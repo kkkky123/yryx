@@ -1,0 +1,755 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>添加演员</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-fileupload.css" rel="stylesheet">
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<style>
+#entryth th {text-align: center;}
+#content {position:relative;}
+#personalimage {position:absolute;right:300px;top:100px;}
+</style>
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--导航-->
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="agencyAdmin.html">北京XXXXXX公司</a> </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="agencyAdmin.html">演员管理</a></li>  
+          <li><a href="agencySubAccount.html">子账号管理</a></li>
+          <li><a href="editAgencyInfo.html">编辑公司资料</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle">用户名 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="modifypwd.html">修改密码</a></li>
+              <li class="divider"></li>
+              <li><a href="login.html">退出</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
+    </div>
+    <!-- /.container-fluid --> 
+  </nav>
+</div>
+
+<!--导航下面的指示框-->
+<div class="container">
+  <ol class="breadcrumb">
+    <li><h4><a href="movieAgency.html">经纪公司管理</a></h4></li>
+    <li><a href="agencyAdmin.html">演员管理</a></li>
+    <li class="active">添加演员</li>
+  </ol>
+</div>
+
+<!--页面主体-->
+<div class="container" id="content">
+  <h4 class="page-header">添加艺人的信息</h4>
+  <div class="row">
+    <form class="form-horizontal" action="" method="post" role="form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label class="control-label col-lg-2">姓名</label>
+          <div class="col-lg-3">
+            <input type="text" name="actorName" class="form-control" placeholder="姓名">
+          </div>
+        </div>
+        <div class="form-group">
+        	<label class="col-lg-2 control-label">性别</label>
+			<div class="col-lg-3">
+            	<label class="radio-inline">
+            	<input type="radio" name="sex" value="man" checked id="man"/>男
+                </label>
+                <label class="radio-inline">
+                <input type="radio" name="sex" value="female"/>女
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+        	<label class="col-lg-2 control-label">出生日期</label>
+            <div class="col-lg-3">
+            	<input type="date" name="birthday" class="form-control">          
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-2">身高</label>
+          <div class="col-lg-3">
+            <div class="input-group">
+              <input type="text" name="actorHeight" class="form-control" placeholder="身高">
+              <span class="input-group-addon">cm</span> </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-2">体重</label>
+          <div class="col-lg-3">
+            <div class="input-group">
+              <input type="text" name="actorWeight" class="form-control" placeholder="体重">
+              <span class="input-group-addon">kg</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center form-group" id="personalimage">
+          <label class="control-label">头像预览</label>
+          <div class="controls">
+            <div class="fileupload fileupload-new" data-provides="fileupload">
+              <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"> <img src="http://placehold.it/200x150" alt="" /></div>
+              <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+              <div>
+              	<span class="btn btn-file btn-default">
+                    <span class="fileupload-new">上传头像</span>
+                    <span class="fileupload-exists">替换</span>
+                    <input type="file" class="default" name="personImage"/>
+                </span>
+                <a href="#" class="btn fileupload-exists btn-default" data-dismiss="fileupload">删除</a>
+             </div>
+            </div>
+          </div>
+        </div>
+       <div class="form-group">
+        	<label class="control-label col-lg-2">血型</label>
+            <div class="col-lg-3">
+            	<select class="form-control" name="bloodtype">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>AB</option>
+                  <option>O</option>
+                </select>
+            </div>
+      </div>
+        <div class="form-group">
+        	<label class="control-label col-lg-2">籍贯</label>
+            <div class="col-lg-6 form-inline">
+            	<select class="form-control" name="province">
+                  <option>北京</option>
+                  <option>天津</option>
+                  <option>上海</option>
+                  <option>广州</option>
+                </select>
+                <select class="form-control" name="city">
+                  <option>海淀</option>
+                  <option>朝阳</option>
+                  <option>东城</option>
+                  <option>XX</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-lg-2">所属院团</label>
+            <div class="col-lg-6 form-inline">
+            	<select class="form-control" name="theatreAddr">
+                    <option>北京</option>
+                    <option>上海</option>
+           		</select>
+                <select class="form-control" name="theatre">
+                  <option>XXXX剧院</option>
+				  <option>XXXX艺术团</option>
+                  <option>XXX剧院</option>
+                </select>
+            </div>
+        </div>       
+        <div class="form-group">
+        	<label class="control-label col-lg-2">学历</label>
+            <div class="col-lg-3">
+            	<select class="form-control" name="educated">
+                  <option>小学</option>
+                  <option>初中</option>
+                  <option>高中</option>
+                  <option>职高</option>
+                  <option>大专</option>
+                  <option>本科</option>
+                  <option>硕士</option>
+                  <option>博士</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-2">毕业院校</label>
+          <div class="col-lg-10 form-inline">
+          	<label class="radio-inline">
+          		<input type="radio" name="school">专业艺术院校
+            </label>
+            <select class="form-control" name="artSchoolAddr">
+            	<option>北京</option>
+                <option>上海</option>
+            </select>
+            <select class="form-control" name="artSchoolPro">
+            	<option>XX专业艺术学院</option>
+                <option>XX专业艺术学院</option>
+            </select>
+            <label class="radio-inline">
+            	<input type="radio" name="school">其他院校
+            </label>
+            <input type="text" placeholder="请填写高校名称" class="form-control" name="otherHighSch">
+          </div>
+        </div> 
+        <div class="form-group">
+          <label class="control-label col-lg-2">专业</label>
+          <div class="col-lg-3">
+            <input type="text" name="major" placeholder="专业" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-lg-2">年级</label>
+            <div class="col-lg-3">
+            	<select class="form-control" name="grade">
+                  <option>2010</option>
+                  <option>2011</option>
+                  <option>2012</option>
+                  <option>2013</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-lg-2">培训经历</label>
+            <div class="col-lg-1">
+        	<button id="train" type="button" class="btn btn-default btn-add-train">添加</button>
+            </div> 
+        </div>
+        <div class="form-group trainAll">
+        	<div class="col-lg-11 col-xs-offset-2 form-inline hidden" id="train-list" style="margin-bottom:2px;">
+            	<input type="date" class="form-control" name="trainStart[]">
+                <span class="form-control-static">月</span>
+                <input type="date" class="form-control" name="trainEnd[]">
+                <input type="text" class="form-control" placeholder="请填写培训机构名称" name="trainPlaceName">
+                <input type="text" class="form-control" placeholder="请填写培训课程内容" name="trainContentName">
+                <button type="button" class="btn btn-default btn-del-train">删除</button>
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-2">联系电话</label>
+          <div class="col-lg-3">
+            <input type="tel" name="phoneNumber" placeholder="" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-2">微信地址</label>
+          <div class="col-lg-3">
+            <input type="text" name="weixin" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-2">微博地址</label>
+          <div class="col-lg-3">
+            <input type="text" name="weibo" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-2">所属经纪公司</label>
+          <div class="col-lg-10 form-inline">
+            <input type="text" name="agencyCompany" class="form-control agencyCompany" id="autocomplete" >
+            
+            <span class="form-control-static">　　经纪人</span>
+            <input type="text" name="agencyName" class="form-control">
+            <span class="form-control-static">　　经纪人电话</span>
+            <input type="tel" class="form-control" name="agencyPhone">
+          </div>
+        </div>
+        <div class="form-group" id="language">
+        	<label class="control-label col-lg-2">语言能力(最多选择5个)</label>
+            <div class="col-lg-9">
+            	<label class="checkbox-inline"><input type="checkbox" name="language[]" value="eng">英语</label>
+                <label class="checkbox-inline"><input type="checkbox" name="language[]" value="fayu">法语</label>
+                <label class="checkbox-inline"><input type="checkbox" name="language[]" value="eyu">俄语</label>
+                <label class="checkbox-inline"><input type="checkbox" name="language[]" value="deyu">德语</label>
+                <label class="checkbox-inline"><input type="checkbox" name="language[]" value="riyu">日语</label>
+                <label class="checkbox-inline"><input type="checkbox" name="language[]" value="hanyu">韩语</label>
+                <label class="checkbox-inline"><input type="checkbox" name="language[]" value="yidaliyu">意大利语</label>
+                <label class="checkbox-inline"><input type="checkbox" name="language[]" value="xibanyayu">西班牙语</label>
+                <label class="checkbox-inline"><input type="checkbox" name="language[]" value="putaoyayu">葡萄牙语</label>
+                <label class="checkbox-inline"><input type="checkbox" name="language[]" value="otheryu">其他</label>
+                <input type="text" class="col-lg-2 pull-right" placeholder="请填写" id="otherLanguage" disabled="disabled" name="otherLanguage">
+            </div>
+        </div>
+        <div class="form-group" id="particular">
+        	<label class="control-label col-lg-2">艺术特长(最多选择3个)</label>
+            <div class="col-lg-9">
+            	<label class="checkbox-inline"><input type="checkbox" name="particular[]" value="changge">唱歌</label>
+                <label class="checkbox-inline"><input type="checkbox" name="particular[]" value="wudao">舞蹈</label>
+                <label class="checkbox-inline"><input type="checkbox" name="particular[]" value="leqi">乐器</label>
+                <label class="checkbox-inline"><input type="checkbox" name="particular[]" value="wushu">武术</label>
+                <label class="checkbox-inline"><input type="checkbox" name="particular[]" value="tiyu">体育</label>
+                <label class="checkbox-inline"><input type="checkbox" name="particular[]" value="quyi">曲艺</label>
+                <label class="checkbox-inline"><input type="checkbox" name="particular[]" value="zaji">杂技</label>
+                <label class="checkbox-inline"><input type="checkbox" name="particular[]" value="mofang">模仿</label>
+                <label class="checkbox-inline"><input type="checkbox" name="particular[]" value="shufa">书法</label>
+                <label class="checkbox-inline"><input type="checkbox" name="particular[]" value="huihua">绘画</label>
+                <label class="checkbox-inline"><input type="checkbox" name="particular[]" value="otherParti">其他</label>
+                <input type="text" class="col-lg-2 pull-right" placeholder="请填写" disabled="disabled" id="otherParti" name="otherParti">
+            </div>
+        </div>
+        <div class="form-group man actorType">
+        	<label class="control-label col-lg-2">擅长饰演的角色类型(最多选择3个)</label>
+            <div class="col-lg-9 checkbox">
+            	<label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="gaofushuai">高富帅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="dongzuo">动作</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="zhainan">宅男</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="gongfu">功夫</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="dashu">大叔</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="fuqin">父亲</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="yeye">爷爷</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="yinghan">硬汉</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="choujue">丑角</label>
+            </div>
+        </div>
+        <div class="form-group hidden female actorType">
+        	<label class="control-label col-lg-2">擅长饰演的角色类型(最多选择3个)</label>
+            <div class="col-lg-9 checkbox">
+            	<label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="gaofushuai">白富美</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="dongzuo">动作</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="zhainan">宅女</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="gongfu">功夫</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="dashu">阿姨</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="fuqin">母亲</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="yeye">奶奶</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="yinghan">林妹妹</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actortype[]" value="choujue">丑角</label>
+            </div>
+        </div>
+        <div class="form-group man actorNature">
+        	<label class="control-label col-lg-2">擅长饰演的角色性格(最多选择5个)</label>
+            <div class="col-lg-9 checkbox">
+            	<label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="cukuang">粗犷</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="ruya">儒雅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="ruizhi">睿智</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="gaofushuai">高富帅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="nanshen">男神</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="huayangmeinan">花样美男</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="erbiqingnian">二逼青年</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="diaosi">屌丝</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="jishuzhai">技术宅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="tubie">土鳖</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="tuhao">土豪</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="aiqiongcuo">矮穷挫</label>
+            </div>
+        </div>
+        <div class="form-group hidden female actorNature">
+        	<label class="control-label col-lg-2">擅长饰演的角色性格(最多选择5个)</label>
+            <div class="col-lg-9 checkbox">
+            	<label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="cukuang">大条</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="ruya">恬静</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="ruizhi">机灵</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="gaofushuai">白富美</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="nanshen">女神</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="huayangmeinan">大龄剩女</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="erbiqingnian">二逼青年</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="diaosi">女屌丝</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="jishuzhai">技术宅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="tubie">土鳖</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="tuhao">土豪</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="aiqiongcuo">矫情</label>
+            </div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-lg-2">曾获奖项</label>
+            <div class="col-lg-1">
+        	<button id="train" type="button" class="btn btn-default btn-add-prize">添加</button>
+            </div> 
+        </div>
+        <div class="form-group prizeAll">
+        	<div class="form-inline col-xs-offset-2 col-lg-10 hidden" id="prize-list">
+            	<select class="form-control" name="getPrizeDate[]">
+                	<option>2011年</option>
+                    <option>2012年</option>
+                </select>
+                <input type="text" class="form-control" placeholder="请填写获奖内容" name="getPrizeContent[]">
+                <button class="btn btn-del-prize btn-default">删除</button>
+            </div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-lg-2">已安排工作档期</label>
+            <div class="col-lg-1">
+            	<button type="button" class="btn btn-default btn-add-workdate">添加</button>
+            </div>
+        </div>
+        <div class="form-group workDateAll">
+            <div class="form-inline col-xs-offset-2 col-lg-10 hidden" id="workDate">
+            	<input type="date" class="form-control" name="workdateStart[]">
+                <span class="form-control-static">至</span>
+                <input type="date" class="form-control" name="workdateEnd[]">
+                <input type="text" class="form-control" name="workDataContent" placeholder="请填写安排内容">
+                <button type="button" class="btn btn-default">删除</button>
+            </div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-lg-2">参赛作品</label>
+            <div class="col-lg-1">
+            	<a href="#addEntries" class="btn btn-default form-control" data-toggle="modal" data-target="#addEntries">添加</a>
+            </div>
+        </div>
+        <div class="form-group">
+        	<div class="col-xs-offset-1 col-lg-10">
+        	<table class="table table-bordered table-hover text-center">
+            	<thead>
+                	<tr id="entryth">
+                    	<th>片名</th>
+                        <th>导演</th>
+                        <th>参赛时间</th>
+                        <th>参演角色</th>
+                        <th>角色类型</th>
+                        <th>角色外型</th>
+                        <th>角色性格</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="entries">
+                </tbody>
+            </table>
+            </div>
+        </div>
+        
+      <div class="form-actions col-xs-offset-3">
+        <button type="submit" class="btn btn-primary btn-save">保存</button>
+        <a href="photoAndMovie.html" class="btn btn-primary">保存并进入下一步：上传照片视频</a>
+        <a href="actorManage.html" class="btn btn-default">取消</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--添加参赛作品弹出层-->
+<div class="modal fade" id="addEntries" tabindex="-1" role="dialog" aria-labelledby="myModalLabe1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"> <a href="#" class="close" data-dismiss="modal">×</a>
+        <h4>添加参赛作品</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" action="" method="post" role="form">
+          <div class="form-group">
+           <label class="control-label col-lg-2">片名</label>
+            <div class="col-lg-4">
+              <input type="text" name="moviename" class="form-control moviename" placeholder="">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">类型</label>
+            <div class="col-lg-8">
+            	<label class="radio-inline">
+                	<input type="radio" name="movietype" value="movie">电影
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="movietype" value="tv">剧集
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="movietype" value="ad">广告
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="movietype" value="mv">MV
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="movietype" value="other">其他
+                </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2">导演</label>
+            <div class="col-lg-4">
+              <input type="text" name="director" class="form-control director">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">参赛时间</label>
+            <div class="col-lg-4">
+            	<select name="entriesyear" class="form-control entriesyesr">
+                	<option>2011年</option>
+                    <option>2012年</option>
+                    <option>2013年</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2">参演角色</label>
+            <div class="col-lg-4">
+              <input type="text" name="inactor" class="form-control inactor">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">角色类型</label>
+            <div class="col-lg-9 man">
+            	<label class="radio-inline">
+                	<input type="radio" name="actortype" value="男一号">男一号
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="actortype" value="男二号">男二号
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="actortype" value="男三号">男三号
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="actortype" value="配角">配角
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="actortype" value="龙套">龙套
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="actortype" value="客串">客串
+                </label>
+            </div>
+            <div class="col-lg-9 female hidden">
+            	<label class="radio-inline">
+                	<input type="radio" name="actortype" value="女一号">女一号
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="actortype" value="女二号">女二号
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="actortype" value="女三号">女三号
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="actortype" value="配角">配角
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="actortype" value="龙套">龙套
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="actortype" value="客串">客串
+                </label>
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">角色外型</label>
+            <div class="col-lg-9 checkbox man">
+            	<label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="高富帅">高富帅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="动作">动作</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="宅男">宅男</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="功夫">功夫</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="大叔">大叔</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="父亲">父亲</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="爷爷">爷爷</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="硬汉">硬汉</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="丑角">丑角</label>
+            </div>
+            <div class="col-lg-9 checkbox female hidden">
+            	<label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="白富美">白富美</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="动作">动作</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="宅女">宅女</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="功夫">功夫</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="阿姨">阿姨</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="母亲">母亲</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="奶奶">奶奶</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="林妹妹">林妹妹</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorout[]" value="丑角">丑角</label>
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">角色性格</label>
+           <div class="col-lg-9 checkbox man">
+            	<label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="粗犷">粗犷</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="儒雅">儒雅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="睿智">睿智</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="高富帅">高富帅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="男神">男神</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="花样美男">花样美男</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="二逼青年">二逼青年</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="屌丝">屌丝</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="技术宅">技术宅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="土鳖">土鳖</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="土豪">土豪</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="矮穷挫">矮穷挫</label>
+            </div>
+            <div class="col-lg-9 checkbox female hidden">
+            	<label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="大条">大条</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="恬静">恬静</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="机灵">机灵</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="白富美">白富美</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="女神">女神</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="青涩少女">青涩少女</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="二逼青年">二逼青年</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="女屌丝">女屌丝</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="技术宅">技术宅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="土鳖">土鳖</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="土豪">土豪</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actorin[]" value="矫情">矫情</label>
+            </div>
+          </div>
+          <div class="modal-footer form-actions">
+          	<button type="button" class="btn btn-primary btn-save" data-dismiss="modal">保存</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/jquery1.10.3_20130911.min.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/bootstrap-fileupload.js"></script> 
+<script src="js/jquery-ui.min.js"></script>
+<script>
+$(function(){
+	//经纪公司的自动补全
+	//tags里边是所有的经纪公司名字
+	var tags = [ 'aaa','bbb','ccc','ddddd','aad','张三','张四' ];
+	$( "#autocomplete" ).autocomplete({
+	  source: function( request, response ) {
+			  var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+			  response( $.grep( tags, function( item ){
+				  return matcher.test( item );
+			  }) );
+		  }
+	}); 
+	//添加培训经历
+	$(".btn-add-train").on("click",function(){
+		$("#train-list").clone().attr("id","").attr("class","col-lg-11 col-xs-offset-2 form-inline").appendTo($("#train-list").parent());	
+	});
+	//删除培训经历
+	$(".trainAll").delegate("button","click",function(){
+		$(this).parent().remove();	
+	});
+	//曾获奖项
+	$(".btn-add-prize").on("click",function(){
+		$("#prize-list").clone().attr("id","").attr("class","form-inline col-xs-offset-2 col-lg-10").appendTo($("#prize-list").parent());	
+	});
+	$(".prizeAll").delegate("button","click",function(){
+		$(this).parent().remove();
+		//alert($(this).attr("class"));	
+	});
+	//已安排工作档期	
+	$(".btn-add-workdate").on("click",function(){
+		$("#workDate").clone().attr("id","").attr("class","form-inline col-xs-offset-2 col-lg-10").appendTo($("#workDate").parent());	
+	});
+	$(".workDateAll").delegate("button","click",function(){
+		$(this).parent().remove();	
+	});
+	//参赛作品保存到表格中
+	$("#addEntries").find(".btn-save").on("click",function(){
+		var oTr=document.createElement("tr");
+		$(oTr).appendTo($("#entries"));
+		$(oTr).append("<td>"+$("#addEntries").find(".moviename").val()+"</td>");
+		$(oTr).append("<td>"+$("#addEntries").find(".director").val()+"</td>");
+		$(oTr).append("<td>"+$("#addEntries").find(".entriesyesr").val()+"</td>");
+		$(oTr).append("<td>"+$("#addEntries").find(".inactor").val()+"</td>");
+		$(oTr).append("<td>"+$("#addEntries").find("input[name='actortype']:checked").val()+"</td>");
+		var actorOut="";
+		$("#addEntries").find("input[name='actorout[]']:checked").each(function() {
+            actorOut+=($(this).val()+" ");
+        });
+		$(oTr).append("<td>"+actorOut+"</td>");
+		var actorIn="";
+		$("#addEntries").find("input[name='actorin[]']:checked").each(function() {
+            actorIn+=($(this).val()+" ");
+        });
+		$(oTr).append("<td>"+actorIn+"</td>");
+		$(oTr).append("<td><a href='#addEntries' data-toggle='modal' data-target='#addEntries'>编辑&nbsp;&nbsp;</a><a href='#del'>删除</a></td>");
+		$(oTr).append("<input type='hidden' name='entry[]' value='"+$("#addEntries").find(".moviename").val()+","+$("#addEntries").find("input[name='movietype']:checked").val()+","+$("#addEntries").find(".director").val()+","+$("#addEntries").find(".entriesyesr").val()+","+$("#addEntries").find(".inactor").val()+","+$("#addEntries").find("input[name='actortype']:checked").val()+","+actorOut+","+actorIn+"' >");
+		//alert($("#entries").find("input[name='entry[]']").val());
+	});
+	//参赛列表删除
+	$("#entries").delegate("a[href='#del']","click",function(){
+		$(this).parent().parent().remove();	
+	});
+	//选择不同的性别会提供不同的角色类型和角色性格选项
+	$("input[name='sex']").on("click",function(){
+		if($(this).val()=='man'){
+			if($(this).attr("checked")=="checked"){
+				$(".man").removeClass("hidden");
+				$(".female").addClass("hidden");	
+			}else{
+				$(".female").removeClass("hidden");
+				$(".man").addClass("hidden");	
+			}	
+		}else{
+			if($(this).attr("checked")=="checked"){
+				$(".female").removeClass("hidden");
+				$(".man").addClass("hidden");
+			}else{
+				$(".man").removeClass("hidden");
+				$(".female").addClass("hidden");
+			}
+		}
+	});
+	//语言能力的个数限制
+	var iLanguageNum=0;
+	$("#language").find("input[name='language[]']").on("click",function(){
+		//alert(iLanguageNum);
+		if($(this).attr("checked")=="checked"){
+			if($(this).val()=="otheryu"){
+				$("#otherLanguage").removeAttr("disabled");	
+			}
+			if(iLanguageNum<=4){
+				iLanguageNum++;
+			}
+			else{
+				alert("语言能力最多选择5个");
+				return false;	
+			}
+		}else{
+			if($(this).val()=="otheryu"){
+				$("#otherLanguage").attr("disabled","disabled");	
+			}
+			iLanguageNum--;	
+		}
+	});
+	//艺术特长的个数限制
+	var iParticularNum=0;
+	$("#particular").find("input[name='particular[]']").on("click",function(){
+		//alert(iLanguageNum);
+		if($(this).attr("checked")=="checked"){
+			if($(this).val()=="otherParti"){
+				$("#otherParti").removeAttr("disabled");	
+			}
+			if(iParticularNum<=2){
+				iParticularNum++;
+			}
+			else{
+				alert("艺术特长最多选择三个");
+				return false;	
+			}
+		}else{
+			if($(this).val()=="otherParti"){
+				$("#otherParti").attr("disabled","disabled");	
+			}
+			iParticularNum--;	
+		}
+	});
+	//擅长饰演的角色类型的个数限制
+	var iActorTypeNum=0;
+	$(".actorType").find("input[name='actortype[]']").on("click",function(){
+		if($(this).attr("checked")=="checked"){
+			if(iActorTypeNum<=2){
+				iActorTypeNum++;
+			}
+			else{
+				alert("擅长饰演的角色类型最多选择三个");
+				return false;	
+			}
+		}else{
+			iActorTypeNum--;	
+		}
+	});
+	//擅长饰演的角色性格的个数限制
+	var iActorNatureNum=0;
+	$(".actorNature").find("input[name='actornature[]']").on("click",function(){
+		//alert(iLanguageNum);
+		if($(this).attr("checked")=="checked"){
+			if(iActorNatureNum<=4){
+				iActorNatureNum++;
+			}
+			else{
+				alert("擅长饰演的角色性格最多选择五个");
+				return false;	
+			}
+		}else{
+			iActorNatureNum--;	
+		}
+	});
+	
+});
+
+</script>
+</body>
+</html>
