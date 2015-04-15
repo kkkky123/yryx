@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>弹性运动导航菜单.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+* {margin:0;padding:0;}
+li {list-style:none;}
+ul {width:400px;position:relative;margin:0 auto;top:100px;height:30px;}
+li {border:1px solid black;width:98px;float:left;height:28px;text-align:center;z-index:2;position:relative;line-height:28px;}
+.bg {width:100px;height:5px;background:red;z-index:1;top:24px;left:0;overflow:hidden;border:none;position:absolute;}
+</style>
+<script type="text/javascript">
+	//var iSpeed=0;
+	function startMove(obj,iTarget){
+		var iSpeed=0;
+		clearInterval(obj.timer);
+		var left=obj.offsetLeft;
+		obj.timer=setInterval(function(){
+			iSpeed+=(iTarget-obj.offsetLeft)/5;
+			iSpeed*=0.7;
+			if(Math.abs(iSpeed)<1 && Math.abs(left-iTarget)<1){
+				clearInterval(obj.timer);
+				obj.style.left=iTarget+'px';
+			}else{
+				left+=iSpeed;
+				obj.style.left=left+'px';
+			}
+		},30);
+	}
+	window.onload=function(){
+		var oUl=document.getElementById('ul1');
+		var aLi=oUl.getElementsByTagName('li');
+		var oBg=aLi[aLi.length-1];
+		
+		for(var i=0;i<aLi,length-1;i++){
+			aLi[i].onmouseover=function(){
+				startMove(oBg,this.offsetLeft);
+			}
+		}
+	};
+</script>
+  </head>
+  
+  <body>
+    <ul id="ul1">
+    	<li>首&nbsp;&nbsp;&nbsp;&nbsp;页</li>
+		<li>科技天地</li>
+		<li>咨询广场</li>
+		<li>联系我们</li>
+		<li class="bg"></li>
+    </ul>
+  </body>
+</html>

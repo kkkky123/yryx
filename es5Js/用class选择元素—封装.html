@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>用class选择元素—封装.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+	function getClass(oParent,sClass){
+		var aBox=oParent.getElementsByTagName('*');
+		var aResult=[];
+		for(var i=0;i<aBox.length;i++){
+			if(aBox[i].className==sClass){
+				aResult.push(aBox[i]);
+			}
+		}
+		return aResult;
+	}
+	window.onload=function(){
+		var oUl=document.getElementById('ul1');
+		var aClass=getClass(oUl,'box');
+		
+		for(var i=0;i<aClass.length;i++){
+			aClass[i].style.background='red';
+		}
+	}
+</script>
+  </head>
+  
+  <body>
+   <ul id='ul1'>
+   	<li></li>
+	<li class='box'></li>
+	<li></li>
+	<li></li>
+	<li class='box'></li>
+	<li></li>
+   </ul>
+  </body>
+</html>

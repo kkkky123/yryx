@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>事件委托.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+	window.onload=function(){
+		var oUl=document.getElementById('ul1');
+		var aLi=oUl.getElementsByTagName('li');
+		var oBtn=document.getElementById('btn1');
+		var iMin=4;
+		
+		//事件委托其实就是把本该绑定到1个元素的事件绑定到其父元素中，这样提高了效率，并且再添加进来的子元素也能会有之前的事件，但是在这里要
+		//判断一下事件源，只有子元素上的操作才能触发之前绑定的事件
+		oUl.onmouseover=function(ev){
+			var ev=ev||event;
+			var target=ev.target||ev.srcElement;
+			if (target.nodeName.toLowerCase() == "li") {
+				target.style.background = "red";
+			}
+		};
+		oUl.onmouseout=function(ev){
+			var ev=ev||event;
+			var target=ev.target||ev.srcElement;
+			if (target.nodeName.toLowerCase() == "li") {
+				target.style.background = "";
+			}
+		};
+		
+		//由于上面的操作用的是事件委托，所以新添加进去的li也会有上面的事件
+		oBtn.onclick=function(){
+			iMin++;
+			var oLi=document.createElement('li');
+			oLi.innerHTML=1111*iMin;
+			oUl.appendChild(oLi);
+		};
+	};
+</script>
+  </head>
+  
+  <body>
+  	<input id="btn1" type="button" value="添加"/>
+    <ul id="ul1">
+    	<li>1111</li>
+		<li>2222</li>
+		<li>3333</li>
+		<li>4444</li>
+    </ul>
+  </body>
+</html>

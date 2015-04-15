@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>碰撞检测.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style>
+		#div1{width:100px;height:100px;background-color:red;position:absolute;z-index:2;}
+		#div2{width:100px;height:100px;background-color:yellow;position:absolute;left:200px;top:200px;z-index:1;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var mydiv=document.getElementById('div1');
+			var mydiv2=document.getElementById('div2');
+			mydiv.onmousedown=function(ev){
+				var myevent=ev || enent;
+				disX=myevent.clientX-mydiv.offsetLeft;
+				disY=myevent.clientY-mydiv.offsetTop;
+				
+				if(mydiv.setCapture){//以下写法只在ie当中可以用，别的可以使用下面的
+					mydiv.setCapture();//该函数表示mydiv这个对象捕获了当前页面所有的鼠标操作
+					mydiv.onmousemove=function(ev){
+						var myevent=ev || enent;
+						mydiv.style.left=myevent.clientX-disX+'px';
+						mydiv.style.top=myevent.clientY-disY+'px';
+						
+						//以下是关于碰撞检测的思路
+						//首先要针对要被碰撞的图形画一个九宫格table，然后以被碰撞的图案为基准去看
+						//这里只要确定什么时候不会碰撞就可以了，即：如果1的右边框在2的左边框左边，1的左边框在2的右边框右边，1的下边框在2的上边框上边
+						//1的上边框在2的下边框下边的时候，就不会碰撞
+						l1=mydiv.offsetLeft;
+						r1=mydiv.offsetLeft+mydiv.offsetWidth;
+						t1=mydiv.offsetTop;
+						b1=mydiv.offsetTop+mydiv.offsetHeight;
+						
+						l2=mydiv2.offsetLeft;
+						r2=mydiv2.offsetLeft+mydiv2.offsetWidth;
+						t2=mydiv2.offsetTop;
+						b2=mydiv2.offsetTop+mydiv2.offsetHeight;
+						
+						if(r1<l2||l1>r2||b1<t2||t1>b2){
+							mydiv2.style.background="yellow";
+							mydiv2.innerHTML="<h5>老婆是张逗逗</h5>"
+						}else{
+							mydiv2.style.background="green";
+							mydiv2.innerHTML="<h5>老婆是张乖乖</h5>"
+						}
+					}
+					mydiv.onmouseup=function(){
+						mydiv.onmousemove=null;
+						mydiv.onmouseup=null;
+						mydiv.releaseCapture();//释放捕获
+					}
+				}
+				else{
+					document.onmousemove=function(ev){
+						var myevent=ev || enent;
+						mydiv.style.left=myevent.clientX-disX+'px';
+						mydiv.style.top=myevent.clientY-disY+'px';
+						
+						l1=mydiv.offsetLeft;
+						r1=mydiv.offsetLeft+mydiv.offsetWidth;
+						t1=mydiv.offsetTop;
+						b1=mydiv.offsetTop+mydiv.offsetHeight;
+						
+						l2=mydiv2.offsetLeft;
+						r2=mydiv2.offsetLeft+mydiv2.offsetWidth;
+						t2=mydiv2.offsetTop;
+						b2=mydiv2.offsetTop+mydiv2.offsetHeight;
+						
+						if(r1<l2||l1>r2||b1<t2||t1>b2){
+							mydiv2.style.background="yellow";
+							mydiv2.innerHTML="<h5>老婆是张逗逗</h5>"
+						}else{
+							mydiv2.style.background="green";
+							mydiv2.innerHTML="<h5>老婆是张乖乖</h5>"
+						}
+					}
+					document.onmouseup=function(){
+						document.onmousemove=null;
+						document.onmouseup=null;
+					}
+				}
+				return false;
+			}
+		}
+	</script>
+  </head>  
+  <body>
+  	sasas
+    <div id="div1">sssss</div>
+	<div id="div2">aaaaass</div>
+	sasa
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>submit和reset的使用.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+	window.onload=function(){
+		var oForm=document.getElementById('form1');
+		var oTxt=document.getElementById('txt1');
+		var oPass=document.getElementById('pwd');
+		
+		//onsubmit是在表单提交之前运行的，这个要记住
+		oForm.onsubmit=function(){
+			if(oTxt.value=="" || oPass.value==""){
+				alert("用户名或者密码为空");
+				return false;
+			}else{
+				alert("用户名:"+oTxt.value+"，密码："+oPass.value);
+			}
+		};
+		//onreset是在点击reset按钮的时候运行，confirm返回true就真的清空，否则就不清零
+		oForm.onreset=function(){
+			return confirm("是否清空？");
+		}
+	}
+</script>
+  </head>
+  
+  <body>
+   <form id="form1" action="http://www.baidu.com" method="get">
+   	<input id="txt1" type="text" name="user"/><br />
+	<input id="pwd" type="password" name="pwd"/><br />
+	<input id="subm" type="submit" value="提交"/>
+	<input id="reset" type="reset" value="重置"/>
+   </form>
+  </body>
+</html>

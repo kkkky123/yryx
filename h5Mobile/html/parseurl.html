@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.3.css">
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.3.js"></script>
+</head>
+<body>
+<div data-role="page" id="firstView">
+
+</div>
+<script>
+    $(document).on("pageinit","#firstView",function(){
+        var sUrl="http://bbs.byr.cn/#!article/Gymnasium/77566";
+        var obj= $.mobile.path.parseUrl(sUrl);
+        $.each(obj,function(key,val){
+            var $p=$("<p></p>");
+            $p.html(key+"="+val+"<br>");
+            $("#firstView").append($p);
+        });
+    });
+</script>
+</body>
+</html>

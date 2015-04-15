@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>继承的使用.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<script type="text/javascript">
+	function Person(name,sex){
+		this.name=name;
+		this.sex=sex;
+	}
+	Person.prototype.showName=function(){
+		alert(this.name);
+	}
+	Person.prototype.showSex=function(){
+		alert(this.sex);
+	}
+	function Worker(name,sex,job){
+		//以下三行为对象冒充的方法实现类之间的继承
+		this.person=Person;
+		this.person(name,sex);
+		delete this.person;
+		//下行为另一种实现继承的方法，这一行完全等于上面三行的作用
+		//Person.call(this,name,sex);//用此方法可以继承Person类的属性
+		
+		this.job=job;
+	}
+	//Worker.prototype=new Person();//继承person类的方法，这里等于是直接将person的一个对象赋值给worker了，不能多重继承
+	//或者为了实现对象方法之间的对象，可以循环将person.prototype里边的所有属性和方法都赋值给worker，和上行的效果是一样的
+	for(var i in Person.prototype){
+		Worker.prototype[i]=Person.prototype[i];
+	}
+	
+	Worker.prototype.showJob=function(){
+		alert(this.job);
+	}
+	window.onload=function(){
+		var oPerson=new Person('aaa','man');
+		var oWorker=new Worker('bbbb','woman','nothing');
+		
+		oPerson.showName();
+		oPerson.showSex();
+		
+		oWorker.showName();
+		oWorker.showSex();
+		oWorker.showJob();
+	}
+</script>
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>拖拽.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style>
+		#div1{width:100px;height:100px;background-color:red;position:absolute;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var mydiv=document.getElementById('div1');
+			mydiv.onmousedown=function(ev){
+				var myevent=ev || event;
+				var disX=myevent.clientX-mydiv.offsetLeft;
+				var disY=myevent.clientY-mydiv.offsetTop;
+				
+				if(mydiv.setCapture){//以下写法只在ie当中可以用，别的可以使用下面的
+					mydiv.setCapture();//该函数表示mydiv这个对象捕获了当前页面所有的鼠标操作
+					mydiv.onmousemove=function(ev){
+						var myevent=ev || event;
+						mydiv.style.left=myevent.clientX-disX+'px';
+						mydiv.style.top=myevent.clientY-disY+'px';
+					}
+					mydiv.onmouseup=function(){
+						mydiv.onmousemove=null;
+						mydiv.onmouseup=null;
+						mydiv.releaseCapture();//释放捕获
+					}
+				}
+				else{
+					document.onmousemove=function(ev){
+						var myevent=ev || event;
+						mydiv.style.left=myevent.clientX-disX+'px';
+						mydiv.style.top=myevent.clientY-disY+'px';
+					}
+					document.onmouseup=function(){
+						document.onmousemove=null;
+						document.onmouseup=null;
+					}
+				}
+				return false;
+			}
+		}
+	</script>
+  </head>  
+  <body>
+  	sasas
+    <div id="div1">sssss</div>
+	sasa
+  </body>
+</html>

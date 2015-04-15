@@ -1,0 +1,2804 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../经纪公司账号管理_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:27px;
+    top:31px;
+    width:800px;
+    height:646px;
+}
+
+#u0_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:806px;
+    height:652px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:315px;
+    width:796px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u2_normal {
+    background-image: url('../经纪公司账号管理_files/u2_normal.png');
+}
+
+.u2_container {
+    position:absolute;
+    left:28px;
+    top:32px;
+    width:798px;
+    height:100px;
+}
+
+#u2_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:804px;
+    height:106px;
+}
+
+.u3 {
+    position:absolute;
+    left:2px;
+    top:42px;
+    width:794px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u4 {
+    position:absolute;
+    left:779px;
+    top:48px;
+    width:40px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u5 {
+    position:absolute;
+    left:679px;
+    top:45px;
+    width:79px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u6 {
+    position:absolute;
+    left:765px;
+    top:43px;
+    width:12px;
+    height:19px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7 {
+    position:absolute;
+    left:164px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u8 {
+    position:absolute;
+    left:296px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u9 {
+    position:absolute;
+    left:692px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u10 {
+    position:absolute;
+    left:34px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u11 {
+    position:absolute;
+    left:429px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u12 {
+    position:absolute;
+    left:560px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u13 {
+    position:absolute;
+    left:42px;
+    top:46px;
+    width:319px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u14 {
+    position:absolute;
+    left:42px;
+    top:175px;
+    width:766px;
+    height:439px
+}
+
+.u15_normal {
+    background-image: url('../经纪公司账号管理_files/u15_normal.png');
+}
+
+.u15_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:58px;
+    height:22px;
+}
+
+#u15_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:28px;
+}
+
+.u16 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u17_normal {
+    background-image: url('../经纪公司账号管理_files/u17_normal.png');
+}
+
+.u17_container {
+    position:absolute;
+    left:58px;
+    top:0px;
+    width:112px;
+    height:22px;
+}
+
+#u17_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:118px;
+    height:28px;
+}
+
+.u18 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:108px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u19_normal {
+    background-image: url('../经纪公司账号管理_files/u19_normal.png');
+}
+
+.u19_container {
+    position:absolute;
+    left:170px;
+    top:0px;
+    width:111px;
+    height:22px;
+}
+
+#u19_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:117px;
+    height:28px;
+}
+
+.u20 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:107px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u21_normal {
+    background-image: url('../经纪公司账号管理_files/u21_normal.png');
+}
+
+.u21_container {
+    position:absolute;
+    left:281px;
+    top:0px;
+    width:113px;
+    height:22px;
+}
+
+#u21_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:119px;
+    height:28px;
+}
+
+.u22 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:109px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u23_normal {
+    background-image: url('../经纪公司账号管理_files/u23_normal.png');
+}
+
+.u23_container {
+    position:absolute;
+    left:394px;
+    top:0px;
+    width:83px;
+    height:22px;
+}
+
+#u23_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:89px;
+    height:28px;
+}
+
+.u24 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:79px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25_normal {
+    background-image: url('../经纪公司账号管理_files/u25_normal.png');
+}
+
+.u25_container {
+    position:absolute;
+    left:477px;
+    top:0px;
+    width:155px;
+    height:22px;
+}
+
+#u25_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:161px;
+    height:28px;
+}
+
+.u26 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:151px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u27_normal {
+    background-image: url('../经纪公司账号管理_files/u27_normal.png');
+}
+
+.u27_container {
+    position:absolute;
+    left:632px;
+    top:0px;
+    width:129px;
+    height:22px;
+}
+
+#u27_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:135px;
+    height:28px;
+}
+
+.u28 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:125px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29_normal {
+    background-image: url('../经纪公司账号管理_files/u29_normal.png');
+}
+
+.u29_container {
+    position:absolute;
+    left:0px;
+    top:22px;
+    width:58px;
+    height:58px;
+}
+
+#u29_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u30 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u31_normal {
+    background-image: url('../经纪公司账号管理_files/u31_normal.png');
+}
+
+.u31_container {
+    position:absolute;
+    left:58px;
+    top:22px;
+    width:112px;
+    height:58px;
+}
+
+#u31_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:118px;
+    height:64px;
+}
+
+.u32 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:108px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u33_normal {
+    background-image: url('../经纪公司账号管理_files/u33_normal.png');
+}
+
+.u33_container {
+    position:absolute;
+    left:170px;
+    top:22px;
+    width:111px;
+    height:58px;
+}
+
+#u33_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:117px;
+    height:64px;
+}
+
+.u34 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:107px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u35_normal {
+    background-image: url('../经纪公司账号管理_files/u35_normal.png');
+}
+
+.u35_container {
+    position:absolute;
+    left:281px;
+    top:22px;
+    width:113px;
+    height:58px;
+}
+
+#u35_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:119px;
+    height:64px;
+}
+
+.u36 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:109px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u37_normal {
+    background-image: url('../经纪公司账号管理_files/u37_normal.png');
+}
+
+.u37_container {
+    position:absolute;
+    left:394px;
+    top:22px;
+    width:83px;
+    height:58px;
+}
+
+#u37_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:89px;
+    height:64px;
+}
+
+.u38 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:79px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u39_normal {
+    background-image: url('../经纪公司账号管理_files/u39_normal.png');
+}
+
+.u39_container {
+    position:absolute;
+    left:477px;
+    top:22px;
+    width:155px;
+    height:58px;
+}
+
+#u39_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:161px;
+    height:64px;
+}
+
+.u40 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:151px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u41_normal {
+    background-image: url('../经纪公司账号管理_files/u41_normal.png');
+}
+
+.u41_container {
+    position:absolute;
+    left:632px;
+    top:22px;
+    width:129px;
+    height:58px;
+}
+
+#u41_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:135px;
+    height:64px;
+}
+
+.u42 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:125px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u43_normal {
+    background-image: url('../经纪公司账号管理_files/u43_normal.png');
+}
+
+.u43_container {
+    position:absolute;
+    left:0px;
+    top:80px;
+    width:58px;
+    height:60px;
+}
+
+#u43_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:66px;
+}
+
+.u44 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u45_normal {
+    background-image: url('../经纪公司账号管理_files/u45_normal.png');
+}
+
+.u45_container {
+    position:absolute;
+    left:58px;
+    top:80px;
+    width:112px;
+    height:60px;
+}
+
+#u45_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:118px;
+    height:66px;
+}
+
+.u46 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:108px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u47_normal {
+    background-image: url('../经纪公司账号管理_files/u47_normal.png');
+}
+
+.u47_container {
+    position:absolute;
+    left:170px;
+    top:80px;
+    width:111px;
+    height:60px;
+}
+
+#u47_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:117px;
+    height:66px;
+}
+
+.u48 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:107px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u49_normal {
+    background-image: url('../经纪公司账号管理_files/u49_normal.png');
+}
+
+.u49_container {
+    position:absolute;
+    left:281px;
+    top:80px;
+    width:113px;
+    height:60px;
+}
+
+#u49_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:119px;
+    height:66px;
+}
+
+.u50 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:109px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u51_normal {
+    background-image: url('../经纪公司账号管理_files/u51_normal.png');
+}
+
+.u51_container {
+    position:absolute;
+    left:394px;
+    top:80px;
+    width:83px;
+    height:60px;
+}
+
+#u51_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:89px;
+    height:66px;
+}
+
+.u52 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:79px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u53_normal {
+    background-image: url('../经纪公司账号管理_files/u53_normal.png');
+}
+
+.u53_container {
+    position:absolute;
+    left:477px;
+    top:80px;
+    width:155px;
+    height:60px;
+}
+
+#u53_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:161px;
+    height:66px;
+}
+
+.u54 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:151px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u55_normal {
+    background-image: url('../经纪公司账号管理_files/u55_normal.png');
+}
+
+.u55_container {
+    position:absolute;
+    left:632px;
+    top:80px;
+    width:129px;
+    height:60px;
+}
+
+#u55_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:135px;
+    height:66px;
+}
+
+.u56 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:125px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u57_normal {
+    background-image: url('../经纪公司账号管理_files/u43_normal.png');
+}
+
+.u57_container {
+    position:absolute;
+    left:0px;
+    top:140px;
+    width:58px;
+    height:60px;
+}
+
+#u57_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:66px;
+}
+
+.u58 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u59_normal {
+    background-image: url('../经纪公司账号管理_files/u45_normal.png');
+}
+
+.u59_container {
+    position:absolute;
+    left:58px;
+    top:140px;
+    width:112px;
+    height:60px;
+}
+
+#u59_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:118px;
+    height:66px;
+}
+
+.u60 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:108px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u61_normal {
+    background-image: url('../经纪公司账号管理_files/u47_normal.png');
+}
+
+.u61_container {
+    position:absolute;
+    left:170px;
+    top:140px;
+    width:111px;
+    height:60px;
+}
+
+#u61_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:117px;
+    height:66px;
+}
+
+.u62 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:107px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u63_normal {
+    background-image: url('../经纪公司账号管理_files/u49_normal.png');
+}
+
+.u63_container {
+    position:absolute;
+    left:281px;
+    top:140px;
+    width:113px;
+    height:60px;
+}
+
+#u63_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:119px;
+    height:66px;
+}
+
+.u64 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:109px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u65_normal {
+    background-image: url('../经纪公司账号管理_files/u51_normal.png');
+}
+
+.u65_container {
+    position:absolute;
+    left:394px;
+    top:140px;
+    width:83px;
+    height:60px;
+}
+
+#u65_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:89px;
+    height:66px;
+}
+
+.u66 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:79px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u67_normal {
+    background-image: url('../经纪公司账号管理_files/u53_normal.png');
+}
+
+.u67_container {
+    position:absolute;
+    left:477px;
+    top:140px;
+    width:155px;
+    height:60px;
+}
+
+#u67_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:161px;
+    height:66px;
+}
+
+.u68 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:151px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u69_normal {
+    background-image: url('../经纪公司账号管理_files/u55_normal.png');
+}
+
+.u69_container {
+    position:absolute;
+    left:632px;
+    top:140px;
+    width:129px;
+    height:60px;
+}
+
+#u69_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:135px;
+    height:66px;
+}
+
+.u70 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:125px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u71_normal {
+    background-image: url('../经纪公司账号管理_files/u43_normal.png');
+}
+
+.u71_container {
+    position:absolute;
+    left:0px;
+    top:200px;
+    width:58px;
+    height:60px;
+}
+
+#u71_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:66px;
+}
+
+.u72 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u73_normal {
+    background-image: url('../经纪公司账号管理_files/u45_normal.png');
+}
+
+.u73_container {
+    position:absolute;
+    left:58px;
+    top:200px;
+    width:112px;
+    height:60px;
+}
+
+#u73_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:118px;
+    height:66px;
+}
+
+.u74 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:108px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u75_normal {
+    background-image: url('../经纪公司账号管理_files/u47_normal.png');
+}
+
+.u75_container {
+    position:absolute;
+    left:170px;
+    top:200px;
+    width:111px;
+    height:60px;
+}
+
+#u75_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:117px;
+    height:66px;
+}
+
+.u76 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:107px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u77_normal {
+    background-image: url('../经纪公司账号管理_files/u49_normal.png');
+}
+
+.u77_container {
+    position:absolute;
+    left:281px;
+    top:200px;
+    width:113px;
+    height:60px;
+}
+
+#u77_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:119px;
+    height:66px;
+}
+
+.u78 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:109px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u79_normal {
+    background-image: url('../经纪公司账号管理_files/u51_normal.png');
+}
+
+.u79_container {
+    position:absolute;
+    left:394px;
+    top:200px;
+    width:83px;
+    height:60px;
+}
+
+#u79_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:89px;
+    height:66px;
+}
+
+.u80 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:79px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u81_normal {
+    background-image: url('../经纪公司账号管理_files/u53_normal.png');
+}
+
+.u81_container {
+    position:absolute;
+    left:477px;
+    top:200px;
+    width:155px;
+    height:60px;
+}
+
+#u81_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:161px;
+    height:66px;
+}
+
+.u82 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:151px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u83_normal {
+    background-image: url('../经纪公司账号管理_files/u55_normal.png');
+}
+
+.u83_container {
+    position:absolute;
+    left:632px;
+    top:200px;
+    width:129px;
+    height:60px;
+}
+
+#u83_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:135px;
+    height:66px;
+}
+
+.u84 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:125px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u85_normal {
+    background-image: url('../经纪公司账号管理_files/u29_normal.png');
+}
+
+.u85_container {
+    position:absolute;
+    left:0px;
+    top:260px;
+    width:58px;
+    height:58px;
+}
+
+#u85_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u86 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u87_normal {
+    background-image: url('../经纪公司账号管理_files/u31_normal.png');
+}
+
+.u87_container {
+    position:absolute;
+    left:58px;
+    top:260px;
+    width:112px;
+    height:58px;
+}
+
+#u87_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:118px;
+    height:64px;
+}
+
+.u88 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:108px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u89_normal {
+    background-image: url('../经纪公司账号管理_files/u33_normal.png');
+}
+
+.u89_container {
+    position:absolute;
+    left:170px;
+    top:260px;
+    width:111px;
+    height:58px;
+}
+
+#u89_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:117px;
+    height:64px;
+}
+
+.u90 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:107px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u91_normal {
+    background-image: url('../经纪公司账号管理_files/u35_normal.png');
+}
+
+.u91_container {
+    position:absolute;
+    left:281px;
+    top:260px;
+    width:113px;
+    height:58px;
+}
+
+#u91_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:119px;
+    height:64px;
+}
+
+.u92 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:109px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u93_normal {
+    background-image: url('../经纪公司账号管理_files/u37_normal.png');
+}
+
+.u93_container {
+    position:absolute;
+    left:394px;
+    top:260px;
+    width:83px;
+    height:58px;
+}
+
+#u93_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:89px;
+    height:64px;
+}
+
+.u94 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:79px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u95_normal {
+    background-image: url('../经纪公司账号管理_files/u39_normal.png');
+}
+
+.u95_container {
+    position:absolute;
+    left:477px;
+    top:260px;
+    width:155px;
+    height:58px;
+}
+
+#u95_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:161px;
+    height:64px;
+}
+
+.u96 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:151px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u97_normal {
+    background-image: url('../经纪公司账号管理_files/u41_normal.png');
+}
+
+.u97_container {
+    position:absolute;
+    left:632px;
+    top:260px;
+    width:129px;
+    height:58px;
+}
+
+#u97_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:135px;
+    height:64px;
+}
+
+.u98 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:125px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u99_normal {
+    background-image: url('../经纪公司账号管理_files/u29_normal.png');
+}
+
+.u99_container {
+    position:absolute;
+    left:0px;
+    top:318px;
+    width:58px;
+    height:58px;
+}
+
+#u99_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u100 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u101_normal {
+    background-image: url('../经纪公司账号管理_files/u31_normal.png');
+}
+
+.u101_container {
+    position:absolute;
+    left:58px;
+    top:318px;
+    width:112px;
+    height:58px;
+}
+
+#u101_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:118px;
+    height:64px;
+}
+
+.u102 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:108px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u103_normal {
+    background-image: url('../经纪公司账号管理_files/u33_normal.png');
+}
+
+.u103_container {
+    position:absolute;
+    left:170px;
+    top:318px;
+    width:111px;
+    height:58px;
+}
+
+#u103_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:117px;
+    height:64px;
+}
+
+.u104 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:107px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u105_normal {
+    background-image: url('../经纪公司账号管理_files/u35_normal.png');
+}
+
+.u105_container {
+    position:absolute;
+    left:281px;
+    top:318px;
+    width:113px;
+    height:58px;
+}
+
+#u105_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:119px;
+    height:64px;
+}
+
+.u106 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:109px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u107_normal {
+    background-image: url('../经纪公司账号管理_files/u37_normal.png');
+}
+
+.u107_container {
+    position:absolute;
+    left:394px;
+    top:318px;
+    width:83px;
+    height:58px;
+}
+
+#u107_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:89px;
+    height:64px;
+}
+
+.u108 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:79px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u109_normal {
+    background-image: url('../经纪公司账号管理_files/u39_normal.png');
+}
+
+.u109_container {
+    position:absolute;
+    left:477px;
+    top:318px;
+    width:155px;
+    height:58px;
+}
+
+#u109_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:161px;
+    height:64px;
+}
+
+.u110 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:151px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u111_normal {
+    background-image: url('../经纪公司账号管理_files/u41_normal.png');
+}
+
+.u111_container {
+    position:absolute;
+    left:632px;
+    top:318px;
+    width:129px;
+    height:58px;
+}
+
+#u111_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:135px;
+    height:64px;
+}
+
+.u112 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:125px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u113_normal {
+    background-image: url('../经纪公司账号管理_files/u29_normal.png');
+}
+
+.u113_container {
+    position:absolute;
+    left:0px;
+    top:376px;
+    width:58px;
+    height:58px;
+}
+
+#u113_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u114 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u115_normal {
+    background-image: url('../经纪公司账号管理_files/u31_normal.png');
+}
+
+.u115_container {
+    position:absolute;
+    left:58px;
+    top:376px;
+    width:112px;
+    height:58px;
+}
+
+#u115_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:118px;
+    height:64px;
+}
+
+.u116 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:108px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u117_normal {
+    background-image: url('../经纪公司账号管理_files/u33_normal.png');
+}
+
+.u117_container {
+    position:absolute;
+    left:170px;
+    top:376px;
+    width:111px;
+    height:58px;
+}
+
+#u117_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:117px;
+    height:64px;
+}
+
+.u118 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:107px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u119_normal {
+    background-image: url('../经纪公司账号管理_files/u35_normal.png');
+}
+
+.u119_container {
+    position:absolute;
+    left:281px;
+    top:376px;
+    width:113px;
+    height:58px;
+}
+
+#u119_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:119px;
+    height:64px;
+}
+
+.u120 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:109px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u121_normal {
+    background-image: url('../经纪公司账号管理_files/u37_normal.png');
+}
+
+.u121_container {
+    position:absolute;
+    left:394px;
+    top:376px;
+    width:83px;
+    height:58px;
+}
+
+#u121_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:89px;
+    height:64px;
+}
+
+.u122 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:79px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u123_normal {
+    background-image: url('../经纪公司账号管理_files/u39_normal.png');
+}
+
+.u123_container {
+    position:absolute;
+    left:477px;
+    top:376px;
+    width:155px;
+    height:58px;
+}
+
+#u123_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:161px;
+    height:64px;
+}
+
+.u124 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:151px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u125_normal {
+    background-image: url('../经纪公司账号管理_files/u41_normal.png');
+}
+
+.u125_container {
+    position:absolute;
+    left:632px;
+    top:376px;
+    width:129px;
+    height:58px;
+}
+
+#u125_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:135px;
+    height:64px;
+}
+
+.u126 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:125px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u127 {
+    position:absolute;
+    left:672px;
+    top:619px;
+    width:144px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u128 {
+    position:absolute;
+    left:42px;
+    top:143px;
+    width:157px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u129 {
+    position:absolute;
+    left:711px;
+    top:208px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u130 {
+    position:absolute;
+    left:711px;
+    top:267px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u131 {
+    position:absolute;
+    left:711px;
+    top:329px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u132 {
+    position:absolute;
+    left:711px;
+    top:388px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u133 {
+    position:absolute;
+    left:711px;
+    top:446px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u134 {
+    position:absolute;
+    left:711px;
+    top:504px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u135 {
+    position:absolute;
+    left:711px;
+    top:562px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u136 {
+    position:absolute;
+    left:711px;
+    top:230px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u137 {
+    position:absolute;
+    left:711px;
+    top:289px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u138 {
+    position:absolute;
+    left:711px;
+    top:351px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u139 {
+    position:absolute;
+    left:711px;
+    top:410px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u140 {
+    position:absolute;
+    left:711px;
+    top:468px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u141 {
+    position:absolute;
+    left:711px;
+    top:526px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u142 {
+    position:absolute;
+    left:711px;
+    top:584px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u143_normal {
+    background-image: url('../经纪公司账号管理_files/u143_normal.png');
+}
+
+.u143_container {
+    position:absolute;
+    left:373px;
+    top:142px;
+    width:180px;
+    height:22px;
+}
+
+#u143_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:28px;
+}
+
+.u144 {
+    position:absolute;
+    left:2px;
+    top:3px;
+    width:176px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u145 {
+    position:absolute;
+    left:558px;
+    top:141px;
+    width:55px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u146 {
+    position:absolute;
+    left:861px;
+    top:246px;
+    width:150px;
+    height:80px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u147 {
+    position:absolute;
+    left:282px;
+    top:204px;
+    width:227px;
+    height:216px;
+    overflow:hidden;
+}
+
+#pd0u147 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:227px;
+    height:216px;
+    
+}
+
+.u148_normal {
+    background-image: url('../经纪公司账号管理_files/u148_normal.png');
+}
+
+.u148_container {
+    position:absolute;
+    left:11px;
+    top:8px;
+    width:206px;
+    height:196px;
+}
+
+#u148_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:212px;
+    height:202px;
+}
+
+.u149 {
+    position:absolute;
+    left:2px;
+    top:90px;
+    width:202px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u150_normal {
+    background-image: url('../经纪公司账号管理_files/u150_normal.png');
+}
+
+.u150_container {
+    position:absolute;
+    left:73px;
+    top:31px;
+    width:125px;
+    height:23px;
+}
+
+#u150_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:131px;
+    height:29px;
+}
+
+.u151 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:121px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u152_normal {
+    background-image: url('../经纪公司账号管理_files/u150_normal.png');
+}
+
+.u152_container {
+    position:absolute;
+    left:73px;
+    top:76px;
+    width:125px;
+    height:23px;
+}
+
+#u152_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:131px;
+    height:29px;
+}
+
+.u153 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:121px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u154 {
+    position:absolute;
+    left:32px;
+    top:34px;
+    width:31px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u155 {
+    position:absolute;
+    left:32px;
+    top:83px;
+    width:31px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u156 {
+    position:absolute;
+    left:29px;
+    top:151px;
+    width:77px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u157 {
+    position:absolute;
+    left:124px;
+    top:151px;
+    width:77px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u158 {
+    position:absolute;
+    left:199px;
+    top:141px;
+    width:100px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+#u159 {
+    position:absolute;
+    left:429px;
+    top:120px;
+    width:125px;
+    height:111px;
+    overflow:hidden;
+}
+
+#pd0u159 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:125px;
+    height:111px;
+    
+}
+
+.u160 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u161 {
+    position:absolute;
+    left:0px;
+    top:36px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u162 {
+    position:absolute;
+    left:0px;
+    top:72px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+#u163 {
+    position:absolute;
+    left:560px;
+    top:120px;
+    width:125px;
+    height:111px;
+    overflow:hidden;
+}
+
+#pd0u163 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:125px;
+    height:111px;
+    
+}
+
+.u164 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u165 {
+    position:absolute;
+    left:0px;
+    top:36px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u166 {
+    position:absolute;
+    left:0px;
+    top:72px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+

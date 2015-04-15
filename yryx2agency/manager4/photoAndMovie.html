@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>添加图片视频</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-fileupload.css" rel="stylesheet">
+<style>
+ul {list-style:none;}
+</style>
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--导航-->
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="usermanage.html">管理后台</a> </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="actorManage.html">演员资料库</a></li>  
+          <li><a href="movieInfo.html">影视资料库</a></li>
+          <li> <a href="movieAgency.html">经纪公司管理</a></li>
+          <li class="dropdown"> <a href="movieTag.html" class="dropdown-toggle" data-toggle="dropdown">标签管理 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="tagClassfic.html">标签分类管理</a></li>
+              <li class="divider"></li>
+              <li><a href="movieTag.html">影视标签管理</a></li>
+              <li class="divider"></li>
+              <li><a href="actorTag.html">角色标签管理</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">账号管理 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="agenyuser.html">经纪公司账号</a></li>
+              <li class="divider"></li>
+              <li><a href="usermanage.html">系统子账号</a></li>
+            </ul>
+          </li>
+          <li><a href="appealManage.html">申诉管理</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle">用户名 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="modifypwd.html">修改密码</a></li>
+             <!-- <li><a href="#">子账号管理</a></li>-->
+              <li class="divider"></li>
+              <li><a href="login.html">退出</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
+    </div>
+    <!-- /.container-fluid --> 
+  </nav>
+</div>
+
+<!--导航下面的指示框-->
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="actorManage.html"><h4>演员资料库</h4></a></li>
+    <li class="active">添加图片视频</li>
+  </ol>
+</div>
+
+<!--页面主体-->
+<div class="container" id="content">
+  <h4 class="page-header">作品资料</h4>
+  <div class="row">
+  	<div class="container">
+  		<strong style="font-size:20px;">生活照(最多可上传20张)</strong>
+        <button type="button" class="btn btn-default btn-add-personPhoto" style="margin-bottom:10px;">上传新照片</button>
+    	<ul class="personPhotoList" style="width:1130px;">
+        	<li style="float:left;height:200px;width:180px;" id="personPhoto" class="hidden">
+                <div class="text-center" >
+                  <div class="controls">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-new thumbnail" style="width: 150px; height: 150px;"> <img src="http://placehold.it/150x150" alt="" /></div>
+                      <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 150px; line-height: 20px;"></div>
+                      <div>
+                        <span class="btn btn-file btn-default">
+                            <span class="fileupload-new">上传生活照(1:1)</span>
+                            <span class="fileupload-exists">替换</span>
+                            <input type="file" class="default" name="lifephoto[]" />
+                        </span>
+                        <a href="#" class="btn fileupload-exists btn-default" data-dismiss="fileupload">删除</a>
+                        <a href="#" class="btn fileupload-exists btn-default">上传</a>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+  		<strong style="font-size:20px;">剧照(最多可上传20张)</strong>
+        <button type="button" class="btn btn-default btn-add-moviePhoto" style="margin-bottom:10px;">上传新照片</button>
+    	<ul class="moviePhotoList" style="width:1130px;">
+        	<li style="float:left;height:150px;width:180px;" id="moviePhoto" class="hidden">
+                <div class="text-center" >
+                  <div class="controls">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-new thumbnail" style="width: 160px; height: 90px;"> <img src="http://placehold.it/160x90" alt="" /></div>
+                      <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 160px; max-height: 90px; line-height: 20px;"></div>
+                      <div>
+                        <span class="btn btn-file btn-default">
+                            <span class="fileupload-new">上传剧照(16:9)</span>
+                            <span class="fileupload-exists">替换</span>
+                            <input type="file" class="default" name="moviephoto[]" />
+                        </span>
+                        <a href="#" class="btn fileupload-exists btn-default" data-dismiss="fileupload">删除</a>
+                        <a href="#" class="btn fileupload-exists btn-default">上传</a>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container" id="moviePieceList">
+    	<strong style="font-size:20px;">作品片段链接</strong>
+        <button type="button" class="btn btn-default btn-add-moviePiece" style="margin-bottom:10px;">添加</button>
+        <div class="form-horizontal hidden" id="pieces">
+            <div class="form-group">
+                <label class="control-label col-lg-1">片段链接</label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="pieceUrl[]">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-lg-1">说明</label>
+                <div class="col-lg-8">
+                    <textarea class="form-control" rows="3" name="pieceContent[]"></textarea>
+                </div>
+                <span class="btn btn-default col-lg-1 btn-del-piece">删除</span>
+            </div>
+         </div>
+    </div>
+	<div class="container">
+    	<strong style="font-size:20px;">生活视频(最多可上传5部)</strong>
+        <button type="button" class="btn btn-default btn-add-lifePiece" style="margin-bottom:10px;">上传视频(5M以内)</button>
+        <ul class="lifePieces" style="width:1130px;">
+        	<li style="float:left;height:150px;width:180px;" id="lifePiece" class="hidden">
+                <div class="text-center" >
+                  <div class="controls">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-new thumbnail" style="width: 160px; height: 90px;"> <img src="http://placehold.it/160x90" alt="" /></div>
+                      <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 160px; max-height: 90px; line-height: 20px;"></div>
+                      <div>
+                        <span class="btn btn-file btn-default">
+                            <span class="fileupload-new">上传视频(5M以内)</span>
+                            <span class="fileupload-exists">替换</span>
+                            <input type="file" class="default" name="movievideo[]" />
+                        </span>
+                        <a href="#" class="btn fileupload-exists btn-default" data-dismiss="fileupload">删除</a>
+                        <a href="#" class="btn fileupload-exists btn-default">上传</a>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+    	<a href="#" class="btn btn-default col-xs-offset-5 col-lg-2">保存</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/jquery1.10.3_20130911.min.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/bootstrap-fileupload.js"></script> 
+<script>
+$(function(){
+	$(".btn-add-personPhoto").on("click",function(){
+		$("#personPhoto").clone().attr("id","").attr("class","").appendTo($("#personPhoto").parent());	
+	});	
+	$(".btn-add-moviePhoto").on("click",function(){
+		$("#moviePhoto").clone().attr("id","").attr("class","").appendTo($("#moviePhoto").parent());	
+	});
+	$(".btn-add-moviePiece").on("click",function(){
+		$("#pieces").clone().attr("id","").attr("class","form-horizontal").appendTo($("#pieces").parent());	
+	});
+	$(".btn-add-lifePiece").on("click",function(){
+		$("#lifePiece").clone().attr("id","").attr("class","").appendTo($("#lifePiece").parent());	
+	});
+	$("#moviePieceList").delegate("span","click",function(){
+		$(this).parent().parent().remove();
+		//alert($(this).html());	
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" charset="utf-8">
+	<title></title>
+</head>
+<body>
+    <h2>展示一下serialize函数和serializeArray两个函数的作用</h2>
+    <form action="aa.html" method="get">
+        <label for="input1">first input</label>
+        <input type="text" name="input1" id="input1" value="" placeholder="input1"/>
+        <label for="input2"></label>
+        <input type="text" id="input2" name="input2" value="" placeholder="input2"/>
+        <label for="input3"></label>
+        <input type="text" id="input3" name="input2" value="" placeholder="input2"/>
+        <label for="input4"></label>
+        <input type="text" id="input4" name="input2" value="" placeholder="input2"/>
+        <lebel><input type="checkbox" name="ch1" value="ch1"/>ch1</lebel>
+        <lebel><input type="checkbox" name="ch1" value="ch2"/>ch2</lebel>
+        <lebel><input type="checkbox" name="ch1" value="ch3"/>ch3</lebel>
+        <lebel><input type="checkbox" name="ch1" value="ch4"/>ch4</lebel>
+        <lebel><input type="checkbox" name="ch1" value="ch5"/>ch5</lebel>
+        <input type="submit" value="submit"/>
+    </form>
+    <button id="btn1">serilize</button>
+    <button id="btn2">serilizeArray</button>
+    <div id="text"></div>
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function($) {
+            $("#btn1").click(function(){
+                $("#text").html($("form").serialize());
+            });
+            $("#btn2").click(function(){
+                $("#text").html(JSON.stringify($("form").serializeArray()));
+            });
+
+		});
+	</script>
+</body>
+</html>

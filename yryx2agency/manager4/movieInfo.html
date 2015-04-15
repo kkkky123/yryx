@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视资料库</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-tags.css" rel="stylesheet">
+<link href="bootstrap-datetimepicker-0.0.11/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<style>
+#actorlist td {vertical-align:middle;}
+#actorlist th {text-align:center;}
+</style>
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--导航-->
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="actorManage.html">管理后台</a> </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="actorManage.html">演员资料库</a></li>  
+          <li class="active"><a href="movieInfo.html">影视资料库</a></li>
+          <li> <a href="movieAgency.html">经纪公司管理</a></li>
+          <li class="dropdown"> <a href="movieTag.html" class="dropdown-toggle" data-toggle="dropdown">标签管理 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="tagClassfic.html">标签分类管理</a></li>
+              <li class="divider"></li>
+              <li><a href="movieTag.html">影视标签管理</a></li>
+              <li class="divider"></li>
+              <li><a href="actorTag.html">角色标签管理</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">账号管理 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="agenyuser.html">经纪公司账号</a></li>
+              <li class="divider"></li>
+              <li><a href="usermanage.html">系统子账号</a></li>
+            </ul>
+          </li>
+          <li><a href="appealManage.html">申诉管理</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle">用户名 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="modifypwd.html">修改密码</a></li>
+             <!-- <li><a href="#">子账号管理</a></li>-->
+              <li class="divider"></li>
+              <li><a href="login.html">退出</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
+    </div>
+    <!-- /.container-fluid --> 
+  </nav>
+</div>
+
+<!--导航下面的指示框-->
+<div class="container">
+  <ol class="breadcrumb">
+    <li>
+      <h4>影视资料库</h4>
+    </li>
+    <li class="active">影视资料库</li>
+  </ol>
+</div>
+
+<!--搜索和新建用户按钮-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <form class="inline input-group" action="" method="get">
+        <input type="text" class="form-control" placeholder="输入片名或编号">
+        <span class="input-group-btn">
+        <button type="submit" class="btn btn-default">搜索</button>
+        </span>
+      </form>
+    </div>
+    <div class="col-lg-2 pull-right text-right"> <a href="addMovie.html" class="btn btn-primary">添加新片</a> </div>
+  </div>
+</div>
+
+<!--表格-->
+<div class="container">
+  <div class="row container">
+      <form role="form" class="form-horizontal page-header">
+        <div class="form-group container">
+        <label class="control-label"><h4>库中共有XXX部影视剧</h4></label>
+        <div class="pull-right">
+        <select name="displayType" class="form-control input-sm">
+            <option value="all">显示全部</option>
+            <option value="unopened">只显示未开机</option>
+            <option value="opened">只显示已开机</option>
+            <option value="unshow">只显示未上映</option>
+            <option value="onshow">只显示已上映</option>
+        </select>
+        </div>
+        </div>
+      </form>
+  </div>
+  <table class="table table-bordered table-hover text-center" id="actorlist">
+    <thead>
+      <tr>
+      	<th><input type="checkbox" name="selectAll" id="selectAll"></th>
+        <th>编号</th>
+        <th>海报</th>
+        <th>片名</th>
+        <th>导演</th>
+        <th>类型</th>
+        <th>开机时间</th>
+        <th>上映时间</th>
+        <th>更新时间</th>
+        <th>编辑</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="agency1">
+      	<td><input type="checkbox" name="movie"></td>
+        <td>12345</td>
+        <td><span class=""><img src="http://placehold.it/80x100" alt="..." width="80px" height="100px"/></span></td>
+        <td>XXXX</td>
+        <td>XXX</td>
+        <td>电影</td>
+        <td>2014年8月</td>
+        <td>尚未排期</td>
+        <td>2014-07-01 14:22</td>
+        <td>
+        	<ul class="list-unstyled">
+            	<li><a href="addMovie.html">编辑资料</a></li>
+            </ul>
+        </td>
+      </tr>
+      <tr id="agency2">
+      	<td><input type="checkbox" name="movie"></td>
+        <td>12345</td>
+        <td><span class=""><img src="http://placehold.it/80x100" alt="..." width="80px" height="100px"/></span></td>
+        <td>XXXX</td>
+        <td>XXX</td>
+        <td>电影</td>
+        <td>2014年8月</td>
+        <td>尚未排期</td>
+        <td>2014-07-01 14:22</td>
+        <td>
+        	<ul class="list-unstyled">
+            	<li><a href="addMovie.html">编辑资料</a></li>
+            </ul>
+        </td>
+      </tr>
+      <tr id="agency3">
+      	<td><input type="checkbox" name="movie"></td>
+        <td>12345</td>
+        <td><span class=""><img src="http://placehold.it/80x100" alt="..." width="80px" height="100px"/></span></td>
+        <td>XXXX</td>
+        <td>XXX</td>
+        <td>电影</td>
+        <td>2014年8月</td>
+        <td>尚未排期</td>
+        <td>2014-07-01 14:22</td>
+        <td>
+        	<ul class="list-unstyled">
+            	<li><a href="addMovie.html">编辑资料</a></li>
+            </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="#delMovie" class="btn btn-default" id="btnDelMovie" data-toggle="modal" data-target="#delMovie">删除</a>
+</div>
+
+<!--分页-->
+<div class="container text-center">
+  <ul class="pagination pagination-sm pull-right" id="fenye">
+    <!--<li><a href="#">&laquo;</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>-->
+  </ul>
+</div>
+<!--删除选中的影片-->
+<div class="modal fade" id="delMovie" tabindex="-1" role="dialog" aria-labelledby="myModalLabe1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"> <a href="#" class="close" data-dismiss="modal">×</a>
+        <h4>删除影片</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" action="?" method="post" role="form">
+          <div class="form-group">
+          	<span class="col-xs-offset-1">您确认要删除这些影片吗？删除后不能恢复。</span>
+            <input type="hidden" name="id" value="" class="DelId">
+          </div>
+          <div class="modal-footer form-actions">
+          	<button type="submit" class="btn btn-primary btn-save">确认</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>     
+          </div>
+        </form>
+      </div><!--body-->
+    </div><!--content-->
+  </div><!--dialog-->
+</div><!--modal-->
+
+<script src="js/jquery1.10.3_20130911.min.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script>
+$(function(){
+	$("#selectAll").on("click",function(){
+		if(this.checked){
+			$("input[name='movie']").each(function(){
+				this.checked="checked";
+			});
+		}
+		else{
+			//$("input[name='items']").removeAttr("checked");//这种方法兼容性不好，可以遍历数组试试
+			$("input[name='movie']").each(function(){
+				this.checked="";
+			});
+		}
+	});
+	//删除选中的影片
+	$("#btnDelMovie").on("click",function(){
+		var delId="";
+		$("input[name='movie']:checked").each(function() {
+            delId+=($(this).parent().parent().attr("id")+",");
+        });
+		delId=delId.substring(0,delId.length-1);
+		$("#delMovie").find(".DelId").val(delId);
+	});	
+});
+
+//分页
+window.onload=function(){
+		page({
+			id:'fenye',
+			nowpage:1,
+			allpage:10,
+			callback:function(now,all){
+				window.alert("当前页："+ now + ",总共页：" + all);
+			}
+		});//函数的参数是比较厉害的json格式，如果要改进的话直接改最后的callback函数就可以完成任意功能
+		return false;//阻止点击超链接跳转页面
+	};
+	function page(opt){
+		if(!opt.id){return false;}//没有取到id的话就可以直接down了
+		var obj = document.getElementById(opt.id);//获取对象
+		var nowpage=opt.nowpage || 1;//获取当前页码，或者直接默认为1
+		var allpage=opt.allpage || 5;//获取总的页面，或者默认为5
+		
+		if(allpage>=6 && nowpage>=4){//总页码大于6或者当前页码大于4的时候才会出现首页字符
+			var oa=document.createElement('a');
+			var oLi=document.createElement('li');
+			oa.href = '#' + 1;
+			oa.innerHTML="首页";
+			oLi.appendChild(oa);
+			obj.appendChild(oLi);
+		}
+		if(nowpage>=2){//当前页码大于2的时候就出现上一页
+			var oa=document.createElement('a');
+			var oLi=document.createElement('li');
+			oa.href = '#' + (nowpage-1);
+			oa.innerHTML="上一页";
+			oLi.appendChild(oa);
+			obj.appendChild(oLi);
+		}
+		if(allpage<=5){//总的页面小于5的时候直接把所有的页码都打出来就行了，没那么多废话
+			for (var i = 1; i <= allpage; i++) {
+				var oa = document.createElement('a');
+				var oLi=document.createElement('li');
+				oa.href = '#' + i;
+				oa.innerHTML=i;
+				if (i == nowpage) {
+					oLi.className="active";
+				}
+				oLi.appendChild(oa);
+				obj.appendChild(oLi);
+			}
+		}else{//总页码超过5的话，默认只出现5个页码，以当前页码为中心，向前两个，向后两个
+			for(var i=1;i<=5;i++){
+				var oa=document.createElement('a');
+				var oLi=document.createElement('li');
+				if (nowpage == 1 || nowpage == 2) {//如果当前页码为1或者2的话，也打印5个页码，但是不能向前出现打2个页码了
+					oa.href = '#' + i;
+					oa.innerHTML=i;
+					if (nowpage == i) {
+						oLi.className="active";
+					}
+					oLi.appendChild(oa);
+					obj.appendChild(oLi);
+				}else if((allpage-nowpage)==1||(allpage-nowpage)==0){//当前页码为最后两个页码的时候，和前面类似
+					oa.href='#'+(allpage-5+i);
+					oa.innerHTML=(allpage-5+i);
+					if((allpage-nowpage==0)&&i==5){
+						oLi.className="active";
+					}else if((allpage-nowpage==1)&&i==4){
+						oLi.className="active";
+					}
+					oLi.appendChild(oa);
+					obj.appendChild(oLi);
+				}
+				else {
+					oa.href = '#' + (nowpage - 3 + i);//好吧，最普遍的情况，以当前为中心，+-2个页码就可以了，注意的是，当前页码没有中括号
+					oa.innerHTML=(nowpage-3+i);
+					if (i == 3) {
+						oLi.className="active";
+					}
+					oLi.appendChild(oa);
+					obj.appendChild(oLi);
+				}
+			}
+		}
+		if((allpage-nowpage>=3)&&allpage>=6){//如果总页码超过6，并且当前页码为倒数第三个以后的话出现尾页
+			var oa=document.createElement('a');
+			var oLi=document.createElement("li");
+			oa.href = '#' + allpage;
+			oa.innerHTML="尾页";
+			oLi.appendChild(oa);
+			obj.appendChild(oLi);
+		}
+		if((allpage-nowpage>=1)){//只要不是最后一页，就出现下一页
+			var oa=document.createElement('a');
+			var oLi=document.createElement("li");
+			oa.href = '#' + (nowpage+1);
+			oa.innerHTML="下一页";
+			oLi.appendChild(oa);
+			obj.appendChild(oLi);
+		}
+		opt.callback(nowpage,allpage);//判断完哪个页码的话，调用一下函数，这里就简单弹出当前页码和总的页码，要是加入操作的话最好就在这个函数做手脚
+		var aA=obj.getElementsByTagName('a');
+		for(var i=0;i<aA.length;i++){//给每个页码都添加分页函数
+			aA[i].onclick=function(){
+				var nowpage = parseInt(this.getAttribute('href').substring(1));//获取当前页码数
+				obj.innerHTML='';//将当前div里边已经打印的页码清空，然后在打出页码就行了，类似于刷新
+				page({
+					id:opt.id,
+					nowpage:nowpage,
+					allpage:opt.allpage,
+					callback:opt.callback
+				});
+				return false;
+			};
+		}
+	}
+</script>
+</body>
+</html>

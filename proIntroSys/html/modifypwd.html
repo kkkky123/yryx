@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/common.css" type="text/css"/>
+    <title>重设密码</title>
+    <style>
+        label {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="container-fluid">
+        <h1 class="page-header"><span class="col-xs-offset-5">重设密码</span></h1>
+
+        <form action="../test.php" method="post" class="form-horizontal" role="form">
+            <div class="form-group row">
+                <label class="control-label col-lg-2 col-xs-offset-2" for="oPassword">旧密码</label>
+
+                <div class="col-lg-4">
+                    <input class="form-control input-lg" type="password" id="oPassword" name="oPassword"
+                           placeholder="请输入旧密码"/>
+
+                    <p class="help-block help-warning"></p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-lg-2 col-xs-offset-2" for="newPassword">新密码</label>
+
+                <div class="col-lg-4">
+                    <input class="form-control input-lg" type="password" id="newPassword" name="newPassword"
+                           placeholder="6位以上数字、字母"/>
+
+                    <p class="help-block help-warning"></p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-lg-2 col-xs-offset-2" for="newPassword2">确认密码</label>
+
+                <div class="col-lg-4">
+                    <input class="form-control input-lg" type="password" id="newPassword2" name="newPassword2"
+                           placeholder="请再次输入密码"/>
+
+                    <p class="help-block help-warning"></p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-xs-offset-4 col-lg-4">
+                    <button class="btn btn-primary btn-lg" id="save" type="button">提交新密码</button>
+                    <a class="btn btn-default btn-lg" href="javascript:history.back();">取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../js/jquery1.10.3_20130911.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modifypwd.js"></script>
+</body>
+</html>

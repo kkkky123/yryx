@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>正则表达式.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+	window.onload=function(){
+		//var str="sao saoisho23nsqa阿萨斯mxs";
+		//var re=/[\u4e00-\u9fa5]/g;//中括号里边的是为了检测中文，就是一个包含所有中文的范围,utf8编码
+		//或者对象形式，如下
+		//var re=new RegExp('[\\u4e00-\\u9fa5]','g');//第二个参数有三种，g代表全局，就是匹配多个，i代表不区分大小写，m表示多行匹配
+		//alert(re.test(str));//test表示测试str里是否有re描述的字符串，返回true或者false
+		//alert(str.match(re));//表示将匹配的re的str里的元素都挑选出来，返回一个数组
+		
+		var oBtn=document.getElementById('btn1');
+		var oTxt1=document.getElementById('txt1');
+		var oTxt2=document.getElementById('txt2');
+		
+		//以下为邮箱检测
+		/*oBtn.onclick=function(){
+			var re=/^\w+@[0-9a-z]+\.[a-z]{2,4}$/gi;
+			//^在[]内表示非，在外表示字符串开始位置，$表示结束位置，\w表示数字，字符或者下划线，\W和\w正好相反，[]里边的都表示或，.表示所有，如果想只
+			//表示一个点的话要加转意\，{n，m}表示最少n个，最多m个，+表示1到多，*表示0到多，{n}，表示刚好n个，？表示0到1
+			re.test(oTxt1.value)?alert("是邮箱"):alert("不是邮箱");
+		};*/
+		
+		//以下为文档类型转换，将小说界面的html源码该为纯txt文本的样式
+		oBtn.onclick=function(){
+			var re=/<[^<>]+>|&nbsp;/g;//这个表示选中所有<>内的元素，但是<>里边不能有新的<>，也就是所有的html标签，还有好多&nbsp;空格
+			oTxt2.value=oTxt1.value.replace(re,"");
+		};
+	};
+</script>
+  </head>
+  <body>
+    <textarea id="txt1" rows="10" cols="40"></textarea>
+	<input id="btn1" type="button" value="转换"/>
+	<textarea id="txt2" rows="10" cols="40"></textarea>
+  </body>
+</html>

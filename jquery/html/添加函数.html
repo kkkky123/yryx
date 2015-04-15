@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <button type="button">点击</button>
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script>
+        (function($){
+            $.doSomething=function(){
+                alert("do something");
+            };
+        })(jQuery);
+        $(document).ready(function(){
+            $("button").on("click",function(){
+                $.doSomething();
+            });
+        });
+    </script>
+</body>
+</html>

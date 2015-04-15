@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {background-color: black;-webkit-transition: background-color 2s;
+           -moz-transition: background-color 2s;
+            -ms-transition: background-color 2s;
+             -o-transition: background-color 2s;
+                transition: background-color 2s; color: #fff;}
+        div:hover {background-color: silver;}
+        h1 {font-size: 150%;-webkit-transition: font-size 2s ease-out 250ms;
+           -moz-transition: font-size 2s ease-out 250ms;
+            -ms-transition: font-size 2s ease-out 250ms;
+             -o-transition: font-size 2s ease-out 250ms;
+                transition: font-size 2s ease-out 250ms;border: 1px solid;}
+        h1:hover {font-size: 600%;}
+        .widget-parent {position: relative;width: 400px;height: 400px;background-color: #ccc;border: 1px solid;}
+        .widget {background-color: black;position: absolute;left: 10px;top: 90px;-webkit-transition: background-color 4s linear,left 4s ease-in-out,top 4s ease-in-out;
+           -moz-transition: background-color 4s linear,left 4s ease-in-out,top 4s ease-in-out;
+            -ms-transition: background-color 4s linear,left 4s ease-in-out,top 4s ease-in-out;
+             -o-transition: background-color 4s linear,left 4s ease-in-out,top 4s ease-in-out;
+                transition: background-color 4s linear,left 4s ease-in-out,top 4s ease-in-out;}
+        div:hover .widget {background-color: silver;left: 130px;top: 10px;}
+    </style>
+</head>
+<body>
+    <div>鼠标放上面的话背景会变化</div>
+    <h1>CSS3 transition 过渡演示</h1>
+    <div class="widget-parent">
+        <div class="widget">多重变换</div>
+    </div>
+</body>
+</html>

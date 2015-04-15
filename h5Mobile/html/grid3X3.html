@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.3.css">
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.3.js"></script>
+</head>
+<body>
+<div data-role="page" id="firstView">
+    <header data-role="header">
+        <a>按钮</a>
+        <h1>前进视图标题</h1>
+        <a href="#secondView" data-theme="b" data-role="button" data-transition="slide">前进</a>
+    </header>
+    <div data-role="content" class="ui-grid-b">
+        <!--ui-grid-a后边的字母a表示2列，b-3,c-4,d-5，这些按钮是平均分配屏幕宽度的-->
+        <!--ui-block-a表示行，和上面一样-->
+        <div class="ui-block-a">
+            <a href="#" data-role="button" data-theme="a" data-icon="home" data-iconpos="top">首页</a>
+        </div>
+        <div class="ui-block-b">
+            <a href="#" data-role="button" data-theme="b" data-icon="grid" data-iconpos="top">列表</a>
+        </div>
+        <div class="ui-block-c">
+            <a href="#" data-role="button" data-theme="c" data-icon="star" data-iconpos="top">加星</a>
+        </div>
+        <div class="ui-block-a">
+            <a href="#" data-role="button" data-theme="a" data-icon="info" data-iconpos="top">信息</a>
+        </div>
+        <div class="ui-block-b">
+            <a href="#" data-role="button" data-theme="b" data-icon="search" data-iconpos="top">搜索</a>
+        </div>
+        <div class="ui-block-c">
+            <a href="#" data-role="button" data-theme="c" data-icon="gear" data-iconpos="top">设置</a>
+        </div>
+        <div class="ui-block-a">
+            <a href="#" data-role="button" data-theme="a" data-icon="check" data-iconpos="top">已选</a>
+        </div>
+        <div class="ui-block-b">
+            <a href="#" data-role="button" data-theme="b" data-icon="alert" data-iconpos="top">提示</a>
+        </div>
+        <div class="ui-block-c">
+            <a href="#" data-role="button" data-theme="c" data-icon="plus" data-iconpos="top">添加</a>
+        </div>
+    </div>
+    <footer data-role="footer" class="ui-bar">
+        <div data-role="controlgroup" data-type="horizontal">
+            <a data-role="button" data-icon="delete" href="#">删除</a>
+            <a data-role="button" data-icon="plus" href="#">添加</a>
+            <a data-role="button" data-icon="arrow-u" href="#">向上</a>
+            <a data-role="button" data-icon="arrow-d" href="#">向下</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

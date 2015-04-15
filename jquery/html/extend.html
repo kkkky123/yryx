@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" charset="utf-8">
+	<title>extend()</title>
+</head>
+<body>
+    <p>first object</p>
+    <p id="obj1"></p>
+    <p>second object</p>
+    <p id="obj2"></p>
+    <p>result object</p>
+    <p id="obj-res"></p>
+    <button id="extend">extend</button>
+    <button id="new">entend-new</button>
+    <button id="reset">reset</button>
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function($) {
+            var reset,obj1=obj2=obj3={};
+            var show=function(){
+                $("#obj1").html(JSON.stringify(obj1));
+                $("#obj2").html(JSON.stringify(obj2));
+                $("#obj-res").html(JSON.stringify(obj3));
+            };
+            (reset=function(){
+                obj1={a:"diff a",b:"diff b",c:"diff c"};
+                obj2={c:"diff2 c",d:"diff2 d"};
+                obj3={};
+                show();
+            })();
+            /*extend就是把参数列表里的对象都合并到第一个参数里边，相同名字的属性会覆盖*/
+			$("#extend").on("click",function(){
+                obj3= $.extend(obj1,obj2);
+                show();
+            });
+            $("#new").on("click",function(){
+                obj3= $.extend({},obj1,obj2);
+                show();
+            });
+            $("#reset").on("click",function(){
+                reset();
+            });
+		});
+	</script>
+</body>
+</html>

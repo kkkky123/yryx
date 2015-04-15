@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       .letterpress {background-color: #565656;}
+       .letterpress h1 {color: #333;text-shadow: 0 1px 0 #777,0 -1px 0 #000;}
+       .txtstroke h1 {font-size: 80px; color: #555;-webkit-text-fill-color: white;-webkit-text-stroke: 3px #555;}
+       .fontSmoothing .first {-webkit-font-smoothing:subpixel-antialiased;}
+       .fontSmoothing .second {-webkit-font-smoothing:antialiased;}
+       .fontSmoothing .third {-webkit-font-smoothing:none;}
+    </style>
+</head>
+<body>
+    <div class="letterpress">
+        <h1>Letterpress</h1>
+    </div>
+    <div class="txtstroke">
+        <h1>Qwerty</h1>
+    </div>
+    <div class="fontSmoothing"><!-- 这功能估计还没实现 -->
+        <h2 class="first">The quick brown fox</h2>
+        <h2 class="second">The quick brown fox</h2>
+        <h2 class="third">The quick brown fox</h2>
+    </div>
+</body>
+</html>

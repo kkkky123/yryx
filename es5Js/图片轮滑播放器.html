@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>仿FLASH的图片轮换效果 —— www.miaov.com 妙味课堂</title>
+<link rel="stylesheet" type="text/css" href="图片轮滑播放器.css">
+<script src="move.js"></script>
+<script type="text/javascript">
+function getClass(oParent,sClass){
+	var aBox=oParent.getElementsByTagName('*');
+	var aResult=[];
+	for(var i=0;i<aBox.length;i++){
+		if(aBox[i].className==sClass){
+			aResult.push(aBox[i]);
+		}
+	}
+	return aResult;
+}
+window.onload=function(){
+	var oDiv=document.getElementById('playimages');
+	var oBigUl=getClass(oDiv,'big_pic')[0];
+	var oDivPrev=getClass(oDiv,'prev')[0];
+	var oDivNext=getClass(oDiv,'next')[0];
+	var oMarkLeft=getClass(oDiv,'mark_left')[0];
+	var oMarkRight=getClass(oDiv,'mark_right')[0];
+	var oSmallUl=getClass(oDiv,'small_pic')[0].getElementsByTagName('ul')[0];
+	var aSmallLi=oSmallUl.getElementsByTagName('li');
+	var oBigUl=getClass(oDiv,'big_pic')[0];
+	var aBigLi=oBigUl.getElementsByTagName('li');
+	var oTxt=getClass(oDiv,'text')[0];
+	var oLen=getClass(oDiv,'length')[0];
+	var i=0;
+	var iNow=0;
+	var iMinzIndex=2;
+	var aPhotoInfo=['第一张','第二张','第三张','第四张','第五张','第六张'];
+	
+	oTxt.innerHTML=aPhotoInfo[iNow];
+	oLen.innerHTML='1/6';
+	oSmallUl.style.width=aSmallLi.length*aSmallLi[0].offsetWidth+'px';//这里以后尽量不要用offset，这个属性容易出错
+	oDivPrev.onmouseover=oMarkLeft.onmouseover=function(){
+		startMove(oDivPrev,'opacity',100);
+	};
+	oDivPrev.onmouseoout=oMarkLeft.onmouseout=function(){
+		startMove(oDivPrev,'opacity',0);
+	};
+	oDivNext.onmouseover=oMarkRight.onmouseover=function(){
+		startMove(oDivNext,'opacity',100);
+	};
+	oDivNext.onmouseout=oMarkRight.onmouseout=function(){
+		startMove(oDivNext,'opacity',0);
+	};
+
+	for(i=0;i<aSmallLi.length;i++){
+		aSmallLi[i].index=i;
+		aSmallLi[i].onmouseover=function(){
+			startMove(this,'opacity',100);
+		}
+		aSmallLi[i].onmouseout=function(){
+			if(iNow!=this.index){
+				startMove(this,'opacity',60);
+			}	
+		}
+		aSmallLi[i].onclick=function(){//点击小图的时候进行的操作，主要是改变iNow,选中当前的图片的话无变化
+			if(this.index==iNow)return;
+			iNow=this.index;
+			tab();
+		}
+		function tab(){
+			oTxt.innerHTML=aPhotoInfo[iNow];
+			oLen.innerHTML=iNow+1+'/'+aSmallLi.length;
+			for(i=0;i<aSmallLi.length;i++){
+				startMove(aSmallLi[i],'opacity',60);
+			}
+			startMove(aSmallLi[iNow],'opacity',100);
+			
+			//这里一定要记住，这种从上到下的翻页其实就是将一张图片放到div的顶层，先把高度清零，然后通过运动的方式增大高度就可以了
+			aBigLi[iNow].style.zIndex=iMinzIndex++;//增加层级
+			aBigLi[iNow].style.height=0;//高度清零	
+			startMove(aBigLi[iNow],'height',oBigUl.offsetHeight);//运动增大高度
+			
+			if(iNow==0){//这个有点类似于无缝图片的滚动，通过判断当前图片的编号，调整整个ul的left值，第一张和最后一张要特殊处理
+				startMove(oSmallUl,'left',0);
+			}else if(iNow==aSmallLi.length-1){
+				startMove(oSmallUl,'left',-(iNow-2)*aSmallLi[0].offsetWidth);
+			}else{
+				startMove(oSmallUl,'left',-(iNow-1)*aSmallLi[0].offsetWidth);
+			}
+		}
+		//分别取前一张和后一张图片，这里只要把iNow变化，再配合以上的图片滚动函数就可以了，区别还是第一张或者最后一张的话要特殊处理
+		oDivPrev.onclick=function(){
+			iNow--;
+			if(iNow==-1){
+				iNow=aSmallLi.length-1;
+			}
+			tab();
+		}
+		oDivNext.onclick=function(){
+			iNow++;
+			if(iNow==aSmallLi.length){
+				iNow=0;
+			}
+			tab();
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="playimages" class="play">
+    <ul class="big_pic">
+		<div class="prev"></div>
+		<div class="next"></div>
+
+		<div class="text">加载图片说明……</div>
+		<div class="length">计算图片数量……</div>
+		
+		<!--布局需要注意，可以先放两张纯透明的div,然后再针对每选中一张图片要怎么做，通过这个判断鼠标在图片的左半边还是右半边-->
+		<a class="mark_left" href="javascript:;"></a>
+		<a class="mark_right" href="javascript:;"></a>
+		<div class="bg"></div>
+		
+        <li style="z-index:1;"><img src="reverse_images/1.jpg" /></li>
+        <li><img src="reverse_images/2.jpg" /></li>
+        <li><img src="reverse_images/3.jpg" /></li>
+        <li><img src="reverse_images/4.jpg" /></li>
+        <li><img src="reverse_images/5.jpg" /></li>
+        <li><img src="reverse_images/6.jpg" /></li>
+    </ul>
+    <div class="small_pic">
+        <ul style="width:390px;">
+            <li style="filter: 100; opacity: 1;"><img src="reverse_images/1.jpg" /></li>
+            <li><img src="reverse_images/2.jpg" /></li>
+            <li><img src="reverse_images/3.jpg" /></li>
+            <li><img src="reverse_images/4.jpg" /></li>
+            <li><img src="reverse_images/5.jpg" /></li>
+            <li><img src="reverse_images/6.jpg" /></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

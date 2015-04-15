@@ -1,0 +1,505 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经纪公司管理</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<style>
+#actorlist td {vertical-align:middle;}
+#actorlist th {text-align:center;}
+.tableComName {width:100px;margin:0 auto;}
+.tableComAdd {width:150px;margin:0 auto;}
+</style>
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--导航-->
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="actorManage.html">管理后台</a> </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="actorManage.html">演员资料库</a></li>  
+          <li><a href="movieInfo.html">影视资料库</a></li>
+          <li class="active"> <a href="movieAgency.html">经纪公司管理</a></li>
+          <li class="dropdown"> <a href="movieTag.html" class="dropdown-toggle" data-toggle="dropdown">标签管理 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="tagClassfic.html">标签分类管理</a></li>
+              <li class="divider"></li>
+              <li><a href="movieTag.html">影视标签管理</a></li>
+              <li class="divider"></li>
+              <li><a href="actorTag.html">角色标签管理</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">账号管理 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="agenyuser.html">经纪公司账号</a></li>
+              <li class="divider"></li>
+              <li><a href="usermanage.html">系统子账号</a></li>
+            </ul>
+          </li>
+          <li><a href="appealManage.html">申诉管理</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle">用户名 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="modifypwd.html">修改密码</a></li>
+             <!-- <li><a href="#">子账号管理</a></li>-->
+              <li class="divider"></li>
+              <li><a href="login.html">退出</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
+    </div>
+    <!-- /.container-fluid --> 
+  </nav>
+</div>
+
+<!--导航下面的指示框-->
+<div class="container">
+  <ol class="breadcrumb">
+    <li><h3>经纪公司管理</h3></li>
+    <li class="active">经纪公司列表</li>
+  </ol>
+</div>
+
+<!--搜索和编辑公司按钮-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <form class="inline input-group" action="?" method="get">
+        <input type="text" class="form-control">
+        <span class="input-group-btn">
+        <button type="submit" class="btn btn-default">搜索</button>
+        </span>
+      </form>
+    </div>
+    <div class="col-lg-2 pull-right text-right"> <a href="#addAgency" class="btn btn-primary" data-toggle="modal" data-target="#addAgency">添加经纪公司</a> </div>
+  </div>
+</div>
+
+<!--表格-->
+<div class="container">
+  <h4 class="page-header">旗下共有XXX个经纪公司</h4>
+  <table class="table table-bordered table-hover text-center" id="actorlist">
+    <thead>
+      <tr>
+        <th>编号</th>
+        <th>公司名称</th>
+        <th>联系人</th>
+        <th>手机号码</th>
+        <th>座机</th>
+        <th>传真</th>
+        <th>公司地址</th>
+        <th>旗下演员</th>
+        <th>更新时间</th>
+        <th>编辑</th>
+      </tr>
+    </thead>
+    <tbody id="agencyList">
+      <tr id="agency1">
+        <td>12345</td>
+        <td><div class="tableComName">北京XXXX文化娱乐传媒公司北京XXXX文化娱乐传媒公司</div></td>
+        <td>张三</td>
+        <td>12345678911</td>
+        <td>65852233</td>
+        <td>010-65852233</td>
+        <td><div class="tableComAdd">北京市海淀区西土城路十号北京邮电大学北京市海淀区西土城路十号北京邮电大学</div></td>
+        <td>23</td>
+        <td>2014-07-01 14:22</td>
+        <td>
+        	<ul class="list-unstyled">       	
+                <li><a href="#editComInfo" data-toggle="modal" data-target="#editComInfo">编辑</a>&nbsp;&nbsp;<a href="agencyAdmin.html">管理</a></li>
+                <li><a href="#closed" data-toggle="modal" data-target="#closed">关闭</a>&nbsp;&nbsp;<a href="#delAgency" data-toggle="modal" data-target="#delAgency">删除</a></li>
+            </ul>
+        </td>
+      </tr>
+      <tr id="agency2">
+        <td>12345</td>
+        <td><div class="tableComName">XXXX</div></td> 
+        <td>张三</td>
+        <td>12345678911</td>
+        <td>65852233</td>
+        <td>010-65852233</td>
+        <td><div class="tableComAdd">北京市海淀区</div></td>
+        <td>23</td>
+        <td>2014-07-01 14:22</td>
+        <td>
+        	<ul class="list-unstyled">           	
+                <li><a href="#editComInfo" data-toggle="modal" data-target="#editComInfo">编辑</a>&nbsp;&nbsp;<a href="agencyAdmin.html">管理</a></li>
+                <li><a href="#closed" data-toggle="modal" data-target="#closed">关闭</a>&nbsp;&nbsp;<a href="#delAgency" data-toggle="modal" data-target="#delAgency">删除</a></li>
+            </ul>
+        </td>
+      </tr> 
+    </tbody>
+  </table>
+</div>
+
+<!--分页-->
+<div class="container text-right">
+  <ul class="pagination pagination-sm pull-right" id="fenye">
+    <!--<li><a href="#">&laquo;</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>-->
+  </ul>
+</div>
+
+<!--编辑资料弹出界面-->
+<div class="modal fade" id="editComInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabe1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"> <a href="#" class="close" data-dismiss="modal">×</a>
+        <h4>编辑公司资料</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" action="?" method="post" role="form">
+          <div class="form-group">
+            <label class="control-label col-lg-2"><span style="color:#F00">*</span>公司名称</label>
+            <div class="col-lg-8">
+              <input type="text" name="agencyName" class="form-control companyName" placeholder="不超过20个字" maxlength="20">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2">公司简介</label>
+            <div class="col-lg-8">
+              <textarea class="form-control" name="agencydisc" rows="6" placeholder="不超过200个字" maxlength="200"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2"><span style="color:#F00">*</span>联系人</label>
+            <div class="col-lg-8">
+              <input type="text" name="contacts" class="form-control contacts" placeholder="请填写联系人信息">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2"><span style="color:#F00">*</span>手机号码</label>
+            <div class="col-lg-8">
+              <input type="text" name="phonenumber" class="form-control phonenumber" placeholder="请填写11位手机号码" maxlength="11">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">座机</label>
+            <div class="col-lg-8">
+            	<input type="text" name="telenumber" class="form-control telenumber" placeholder="请填写座机号码">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">传真</label>
+            <div class="col-lg-8">
+            	<input type="text" name="fax" class="form-control fax" placeholder="请填写传真号码">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">公司地址</label>
+            <div class="col-lg-8">
+            	<input type="text" name="agencyAddress" class="form-control agencyAddress" placeholder="请填写公司地址">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2">邮箱</label>
+            <div class="col-lg-8">
+              <input type="text" name="email" class="form-control" placeholder="请填写联系邮箱">
+            </div>
+          </div>
+           <div class="form-group">
+            <label class="control-label col-lg-2">微信</label>
+            <div class="col-lg-8">
+              <input type="text" name="weixin" class="form-control" placeholder="请填写微信账号">
+            </div>
+          </div>
+           <div class="form-group">
+            <label class="control-label col-lg-2">微博</label>
+            <div class="col-lg-8">
+              <input type="text" name="weibo" class="form-control" placeholder="请填写微博地址">
+            </div>
+          </div>
+          <input type="hidden" name="CompanyId" id="CompanyId" value="">
+          <div class="modal-footer form-actions">
+         	<button type="submit" class="btn btn-primary btn-save">保存</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--添加经纪公司弹出层-->
+<div class="modal fade" id="addAgency" tabindex="-1" role="dialog" aria-labelledby="myModalLabe3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"> <a href="#" class="close" data-dismiss="modal">×</a>
+        <h4>添加经纪公司资料</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" action="?" method="post" role="form">
+          <div class="form-group">
+            <label class="control-label col-lg-2"><span style="color:#F00">*</span>公司名称</label>
+            <div class="col-lg-8">
+              <input type="text" name="agencyName" class="form-control" placeholder="不超过20个字" maxlength="20">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2">公司简介</label>
+            <div class="col-lg-8">
+              <textarea class="form-control" name="agencydisc" rows="6" placeholder="不超过200个字" maxlength="200"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2"><span style="color:#F00">*</span>联系人</label>
+            <div class="col-lg-8">
+              <input type="text" name="contacts" class="form-control" placeholder="请填写联系人信息">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2"><span style="color:#F00">*</span>手机号码</label>
+            <div class="col-lg-8">
+              <input type="text" name="phonenumber" class="form-control" placeholder="请填写11位手机号码" maxlength="11">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">座机</label>
+            <div class="col-lg-8">
+            	<input type="text" name="telenumber" class="form-control" placeholder="请填写座机号码">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">传真</label>
+            <div class="col-lg-8">
+            	<input type="text" name="fax" class="form-control" placeholder="请填写传真号码">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">公司地址</label>
+            <div class="col-lg-8">
+            	<input type="text" name="agencyAddress" class="form-control" placeholder="请填写公司地址">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2">邮箱</label>
+            <div class="col-lg-8">
+              <input type="text" name="email" class="form-control" placeholder="请填写联系邮箱">
+            </div>
+          </div>
+           <div class="form-group">
+            <label class="control-label col-lg-2">微信</label>
+            <div class="col-lg-8">
+              <input type="text" name="weixin" class="form-control" placeholder="请填写微信账号">
+            </div>
+          </div>
+           <div class="form-group">
+            <label class="control-label col-lg-2">微博</label>
+            <div class="col-lg-8">
+              <input type="text" name="weibo" class="form-control" placeholder="请填写微博地址">
+            </div>
+          </div>
+          <div class="modal-footer form-actions">
+         	<button type="submit" class="btn btn-primary btn-save">添加</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--删除确认界面-->
+<div class="modal fade" id="delAgency" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"> <a href="#" class="close" data-dismiss="modal">×</a>
+        <h4>删除经纪公司</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" action="actorManage.html" method="post" role="form">
+          <div class="form-group">
+          	<span class="col-xs-offset-1">您确认要删除该公司吗？删除后不能恢复。</span>
+            <input type="hidden" name="id" value="" class="DelId">
+          </div>
+          <div class="modal-footer form-actions">
+          	<button type="submit" class="btn btn-primary btn-save">确认</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>     
+          </div>
+        </form>
+      </div><!--body-->
+    </div><!--content-->
+  </div><!--dialog-->
+</div><!--modal-->
+
+<!--关闭公司确认界面-->
+<div class="modal fade" id="closed" tabindex="-1" role="dialog" aria-labelledby="myModalLabe4" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"> <a href="#" class="close" data-dismiss="modal">×</a>
+        <h4>关闭经纪公司</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" action="?" method="post" role="form">
+          <div class="form-group">
+          	<span class="col-xs-offset-1">您确认要关闭该公司吗？关闭后不能恢复。</span>
+            <input type="hidden" name="id" value="" class="closed">
+          </div>
+          <div class="modal-footer form-actions">
+          	<button type="submit" class="btn btn-primary btn-close">确认</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>     
+          </div>
+        </form>
+      </div><!--body-->
+    </div><!--content-->
+  </div><!--dialog-->
+</div><!--modal-->
+
+<script src="js/jquery1.10.3_20130911.min.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/bootstrap-tags.js"></script> 
+<script>
+//删除确定
+$(function(){
+	$("#agencyList").find("a[href='#delAgency']").on('click',function(){
+		//alert($(this).parent().parent().parent().parent().attr("id"));
+		$("#delAgency").find(".DelId").val($(this).parent().parent().parent().parent().attr("id"));
+	});
+	//编辑页面的显示
+	$("#agencyList").find("a[href='#editComInfo']").on("click",function(){
+		$("#editComInfo").find("#CompanyId").val($(this).parent().parent().parent().parent().attr("id"));
+		$("#editComInfo").find(".companyName").val($(this).parent().parent().parent().parent().children("td:eq(1)").children().html());
+		$("#editComInfo").find(".contacts").val($(this).parent().parent().parent().parent().children("td:eq(2)").html());
+		$("#editComInfo").find(".phonenumber").val($(this).parent().parent().parent().parent().children("td:eq(3)").html());
+		$("#editComInfo").find(".telenumber").val($(this).parent().parent().parent().parent().children("td:eq(4)").html());
+		$("#editComInfo").find(".fax").val($(this).parent().parent().parent().parent().children("td:eq(5)").html());
+		$("#editComInfo").find(".agencyAddress").val($(this).parent().parent().parent().parent().children("td:eq(6)").children().html());
+	});	
+	$("#agencyList").find("a[href='#closed']").on('click',function(){
+		$("#closed").find(".closed").val($(this).parent().parent().parent().parent().attr("id"));	
+	});
+});
+
+//分页
+window.onload=function(){
+		page({
+			id:'fenye',
+			nowpage:1,
+			allpage:10,
+			callback:function(now,all){
+				window.alert("当前页："+ now + ",总共页：" + all);
+			}
+		});//函数的参数是比较厉害的json格式，如果要改进的话直接改最后的callback函数就可以完成任意功能
+		return false;//阻止点击超链接跳转页面
+	};
+	function page(opt){
+		if(!opt.id){return false;}//没有取到id的话就可以直接down了
+		var obj = document.getElementById(opt.id);//获取对象
+		var nowpage=opt.nowpage || 1;//获取当前页码，或者直接默认为1
+		var allpage=opt.allpage || 5;//获取总的页面，或者默认为5
+		
+		if(allpage>=6 && nowpage>=4){//总页码大于6或者当前页码大于4的时候才会出现首页字符
+			var oa=document.createElement('a');
+			var oLi=document.createElement('li');
+			oa.href = '#' + 1;
+			oa.innerHTML="首页";
+			oLi.appendChild(oa);
+			obj.appendChild(oLi);
+		}
+		if(nowpage>=2){//当前页码大于2的时候就出现上一页
+			var oa=document.createElement('a');
+			var oLi=document.createElement('li');
+			oa.href = '#' + (nowpage-1);
+			oa.innerHTML="上一页";
+			oLi.appendChild(oa);
+			obj.appendChild(oLi);
+		}
+		if(allpage<=5){//总的页面小于5的时候直接把所有的页码都打出来就行了，没那么多废话
+			for (var i = 1; i <= allpage; i++) {
+				var oa = document.createElement('a');
+				var oLi=document.createElement('li');
+				oa.href = '#' + i;
+				oa.innerHTML=i;
+				if (i == nowpage) {
+					oLi.className="active";
+				}
+				oLi.appendChild(oa);
+				obj.appendChild(oLi);
+			}
+		}else{//总页码超过5的话，默认只出现5个页码，以当前页码为中心，向前两个，向后两个
+			for(var i=1;i<=5;i++){
+				var oa=document.createElement('a');
+				var oLi=document.createElement('li');
+				if (nowpage == 1 || nowpage == 2) {//如果当前页码为1或者2的话，也打印5个页码，但是不能向前出现打2个页码了
+					oa.href = '#' + i;
+					oa.innerHTML=i;
+					if (nowpage == i) {
+						oLi.className="active";
+					}
+					oLi.appendChild(oa);
+					obj.appendChild(oLi);
+				}else if((allpage-nowpage)==1||(allpage-nowpage)==0){//当前页码为最后两个页码的时候，和前面类似
+					oa.href='#'+(allpage-5+i);
+					oa.innerHTML=(allpage-5+i);
+					if((allpage-nowpage==0)&&i==5){
+						oLi.className="active";
+					}else if((allpage-nowpage==1)&&i==4){
+						oLi.className="active";
+					}
+					oLi.appendChild(oa);
+					obj.appendChild(oLi);
+				}
+				else {
+					oa.href = '#' + (nowpage - 3 + i);//好吧，最普遍的情况，以当前为中心，+-2个页码就可以了，注意的是，当前页码没有中括号
+					oa.innerHTML=(nowpage-3+i);
+					if (i == 3) {
+						oLi.className="active";
+					}
+					oLi.appendChild(oa);
+					obj.appendChild(oLi);
+				}
+			}
+		}
+		if((allpage-nowpage>=3)&&allpage>=6){//如果总页码超过6，并且当前页码为倒数第三个以后的话出现尾页
+			var oa=document.createElement('a');
+			var oLi=document.createElement("li");
+			oa.href = '#' + allpage;
+			oa.innerHTML="尾页";
+			oLi.appendChild(oa);
+			obj.appendChild(oLi);
+		}
+		if((allpage-nowpage>=1)){//只要不是最后一页，就出现下一页
+			var oa=document.createElement('a');
+			var oLi=document.createElement("li");
+			oa.href = '#' + (nowpage+1);
+			oa.innerHTML="下一页";
+			oLi.appendChild(oa);
+			obj.appendChild(oLi);
+		}
+		opt.callback(nowpage,allpage);//判断完哪个页码的话，调用一下函数，这里就简单弹出当前页码和总的页码，要是加入操作的话最好就在这个函数做手脚
+		var aA=obj.getElementsByTagName('a');
+		for(var i=0;i<aA.length;i++){//给每个页码都添加分页函数
+			aA[i].onclick=function(){
+				var nowpage = parseInt(this.getAttribute('href').substring(1));//获取当前页码数
+				obj.innerHTML='';//将当前div里边已经打印的页码清空，然后在打出页码就行了，类似于刷新
+				page({
+					id:opt.id,
+					nowpage:nowpage,
+					allpage:opt.allpage,
+					callback:opt.callback
+				});
+				return false;
+			};
+		}
+	}
+</script>
+</body>
+</html>

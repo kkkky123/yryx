@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>事件冒泡.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+	#div1 {width:300px;height:300px;background:red;}
+	#div2 {width:200px;height:200px;background:green;}
+	#div3 {width:100px;height:100px;background:blue;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oDiv1=document.getElementById('div1');
+		var oDiv2=document.getElementById('div2');
+		var oDiv3=document.getElementById('div3');
+		
+		//如下所示，按照布局，div1包含div2，div2包含div3，那么在点击div3的时候，也同样会触发div1和div2的事件，这叫做事件冒泡
+		/*oDiv1.onclick=function(){
+			alert('div1');
+		};
+		oDiv2.onclick=function(){
+			alert('div2');
+		};
+		oDiv3.onclick=function(){
+			alert('div3');
+		};*/
+		
+		//为了取消冒泡，需要有取消冒泡操作，即把每一层的函数都放在最顶层
+		oDiv1.onclick=function(){//最顶层数据就可以不用取消冒泡了，不过如果有更顶层的，比如body或者document的操作的话，也要冒泡
+			alert('div1');
+		};
+		oDiv2.onclick=function(ev){
+			var oEvent=ev||event;//event是默认的事件名称，只有IE支持，FF的话需要在事件函数里边加入一个参数，也就是ev
+			oEvent.cancelBubble=true;//删除冒泡设置为true，表示该事件取消冒泡
+			alert('div2');
+		};
+		oDiv3.onclick=function(ev){
+			var oEvent=ev||event;
+			oEvent.cancelBubble=true;
+			alert('div3');
+		};
+	};
+</script>
+  </head>
+  
+  <body>
+    <div id="div1">
+    	<div id="div2">
+    		<div id="div3">
+    		</div>
+    	</div>
+    </div>
+  </body>
+</html>

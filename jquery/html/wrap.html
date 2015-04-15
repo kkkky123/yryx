@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wraper{border: 1px solid red;}
+    </style>
+</head>
+<body>
+    <p>paragraph to wrap</p>
+    <p>paragraph to wrap</p>
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script>
+        /*hover两个参数，第一个表示mouseover的时候执行的操作，第二个是mouseout执行的操作*/
+        $(document).ready(function(){
+            /*还有一个wrapInner是包裹住P标签里边的元素，但是不推荐使用*/
+            //$("p").wrap("<div class='wraper'/>");//包裹单个元素
+            $("p").wrapAll("<div class='wraper'/>");//包裹所有的元素
+            $("p").on("click",function(){
+               $(this).unwrap("<div class='wraper'/>");
+            });
+        });
+    </script>
+</body>
+</html>

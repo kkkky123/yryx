@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>表格的增加删除.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  <script type="text/javascript">
+  	window.onload=function(){
+		var oTxt=document.getElementById('txt1');
+		var oBtn=document.getElementById('btn1');
+		var oTab=document.getElementById('tab1');
+		var iMinId=oTab.tBodies[0].rows.length+1;
+		
+		oBtn.onclick=function(){
+			var oTr=document.createElement('tr');//每次添加要添加一行，一行包含三列
+			var oTd=document.createElement('td');
+			oTd.innerHTML=iMinId++;//ID的话就在外面计算吧，每次都增加，就算删除了，也不会有重复的ID
+			oTr.appendChild(oTd);
+			
+			var oTd=document.createElement('td');
+			oTd.innerHTML=oTxt.value;//添加的内容
+			oTr.appendChild(oTd);
+			
+			var oTd=document.createElement('td');
+			oTd.innerHTML="<a href='javascript:;'>删除</a>";//增加一个删除该行的操作
+			oTr.appendChild(oTd);
+			oTd.getElementsByTagName('a')[0].onclick=function(){
+				//删除的时候要画个DOM树来确认从哪个元素里边删除哪个元素，这个操作是从table的tbody里面删除该a标签的父亲的父亲（a标签的父亲是td，td的父亲是tr）
+				oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+			};
+			
+			oTab.tBodies[0].appendChild(oTr);
+		};
+	};
+  </script>
+  <body>
+  	<input id="txt1" type="text"/>
+	<input id="btn1" type="button" value="添加"/>
+    <table id="tab1" border="1" width="400px">
+    	<thead>
+    		<td>ID</td><td>姓名</td><td>操作</td>
+    	</thead>
+		<tbody>
+			<tr>
+				<td>1</td><td>aaa</td><td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>2</td><td>中文</td><td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>3</td><td>AAb</td><td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>4</td><td>aaB</td><td>&nbsp;</td>
+			</tr>
+		</tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+</body>
+<script>
+    if(window.applicationCache){
+        alert(1);
+        //浏览器支持离线应用
+        navigator.onLine?alert(3):alert(4);//判断是否在线
+    }else{
+        alert(2);
+    }
+</script>
+</html>

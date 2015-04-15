@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>任意运动框架.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+	div {width:100px;height:100px;margin-top:50px;background:red;font-size:12px;}
+</style>
+<script type="text/javascript">
+	function getStyle(obj,attr){
+		if(obj.currentStyle){
+			//IE only
+			return obj.currentStyle[attr];
+		}
+		else{
+			return getComputedStyle(obj,false)[attr];
+		}
+	}	
+	function startMove(obj,attr,iTarget){		
+		var iSpeed=0;		
+		clearInterval(obj.timer);
+		var iStyle=parseInt(getStyle(obj,attr));
+		obj.timer=setInterval(function(){
+			var dis=iTarget-iStyle;
+			iSpeed=dis>0?Math.ceil(dis/8):Math.floor(dis/8);
+			if(iStyle==iTarget){
+				clearInterval(obj.timer);
+				//obj.style.left=iTarget+'px';
+			}else{
+				iStyle+=iSpeed;
+				obj.style[attr]=iStyle+'px';
+			}
+		},30);
+	};
+	window.onload=function(){
+		var aDiv=document.getElementsByTagName('div');
+		
+		aDiv[0].onmouseover=function(){
+			startMove(this,'width',300);
+		}
+		aDiv[0].onmouseout=function(){
+			startMove(this,'width',100);
+		}
+		aDiv[1].onmouseover=function(){
+			startMove(this,'height',200);
+		}
+		aDiv[1].onmouseout=function(){
+			startMove(this,'height',100);
+		}
+		aDiv[2].onmouseover=function(){
+			startMove(this,'fontSize',100);
+		}
+		aDiv[2].onmouseout=function(){
+			startMove(this,'fontSize',12);
+		}
+	}
+</script>
+  </head>
+  
+  <body>
+    <div></div>
+	<div></div>
+	<div>sasasa</div>
+	<div></div>
+  </body>
+</html>

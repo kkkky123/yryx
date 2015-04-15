@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>神奇的sort.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+	var arr1=new Array('asa','sa','bsa','fe','tye','zoo');
+	var arr2=[98,12,33,234,-1,0,22];
+	
+	arr1.push('yty');//push会将元素添加到数组末尾
+	arr1.pop();//便是删除数组末尾的元素
+	arr1.unshift('qq');//表示像数组头部添加元素
+	arr1.shift();//删除数组头部的元素
+	arr1.sort();//sort只能对字符串进行操作，如以上的arr1那种类型的数组，如果像arr2的话，会先把数字改变成字符串
+	arr2.sort(function(num1,num2){//如果sort要操作数字数组，则要采取这样的操作，就是加一个函数，返回两个数字之间的差，类似于隐式类型转换
+		return num1-num2;//num1-num2的话排序之后的为升序，降序的话返回num2-num1
+	});
+	alert(arr1);
+</script>
+  </head>
+  
+  <body>
+    
+  </body>
+</html>

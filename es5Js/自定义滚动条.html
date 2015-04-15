@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>自定义滚动条.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style>
+		#parent {width:10px;height:410px;position:relative;margin:20 auto;background:gray;float:right;}
+		#div1{width:10px;height:10px;background-color:red;position:absolute;}
+		#div2{position:absolute;background:yellow;left:0px;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var mydiv=document.getElementById('div1');
+			var pdiv=document.getElementById('parent');
+			var mydiv2=document.getElementById('div2');
+			mydiv.onmousedown=function(ev){
+				var myevent=ev || enent;
+				disX=myevent.clientX-mydiv.offsetLeft;
+				disY=myevent.clientY-mydiv.offsetTop;
+				
+				if(mydiv.setCapture){//以下写法只在ie当中可以用，别的可以使用下面的
+					mydiv.setCapture();//该函数表示mydiv这个对象捕获了当前页面所有的鼠标操作
+					mydiv.onmousemove=function(ev){
+						var myevent=ev || enent;
+						//mydiv.style.left=myevent.clientX-disX+'px';
+						t=myevent.clientY-disY;
+						if(t<0){
+							t=0;
+						}else if(t>pdiv.offsetHeight-mydiv.offsetHeight){
+							t=pdiv.offsetHeight-mydiv.offsetHeight;
+						}
+						mydiv.style.top=t+'px';
+						
+						percent=t/(pdiv.offsetHeight-mydiv.offsetHeight)
+						document.title=percent;
+						mydiv2.style.width=percent*400+'px';
+						mydiv2.style.height=percent*400+'px';
+					}
+					mydiv.onmouseup=function(){
+						mydiv.onmousemove=null;
+						mydiv.onmouseup=null;
+						mydiv.releaseCapture();//释放捕获
+					}
+				}
+				else{
+					document.onmousemove=function(ev){
+						var myevent=ev || enent;
+						//mydiv.style.left=myevent.clientX-disX+'px';
+						mydiv.style.top=myevent.clientY-disY+'px';
+					}
+					document.onmouseup=function(){
+						document.onmousemove=null;
+						document.onmouseup=null;
+					}
+				}
+				return false;
+			}
+		}
+	</script>
+  </head>  
+  <body>
+  	<div id="parent">
+    <div id="div1"></div>
+	</div>
+	<div id="div2"></div>
+  </body>
+</html>

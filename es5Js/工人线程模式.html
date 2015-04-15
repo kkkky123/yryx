@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        var worker=new Worker("jsonparser.js");
+        var data={'name':'xiaoming','age':'20','grader':'senior'};
+        var jsonText=JSON.stringify(data);
+        function evaluateData(jsonData){
+            var result="";
+            for(var key in jsonData){
+                result+=key+":"+jsonData[key]+";";
+            }
+            alert(result.substr(0,result.length-1));
+        }
+        worker.onmessage=function(event){
+            var jsonData=event.data;
+            evaluateData(jsonData);
+        };
+        worker.postMessage(jsonText);
+    </script>
+</body>
+</html>

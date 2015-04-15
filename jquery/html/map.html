@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The map() function</title>
+</head>
+<body>
+	<h2>This example shows this basic usage of a map</h2>
+	<p id="before">Before Map</p>
+	<p id="after">After Map</p>
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function($) {
+			var arr=[1,2,3,4,5];
+			$("#before").append(JSON.stringify(arr));
+			arr=$.map(arr, function(value, index) {
+				return "done something with"+value;
+			});	
+			$("#after").append(JSON.stringify(arr));
+		});
+	</script>
+</body>
+</html>

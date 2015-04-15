@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片滚屏效果</title>
+<link href="无缝滚动.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	window.onload=function(){
+		var oBtn=document.getElementById('roll');
+		var oUl=oBtn.getElementsByTagName('ul')[0];
+		var oA=oBtn.getElementsByTagName('a');
+		var oSel=document.getElementById('sel_speed');
+		var oPtime=document.getElementById('pause_time');
+		var oCheck=document.getElementById('chk_pause').getElementsByTagName('input')[0];
+		var timet=null;
+		var iCount=0;
+		var speed=-2;
+		
+		oSel.onchange=function(){
+			speed=(speed>0?parseInt(oSel.value):-parseInt(oSel.value));	
+		};
+		oA[0].onmouseover=function(){
+			speed=-Math.abs(speed);
+		};
+		oA[1].onmouseover=function(){
+			speed=Math.abs(speed);
+		};
+		oUl.innerHTML+=oUl.innerHTML;
+		oUl.style.width=oUl.offsetWidth*2+'px';
+		
+		function roll(){
+			iCount++;
+			oUl.style.left=oUl.offsetLeft+speed+'px';
+			if(oUl.offsetLeft<-(oUl.offsetWidth/2)){
+				oUl.style.left=0;
+			}else if(oUl.offsetLeft>0){
+				oUl.style.left=-(oUl.offsetWidth/2)+'px';
+			}
+			
+			if(oCheck.checked==true&&iCount==20){
+				endRoll();
+				setTimeout(startRoll,oPtime.value);
+				iCount=0;
+			}
+		}
+		function startRoll(){
+			timer=setInterval(roll,50);
+		}
+		function endRoll(){
+			clearInterval(timer);
+		}
+		timer=setInterval(roll,50);
+		/*if(oCheck.checked==true){//设置延时的操作，这里没做好，还有就是checked的值判断的话要这么玩就对了
+			oPtime.onchange=function(){
+				endRoll();//可以把if里边的都当做废弃的，因为没做好
+				setTimeout(startRoll,oPtime.value);
+			}	
+		}*/	
+		oUl.onmouseover=endRoll;
+		oUl.onmouseout=startRoll;
+	}
+
+</script>
+</head>
+<body>
+<div class="control">
+	<label id="chk_pause"><input type="checkbox" checked="checked">间隔停顿</label>
+	<select id="pause_time">
+		<option value="100">短</option>
+		<option value="1000" selected="selected">中</option>
+		<option value="3000">长</option>
+	</select>
+
+	滚动速度：
+	<select id="sel_speed">
+		<option value="2">慢</option>
+		<option value="5">中</option>
+		<option value="10">快</option>
+	</select>
+</div>
+
+<div class="roll" id="roll">
+    <a href="javascript:void(0);" class="btn_left"></a>
+    <a href="javascript:void(0);" class="btn_right"></a>
+    <div class="wrap">
+        <ul>
+            <li><a href="http://www.miaov.com/"><img src="images/1.jpg" /></a></li>
+            <li><a href="http://www.miaov.com/"><img src="images/2.jpg" /></a></li>
+            <li><a href="http://www.miaov.com/"><img src="images/3.jpg" /></a></li>
+            <li><a href="http://www.miaov.com/"><img src="images/4.jpg" /></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

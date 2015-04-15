@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>表格的搜索.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  <script type="text/javascript">
+  	window.onload=function(){
+		var oTxt=document.getElementById('txt1');
+		var oBtn=document.getElementById('btn1');
+		var oTab=document.getElementById('tab1');
+		var bFound=false;
+		
+		oBtn.onclick=function(){
+			var sValueTxt=oTxt.value.toLowerCase();//toLowerCase是把字符串变成全部小写，都变成小写的话就不用在意大小写的问题了
+			var aValueTxt=sValueTxt.split(" ");//将文本搜索框的内容用空格隔开成一个字符数组，分别对其中每个字符串查找
+
+			for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+				var sValueTab=oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+				
+				for(var j=0;j<aValueTxt.length;j++){
+					//search函数就是查找相应的字符串在svalueTab中的位置，找不到就返回-1
+					if(sValueTab.search(aValueTxt[j])!=-1){
+						bFound=true;
+					}
+				}
+				if(bFound){
+					oTab.tBodies[0].rows[i].style.backgroundColor='yellow';
+					bFound=false;
+				}else{
+					oTab.tBodies[0].rows[i].style.backgroundColor='';
+				}
+			}
+		};
+	};
+  </script>
+  <body>
+  	<input id="txt1" type="text"/>
+	<input id="btn1" type="button" value="搜索"/>
+    <table id="tab1" border="1" width="400px">
+    	<thead>
+    		<td>ID</td><td>姓名</td><td>操作</td>
+    	</thead>
+		<tbody>
+			<tr>
+				<td>1</td><td>aaa</td><td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>2</td><td>乖乖</td><td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>3</td><td>AAb</td><td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>4</td><td>B</td><td>&nbsp;</td>
+			</tr>
+		</tbody>
+    </table>
+  </body>
+</html>

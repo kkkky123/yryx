@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body> 
+    <div style="background-color: red;width: 100px;height: 100px;position: absolute;" class="draggable" id="myDiv"></div>
+    <script type="text/javascript" src="./event.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            var DragDrop=function(){
+                var dragging=null,
+                    diffx=0,
+                    diffy=0;
+                function handlerEvent(event){
+                    event=EventUtil.getEvent(event);
+                    var target=EventUtil.getTarget(event);
+                    switch(event.type) {
+                        case "mousedown":
+                            if(target.className.indexOf("draggable")>-1){
+                                dragging=target;
+                                diffx=event.clientX-target.offsetLeft;
+                                diffy=event.clientY-target.offsetTop;
+                            }
+                            break;
+                        case "mousemove":
+                            if(dragging!==null){
+                                dragging.style.left=(event.clientX-diffx)+"px";
+                                dragging.style.top=(event.clientY-diffy)+"px";
+                            }
+                            break;
+                        case "mouseup":
+                            dragging=null;
+                            break;
+                    }
+                };
+                return {
+                    enable:function(){
+                        EventUtil.addHandler(document,"mousedown",handlerEvent);
+                        EventUtil.addHandler(document,"mousemove",handlerEvent);
+                        EventUtil.addHandler(document,"mouseup",handlerEvent);
+                    },
+                    disable:function(){
+                        EventUtil.removeHandler(document,"mousedown",handlerEvent);
+                        EventUtil.removeHandler(document,"mousemove",handlerEvent);
+                        EventUtil.removeHandler(document,"mouseup",handlerEvent);
+                    }
+                }
+            }();
+            DragDrop.enable();
+        };
+    </script>
+</body>
+</html>

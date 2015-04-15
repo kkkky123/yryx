@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>添加图片视频</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-fileupload.css" rel="stylesheet">
+<style>
+#actorlist td {vertical-align: middle;}
+#actorlist th {text-align: center;}
+#content {position:relative;}
+ul {list-style:none;}
+personalimage {position:absolute;right:300px;top:50px;}
+</style>
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--导航-->
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="agencyAdmin.html">北京XXXXXX公司</a> </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="agencyAdmin.html">演员管理</a></li>  
+          <li><a href="agencySubAccount.html">子账号管理</a></li>
+          <li><a href="editAgencyInfo.html">编辑公司资料</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle">用户名 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="modifypwd.html">修改密码</a></li>
+              <li class="divider"></li>
+              <li><a href="login.html">退出</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
+    </div>
+    <!-- /.container-fluid --> 
+  </nav>
+</div>
+
+<!--导航下面的指示框-->
+<div class="container">
+  <ol class="breadcrumb">
+    <li><h4><a href="movieAgency.html">经纪公司管理</a></h4></li>
+    <li><a href="agencyAdmin.html">演员管理</a></li>
+    <li class="active">图片和视频</li>
+  </ol>
+</div>
+
+<!--页面主体-->
+<div class="container" id="content">
+  <h4 class="page-header">作品资料</h4>
+  <div class="row">
+  	<div class="container">
+  		<strong style="font-size:20px;">生活照(最多可上传20张)</strong>
+        <button type="button" class="btn btn-default btn-add-personPhoto" style="margin-bottom:10px;">上传新照片</button>
+    	<ul class="personPhotoList" style="width:1030px;">
+        	<li style="float:left;height:200px;width:180px;" id="personPhoto" class="hidden">
+                <div class="text-center" >
+                  <div class="controls">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-new thumbnail" style="width: 150px; height: 150px;"> <img src="http://placehold.it/150x150" alt="" /></div>
+                      <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 150px; line-height: 20px;"></div>
+                      <div>
+                        <span class="btn btn-file btn-default">
+                            <span class="fileupload-new">上传生活照(1:1)</span>
+                            <span class="fileupload-exists replace">替换</span>
+                            <input type="file" class="default" name="lifephoto[]" />
+                        </span>
+                        <a href="#delPhoto" class="btn fileupload-exists btn-default" data-dismiss="fileupload">删除</a>
+                        <a href="#upload" class="btn fileupload-exists btn-default">上传</a>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+  		<strong style="font-size:20px;">剧照(最多可上传20张)</strong>
+        <button type="button" class="btn btn-default btn-add-moviePhoto" style="margin-bottom:10px;">上传新照片</button>
+    	<ul class="moviePhotoList" style="width:1030px;">
+        	<li style="float:left;height:150px;width:180px;" id="moviePhoto" class="hidden">
+                <div class="text-center" >
+                  <div class="controls">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-new thumbnail" style="width: 160px; height: 90px;"> <img src="http://placehold.it/160x90" alt="" /></div>
+                      <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 160px; max-height: 90px; line-height: 20px;"></div>
+                      <div>
+                        <span class="btn btn-file btn-default">
+                            <span class="fileupload-new">上传剧照(16:9)</span>
+                            <span class="fileupload-exists">替换</span>
+                            <input type="file" class="default" name="moviephoto[]" />
+                        </span>
+                        <a href="#delPhoto" class="btn fileupload-exists btn-default" data-dismiss="fileupload">删除</a>
+                        <a href="#upload" class="btn fileupload-exists btn-default">上传</a>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container" id="moviePieceList">
+    	<strong style="font-size:20px;">作品片段链接</strong>
+        <button type="button" class="btn btn-default btn-add-moviePiece" style="margin-bottom:10px;">添加</button>
+        <div class="form-horizontal hidden" id="pieces">
+            <div class="form-group">
+                <label class="control-label col-lg-1">片段链接</label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="pieceUrl[]">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-lg-1">说明</label>
+                <div class="col-lg-8">
+                    <textarea class="form-control" rows="3" name="pieceContent[]"></textarea>
+                </div>
+                <span class="btn btn-default col-lg-1 btn-del-piece">删除</span>
+            </div>
+         </div>
+    </div>
+	<div class="container">
+    	<strong style="font-size:20px;">生活视频(最多可上传5部)</strong>
+        <button type="button" class="btn btn-default btn-add-lifePiece" style="margin-bottom:10px;">上传视频(5M以内)</button>
+        <ul class="lifePieces" style="width:1100px;">
+        	<li style="float:left;height:140px;width:210px;" id="lifePiece" class="hidden">
+                <div class="text-center" >
+                  <div class="controls">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 140px; max-height: 210px; line-height: 30px;"></div>
+                      <div>
+                        <span class="btn btn-file btn-default">
+                            <span class="fileupload-new">上传视频(5M以内)</span>
+                            <span class="fileupload-exists">替换</span>
+                            <input type="file" class="default" name="movievideo[]" value="" />
+                        </span>
+                        <a href="#delPhoto" class="btn fileupload-exists btn-default" data-dismiss="fileupload">删除</a>
+                        <a href="#uploadMovie" class="btn fileupload-exists btn-default">上传</a>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+    	<a href="#" class="btn btn-default col-xs-offset-5 col-lg-2">保存</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/jquery1.10.3_20130911.min.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/bootstrap-fileupload.js"></script> 
+<script>
+$(function(){
+	var personPhoto=0;
+	$(".btn-add-personPhoto").on("click",function(){
+		if(personPhoto<20){
+			$("#personPhoto").clone().attr("id","").attr("class","").appendTo($("#personPhoto").parent());
+			personPhoto++;	
+		}else{
+			alert("最多上传20张生活照");	
+		}	
+	});
+	var moviePhoto=0;	
+	$(".btn-add-moviePhoto").on("click",function(){
+		if(moviePhoto<20){
+			$("#moviePhoto").clone().attr("id","").attr("class","").appendTo($("#moviePhoto").parent());
+			moviePhoto++;	
+		}else{
+			alert("最多上传20张剧照");	
+		}	
+	});
+	$(".btn-add-moviePiece").on("click",function(){
+		$("#pieces").clone().attr("id","").attr("class","form-horizontal").appendTo($("#pieces").parent());	
+	});
+	var lifePiece=0;
+	$(".btn-add-lifePiece").on("click",function(){
+		if(lifePiece<5){
+			$("#lifePiece").clone().attr("id","").attr("class","").appendTo($("#lifePiece").parent());
+			lifePiece++;	
+		}else{
+			alert("最多上传5段视频");	
+		}
+			
+	});
+	$("#moviePieceList").delegate("span","click",function(){
+		$(this).parent().parent().remove();	
+	});
+	$("#content").delegate("a[href='#delPhoto']","click",function(){
+		$(this).parent().find(".btn-file").removeClass("hidden");
+		$(this).next("a").removeAttr("disabled").html("上传");
+	});
+	$("#content").delegate("a[href='#upload']","click",function(){
+		var img=$(this).parent().parent().find(".fileupload-preview").find("img").attr("src");
+		img = img.replace(/\+/g, "%2B");
+        img = img.replace(/\&/g, "%26");
+		var $upload=$(this);
+		$.ajax({
+			url:"action.php",
+			dataType:"json",
+			type:"POST",
+			data:"img="+img,
+			success: function(data){
+				//alert(data);
+				
+			}	
+		});
+		//以下三行整合到php的时候要放入success里
+		$upload.attr("disabled","disabled");
+		$upload.html("已上传");
+		$upload.parent().find(".btn-file").addClass("hidden");
+	});
+	$("#content").delegate("a[href='#uploadMovie']","click",function(){
+		var img=$(this).parent().parent().find(".fileupload-preview").html();
+		alert($(this).parent().find("btn-file").children("input").attr("name"));
+		var $upload=$(this);
+		$.ajax({
+			url:"action.php",
+			dataType:"json",
+			type:"POST",
+			data:"img="+img,
+			success: function(data){
+				//alert(data);
+				
+			}	
+		});
+		//以下三行整合到php的时候要放入success里
+		$upload.attr("disabled","disabled");
+		$upload.html("已上传");
+		$upload.parent().find(".btn-file").addClass("hidden");
+	});
+});
+</script>
+</body>
+</html>

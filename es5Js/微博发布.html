@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>微博发布.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+	* {margin:0;padding:0;}
+	div {border-bottom:1px dashed gray;filter:alpha(opacity:0);opacity:0;overflow:hidden;padding:3px;}
+	#div1 {width:400px;height:300px;border:1px solid black;margin:0 auto;filter:alpha(opacity:100);opacity:1;}
+	#div2 {filter:alpha(opacity:100);opacity:1;}
+</style>
+<script src="move2.js"></script>
+<script type="text/javascript">
+	window.onload=function(){
+		var oTxt=document.getElementById('txt1');
+		var oBtn=document.getElementById('btn1');
+		var oDiv=document.getElementById('div1');
+				
+		oBtn.onclick=function(){
+			var oDiv2=document.createElement('div');
+			var aDiv=oDiv.getElementsByTagName('div');
+			oDiv2.innerHTML=oTxt.value;
+			oTxt.value="";
+			if(aDiv.length){
+				oDiv.insertBefore(oDiv2,aDiv[0]);
+			}else{	
+				oDiv.appendChild(oDiv2);
+			}
+			var iHeight=oDiv2.offsetHeight;
+			oDiv2.style.height=0;
+			//这里为了让高度先出来，要先在运动之前取出添加的div的高度，然后将其高度清零，在运动到原来的高度，高度确定了之后再进行运动透明度
+			startMove(oDiv2,{height:iHeight},function(){
+				startMove(oDiv2,{opacity:100});
+			});
+		};
+	};
+</script>
+  </head>
+  
+  <body>
+    <textarea id="txt1" cols=40 rows=10 value="输入发布的消息"></textarea><br />
+	<input id="btn1" type="button" value="发布"/>
+	<div id="div1">
+		<div id="div2">saaaaaaaaaaaaaaaaaaa</div>
+	</div>
+  </body>
+</html>

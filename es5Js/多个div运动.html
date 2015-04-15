@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>多个div运动.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+	div {width:100px;height:100px;margin-top:50px;background:red;}
+</style>
+<script type="text/javascript">
+	function startMove(obj,iTarget){		
+		var iSpeed=0;		
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
+			var dis=iTarget-obj.offsetWidth;
+			iSpeed=dis>0?Math.ceil(dis/8):Math.floor(dis/8);
+			if(obj.offsetWidth==iTarget){
+				clearInterval(obj.timer);
+				//obj.style.left=iTarget+'px';
+			}else{
+				obj.style.width=obj.offsetWidth+iSpeed+'px';
+			}
+		},30);
+	};
+	window.onload=function(){
+		var aDiv=document.getElementsByTagName('div');
+		for(var i=0;i<aDiv.length;i++){
+			//aDiv[i].timer=null;
+			aDiv[i].onmouseover=function(){
+				startMove(this,300);
+			}
+			aDiv[i].onmouseout=function(){
+				startMove(this,100);
+			}
+		}
+	}
+</script>
+  </head>
+  
+  <body>
+    <div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>多个div淡入淡出.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+	div {width:100px;height:100px;margin-top:50px;background:red;opacity:0.3;filter:alpha(opacity=30);}
+</style>
+<script type="text/javascript">
+	function startMove(obj,iTarget){		
+		var iSpeed=0;		
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
+			var dis=iTarget-obj.alpha;
+			iSpeed=dis>0?Math.ceil(dis/8):Math.floor(dis/8);
+			if(obj.alpha==iTarget){
+				clearInterval(obj.timer);
+				//obj.style.left=iTarget+'px';
+			}else{
+				obj.alpha+=iSpeed;
+				obj.style.opacity=obj.alpha/100;
+				obj.style.filter='alpha(opacity='+alpha+')';
+			}
+		},30);
+	};
+	window.onload=function(){
+		var aDiv=document.getElementsByTagName('div');
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].timer=null;
+			aDiv[i].alpha=30;
+			aDiv[i].onmouseover=function(){
+				startMove(this,100);
+			}
+			aDiv[i].onmouseout=function(){
+				startMove(this,30);
+			}
+		}
+	}
+</script>
+  </head>
+  
+  <body>
+    <div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+  </body>
+</html>

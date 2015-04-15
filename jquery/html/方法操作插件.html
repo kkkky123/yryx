@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h2>这货的颜色待会可以各种切换</h2>
+    <button id="blue">蓝色</button>
+    <button id="green">绿色</button>
+    <button id="light">light</button>
+    <button id="dark">dark</button>
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script>
+        (function($){
+            var helper=function(option,prefix){
+                var settings= $.extend({color:"gray"},this.data("settings"),option);
+                this.data("settings",settings);
+                this.css("background-color",(prefix!=undefined?prefix:"")+settings.color);
+            };
+            var methods={
+                init:helper,
+                dark:function(option){
+                    helper.apply(this,[option,"dark"]);
+                },
+                light:function(option){
+                    helper.apply(this,[option,"light"]);
+                }
+            };
+            /*$.fn类似于jquery.prototype*/
+            $.fn.makeIt=function(method){
+                if(methods[method]){
+                    return methods[method].apply(this,Array.prototype.slice.call(arguments,1));
+                }else if(typeof method==="object"||!method){
+                    return methods.init.apply(this,arguments);
+                }else{
+                    $.error("Method"+method+"不存在");
+                }
+            };
+        })(jQuery);
+        $(document).ready(function(){
+            $("#blue").click(function(){
+                $("h2").makeIt({color:"blue"});
+            });
+            $("#green").click(function(){
+                $("h2").makeIt({color:"green"});
+            });
+            $("#dark").click(function(){
+                $("h2").makeIt("dark");
+            });
+            $("#light").click(function(){
+                $("h2").makeIt("light");
+            });
+        });
+    </script>
+</body>
+</html>

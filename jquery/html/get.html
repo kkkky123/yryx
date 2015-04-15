@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>first</p>
+<p>second</p>
+<p>third</p>
+<button id="get">Get</button><br>
+<button id="to-array">to-array</button><br>
+<button id="make-array">make-array</button><br>
+<button id="first">first</button><br>
+<button id="get-first">get-first</button><br>
+<button id="get-last">get-last</button><br>
+<script src="../js/jquery1.10.3_20130911.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#get").click(function(){
+            alert("get p="+$("p").get());
+        });
+        $("#to-array").click(function(){
+            alert("to-array p="+$("p").toArray());
+        });
+        $("#make-array").click(function(){
+            alert("make-array p="+$.makeArray($("p")));
+        });
+        $("#first").click(function(){
+            alert("first p="+$("p")[0].innerHTML);
+        });
+        $("#get-first").click(function(){
+            alert("get-first p="+$("p").get(0).innerHTML);
+        });
+        $("#get-last").click(function(){
+            alert("get-last p="+$("p").get(-1).innerHTML);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" charset="utf-8">
+	<title>data-attributes</title>
+</head>
+<body>
+    <p id="store-data">存点东西在这个标签的data属性里</p>
+    <button id="button">获取data属性</button>
+    <button id="btn2">存数据到上面的p标签的data属性里</button>
+    <button id="btn3">移除data属性里边的数据</button>
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function($) {
+			$("#button").on("click",function(){
+                alert($("#store-data").data("myattribute"));
+                alert($("#store-data").data("myattribute2"));
+            });
+            $("#btn2").on("click",function(){
+                $("#store-data").data("myattribute","我是data-myattribute属性的值,啦啦啦");
+                $("#store-data").data("myattribute2","我是data-myattribute2属性的值,啦啦啦");
+            });
+            $("#btn3").on("click",function(){
+                $("#store-data").removeData("myattribute");
+            });
+		});
+	</script>
+</body>
+</html>

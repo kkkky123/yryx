@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>匀速运动.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+	#div1 {width:100px;height:100px;position:absolute;left:500px;background:red;}
+</style>
+<script type="text/javascript">
+	var timer=null;
+	function startMove(obj,iTarget){
+		var iSpeed=0;
+		iSpeed=obj.offsetLeft<iTarget?7:-7;//根据对象在终点的方向，确定运动的方向
+		clearInterval(timer);//开定时之前最好先关定时，防止多次点击
+		timer=setInterval(function(){
+			if(Math.abs(obj.offsetLeft-iTarget)<Math.abs(iSpeed)){//当对象在终点附近时，就先停止，距离不够运动一次的话就直接挪过去
+				clearInterval(timer);
+				obj.style.left=iTarget+'px';
+			}else{
+				obj.style.left=obj.offsetLeft+iSpeed+'px';//根据速度运动对象
+			}
+		},30);
+		
+	}
+	window.onload=function(){
+		var oBtn=document.getElementById('btn1');
+		var oDiv=document.getElementById('div1');
+		
+		oBtn.onclick=function(){
+			//alert(oDiv.offsetLeft);
+			startMove(oDiv,300);
+		}
+	}
+</script>
+  </head>
+  
+  <body>
+    <input id="btn1" type="button" value="开始运动"/>
+	<div id="div1"></div>
+	<span style="width:0px;height:300px;position:absolute;left:300px;border:1px solid black;"></span>
+  </body>
+</html>

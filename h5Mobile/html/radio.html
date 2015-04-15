@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.3.css">
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.3.js"></script>
+</head>
+<body>
+<div data-role="page" id="firstView">
+    <header data-role="header">
+        <a>按钮</a>
+        <h1>前进视图标题</h1>
+        <a href="#secondView" data-theme="b" data-role="button" data-transition="slide">前进</a>
+    </header>
+    <div data-role="content">
+        <fieldset data-role="controlgroup">
+            <legend>请选择您的年龄范围：</legend>
+            <input type="radio" name="radio1" id="radio1" value="any" checked>
+            <label for="radio1">不限</label>
+            <input type="radio" name="radio1" id="radio2" value="16-22">
+            <label for="radio2">16-22岁</label>
+            <input type="radio" name="radio1" id="radio3" value="23-30">
+            <label for="radio3">23-30岁</label>
+        </fieldset>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>请选择您的年龄范围：</legend>
+            <input type="radio" name="radio2" id="radio4" value="any" checked>
+            <label for="radio4">不限</label>
+            <input type="radio" name="radio2" id="radio5" value="16-22">
+            <label for="radio5">16-22岁</label>
+            <input type="radio" name="radio2" id="radio6" value="23-30">
+            <label for="radio6">23-30岁</label>
+        </fieldset>
+    </div>
+    <footer data-role="footer" class="ui-bar">
+        <div data-role="controlgroup" data-type="horizontal">
+            <a data-role="button" data-icon="delete" href="#">删除</a>
+            <a data-role="button" data-icon="plus" href="#">添加</a>
+            <a data-role="button" data-icon="arrow-u" href="#">向上</a>
+            <a data-role="button" data-icon="arrow-d" href="#">向下</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

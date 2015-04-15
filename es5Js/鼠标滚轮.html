@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>鼠标滚轮.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+	<style>
+		#div1{width:200px;height:200px;border:1px solid red;}
+	</style>
+	<script type="text/javascript">
+		function MyAddEvent(obj,oevent,fn){
+			if(obj.attachEvent){//IE only
+				obj.attachEvent('on'+oevent,fn);
+			}else{//FF or Chrome
+				obj.addEventListener(oevent,fn,false);
+			}
+		}
+		window.onload=function(){
+			mydiv=document.getElementById('div1');
+			function onMouseWheel(ev){
+				myevent=ev||event;
+				bDown=true;
+				
+				//wheelDelta IE  上 正 下负
+				//detail FF 上负下正
+				/*if(myevent.wheelDelta){
+					if(myevent.wheelDelta<0){
+						bDown=true;
+					}else{
+						bDown=false;
+					}
+				}else{
+					if(myevent.detail<0){
+						bDown=false;
+					}else{
+						bDown=true;
+					}
+				}*/
+				//以上一大堆可以简写为
+				bDown=(myevent.wheelDelta?myevent.wheelDelta<0:myevent.detail>0)
+				
+				bDown==true?alert('下'):alert('上');
+				
+				//这里要加一个return false,不然在页面比较大出现浏览器本身的滚动条的时候，滚轮操作会同时影响到该函数
+				//和默认的鼠标滚轮操作，返回一个false就表示不让浏览器本身的函数运行，不过这个在FF里不适用
+				if(myevent.preventDefault){//FF only
+					myevent.preventDefault();
+				}else{
+					return false;
+				}
+			}
+			MyAddEvent(mydiv,'mousewheel',onMouseWheel);
+			MyAddEvent(mydiv,'DOMMouseScroll',onMouseWheel);
+		}
+		
+	</script>
+  </head>
+  
+  <body>
+    <div id="div1">aaa</div>
+  </body>
+</html>

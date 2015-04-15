@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Click on the paragraph to see their index</h1>
+<p>first</p>
+<span>Not a paragraph</span>
+<p>second</p>
+<p>third</p>
+<p>some nested paragraph:
+    <p>Nested 1</p>
+    <p>Nested 2</p>
+</p>
+<p>And a final non_nested paragraph</p>
+
+<script src="../js/jquery1.10.3_20130911.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("p").click(function(){
+            alert("Index of clicked item is: "+$(this).index());
+        });
+    });
+</script>
+</body>
+</html>

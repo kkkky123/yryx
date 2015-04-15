@@ -1,0 +1,6 @@
+@media screen and (max-device-width: 480px){
+    .demo {background-color: #f00;color: #000;}
+}
+@media screen and (min-width:480px) and (max-width:900px) {
+    .demo{background-color: #000;color: #fff;}
+}

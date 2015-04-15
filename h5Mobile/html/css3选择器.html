@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    [id=test1] {color: red;}
+    [id*=test] {color: green;}
+    [id$=t1] {color: #ccc;}
+    [id^=test] {color: #c0c0c0;}
+    #atest:before {content: "before这么用"}
+    #test1:after{content: "after就是在后边"}
+    div:first-child {border: 1px solid;}
+    div:last-child {background: #000000;}
+    div {box-shadow: 3px 4px 2px #000;-webkit-box-shadow: 3px 4px 2px #000;-moz-box-shadow:  3px 4px 2px #000;
+        text-shadow:  5px -10px 5px red;font-size: 16px;}
+    span {background-size: 20px 6px;-webkit-background-size: 10px 6px;background-color: red;
+            background-origin: padding-box; padding-left: 10px;}
+    #test4 {width: 200px;background: -webkit-gradient(linear,0 0,0 100%,from(#000),to(#fff));color: #1c94c4;}
+    #test5 {border: 1px solid;border-radius: 5px 5px;-webkit-border-radius: 5px 5px;-moz-border-radius: 5px 5px;}
+
+</style>
+<body>
+<div id="test1">完全匹配选择器</div>
+<div id="test2">测试包含匹配选择器1</div>
+<div id="test3">测试包含匹配选择器2</div>
+<div id="test31">测试包含匹配选择器3</div>
+<div id="atest">测试首位匹配选择器</div>
+<span>测试css3背景</span>
+<div id="test4">测试css3背景</div>
+<div id="test5">测试圆角</div>
+</body>
+</html>

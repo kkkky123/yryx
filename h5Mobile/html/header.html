@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.3.css">
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.3.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#delete").on("click",function(){
+                $(this).parent().detach();
+            });
+        });
+    </script>
+</head>
+<body>
+<div data-role="page" id="firstView">
+    <div data-theme="e" data-role="header">
+        <h3>警告：点X的话会消失</h3>
+        <a href="#" id="delete" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right">delete</a>
+    </div>
+    <div data-role="header">
+        <h1>header</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#first" class="ui-btn-active">first</a></li>
+                <li><a href="#second">second</a></li>
+                <li><a href="#third">third</a></li>
+                <li><a href="#second">second</a></li>
+                <li><a href="#third">third</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="content">
+        <p><a href="#">链接a</a></p>
+        <div class="ui-bar ui-bar-b">
+            <h3>这是个bar，里边会有一个按钮<a href="#" data-role="button">button</a></h3>
+        </div>
+    </div>
+    <div data-role="footer">
+        <label for="myselect">select</label>
+        <select name="myselect" id="myselect">
+            <option value="1">first</option>
+            <option value="2">second</option>
+            <option value="3">third</option>
+        </select>
+    </div>
+</div>
+</body>
+</html>

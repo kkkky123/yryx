@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>li排序.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+	ul {margin:0 auto;}
+	li {list-style:none;border:1px solid black;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oUl=document.getElementById('ul1');
+		var oBtn=document.getElementById('btn1');
+		var aLi=oUl.getElementsByTagName('li');
+		var i=0;
+		var bAsc=true;
+		oBtn.onclick=function(){
+			var arr=[];
+			//1.先变成数组
+			for(i=0;i<aLi.length;i++){
+				arr[i]=aLi[i];
+			}
+			//2.排序
+			arr.sort(function(li1,li2){
+				return bAsc?parseInt(li1.innerHTML)-parseInt(li2.innerHTML):parseInt(li2.innerHTML)-parseInt(li1.innerHTML);
+			});
+			
+			//3.按顺序插入到元素里
+			for(i=0;i<arr.length;i++){
+				//appendChild有两部操作，一是先将元素从其父元素内删除，二是将该元素添加到指定的父元素的末尾
+				oUl.appendChild(arr[i]);
+			}
+			bAsc=!bAsc;
+			oBtn.value=bAsc?"升序":"降序";
+		};
+	};
+</script>
+  </head>
+  
+  <body>
+  	<input id="btn1" type="button" value="升序"/>
+    <ul id="ul1">
+    	<li>1</li>
+		<li>3</li>
+		<li>4</li>
+		<li>6</li>
+		<li>5</li>
+		<li>2</li>
+    </ul>
+  </body>
+</html>

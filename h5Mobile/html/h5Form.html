@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.3.css">
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.3.js"></script>
+</head>
+<body>
+<section>
+<form id="form1" action="?" method="get" data-type="horizontal" >
+    <!--autofocus表示自动获得焦点，在一个表单里只能有一个，表示进入这个表单就先去填写这个属性-->
+    <input type="text" placeholder="默认字符" autofocus required><br>
+    <!--required表示如果该表单是空的就不执行提交操作，这个很重要的-->
+    <input type="tel" placeholder="tel" required><br>
+    <label for="search"></label>
+    <input type="search" placeholder="search" name="search" id="search" value="" /><br>
+    <input type="email" placeholder="email"><br>
+    <input type="number" min="0" maxlength="9" placeholder="number"><br>
+    <input type="range" min="1" max="10" placeholder="2" value="2"><br>
+    <input type="submit" value="提交">
+</form>
+<input form="form1" required><!--这种即使在表单外，只要给一个form属性，后边是要从属的form-->
+</section>
+<div data-role="fieldcontain">
+    <label for="slide"></label>
+    <input id="slide" type="range" min="0" max="10" name="slide" value="2">
+</div>
+</body>
+</html>

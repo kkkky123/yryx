@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p>这是第一个p标签</p>
+    <p>这是第二个p标签</p>
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script>
+        (function($){
+            $.fn.myStaticPlugin=function(){
+                return $.Deferred();
+            };
+        })(jQuery);
+        $(document).ready(function(){
+            var deferred = $.myStaticPlugin().done(function(msg){
+                alert(msg);
+            });
+            window.setTimeout(function(){
+                deferred.resolve("ready....");
+            },5000);
+        });
+    </script>
+</body>
+</html>

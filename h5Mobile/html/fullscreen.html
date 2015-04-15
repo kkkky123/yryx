@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.3.css">
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.3.js"></script>
+</head>
+<body>
+<div data-role="page" id="firstView" data-fullscreen="true">
+    <header data-role="header" data-position="fixed">
+        <a>按钮</a>
+        <h1>前进视图标题</h1>
+        <a href="#secondView" data-theme="b" data-role="button" data-transition="slide">前进</a>
+    </header>
+    <div data-role="content" class="ui-grid-b">
+        <!--ui-grid-a后边的字母a表示2列，b-3,c-4,d-5，这些按钮是平均分配屏幕宽度的-->
+        <!--ui-block-a表示行，和上面一样-->
+        <div class="ui-block-a">
+            <a href="#" data-role="button" data-theme="a" data-icon="home" data-iconpos="top">首页</a>
+        </div>
+        <div class="ui-block-b">
+            <a href="#" data-role="button" data-theme="b" data-icon="grid" data-iconpos="top">列表</a>
+        </div>
+        <div class="ui-block-c">
+            <a href="#" data-role="button" data-theme="c" data-icon="star" data-iconpos="top">加星</a>
+        </div>
+        <div class="ui-block-a">
+            <a href="#" data-role="button" data-theme="a" data-icon="info" data-iconpos="top">信息</a>
+        </div>
+        <div class="ui-block-b">
+            <a href="#" data-role="button" data-theme="b" data-icon="search" data-iconpos="top">搜索</a>
+        </div>
+        <div class="ui-block-c">
+            <a href="#" data-role="button" data-theme="c" data-icon="gear" data-iconpos="top">设置</a>
+        </div>
+        <div class="ui-block-a">
+            <a href="#" data-role="button" data-theme="a" data-icon="check" data-iconpos="top">已选</a>
+        </div>
+        <div class="ui-block-b">
+            <a href="#" data-role="button" data-theme="b" data-icon="alert" data-iconpos="top">提示</a>
+        </div>
+        <div class="ui-block-c">
+            <a href="#" data-role="button" data-theme="c" data-icon="plus" data-iconpos="top">添加</a>
+        </div>
+        <p>新华社北京9月21日电中共中央、全国政协21日上午在全国政协礼堂隆重举行庆祝中国人民政治协商会议成立65周年大会。中共中央总书记、国家主席、中央军委主席习近平在大会上发表重要讲话。他强调，人民政协是人民民主的重要形式。人民政协要适应推进国家治理体系和治理能力现代化的要求，坚持改革创新精神，推进人民政协理论创新、制度创新、工作创新，丰富民主形式，畅通民主渠道，有效组织各党派、各团体、各民族、各阶层、各界人士共商国是，推动实现广泛有效的人民民主。
+            习近平强调，社会主义协商民主，是中国社会主义民主政治的特有形式和独特优势，是中国共产党的群众路线在政治领域的重要体现。实行人民民主，保证人民当家作主，要求我们在治国理政时在人民内部各方面进行广泛商量。在中国社会主义制度下，有事好商量，众人的事情由众人商量，找到全社会意愿和要求的最大公约数，是人民民主的真谛。我们要坚持有事多商量，遇事多商量，做事多商量，商量得越多越深入越好，推进社会主义协商民主广泛多层制度化发展。
+            中共中央政治局常委李克强、张德江、刘云山、王岐山出席。中共中央政治局常委、全国政协主席俞正声主持大会。</p>
+    </div>
+    <footer data-role="footer" class="ui-bar" data-position="fixed">
+        <div data-role="controlgroup" data-type="horizontal">
+            <a data-role="button" data-icon="delete" href="#">删除</a>
+            <a data-role="button" data-icon="plus" href="#">添加</a>
+            <a data-role="button" data-icon="arrow-u" href="#">向上</a>
+            <a data-role="button" data-icon="arrow-d" href="#">向下</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

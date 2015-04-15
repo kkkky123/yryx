@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>完美运动.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">   
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+	#div1,#div2 {width:100px;height:100px;background:red;filter:alpha(opacity=30);opacity:0.3;margin-top:50px;}
+</style>
+<script src="move2.js"></script>
+<script type="text/javascript">
+	window.onload=function(){
+		var oBtn=document.getElementById('btn1');
+		var oDiv=document.getElementById('div1');
+		var oDiv2=document.getElementById('div2');
+		
+		oBtn.onclick=function(){
+			startMove(oDiv,{width:102,height:200,opacity:100});
+			startMove(oDiv2,{width:50,height:400,opacity:100});
+		};
+	}
+</script>
+  </head>
+  
+  <body>
+  	<input id="btn1" type="button" value="开始运动"/>
+    <div id="div1"></div>
+	<div id="div2"></div>
+  </body>
+</html>

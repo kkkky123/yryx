@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>拖拽.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style>
+		#parent{width:10px;height:410px;position:relative;margin:20 auto;background:gray;float:right;}
+		#div1{width:10px;height:10px;background-color:red;position:absolute;}
+		#div2{position:absolute;left:0px;width:200px;height:300px;
+		border:1px solid black;overflow:hidden;}
+		#div3{position:absolute;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var mydiv=document.getElementById('div1');
+			var pdiv=document.getElementById('parent');
+			var mydiv2=document.getElementById('div2');
+			var mydiv3=document.getElementById('div3');
+			mydiv.onmousedown=function(ev){
+				var myevent=ev || event;
+				disX=myevent.clientX-mydiv.offsetLeft;
+				disY=myevent.clientY-mydiv.offsetTop;
+				
+				if(mydiv.setCapture){//以下写法只在ie当中可以用，别的可以使用下面的
+					mydiv.setCapture();//该函数表示mydiv这个对象捕获了当前页面所有的鼠标操作
+					mydiv.onmousemove=function(ev){
+						var myevent=ev || event;
+						//mydiv.style.left=myevent.clientX-disX+'px';
+						var t=myevent.clientY-disY;
+						if(t<0){
+							t=0;
+						}else if(t>pdiv.offsetHeight-mydiv.offsetHeight){
+							t=pdiv.offsetHeight-mydiv.offsetHeight;
+						}
+						mydiv.style.top=t+'px';
+						
+						percent=t/(pdiv.offsetHeight-mydiv.offsetHeight)
+						document.title=percent;
+						//mydiv2.style.width=percent*400+'px';
+						//mydiv2.style.height=percent*400+'px';
+						mydiv3.style.top=-(mydiv3.offsetHeight-mydiv2.offsetHeight)*percent+'px';
+						
+					}
+					mydiv.onmouseup=function(){
+						mydiv.onmousemove=null;
+						mydiv.onmouseup=null;
+						mydiv.releaseCapture();//释放捕获
+					}
+				}
+				else{
+					document.onmousemove=function(ev){
+						var myevent=ev || event;
+						//mydiv.style.left=myevent.clientX-disX+'px';
+						var t=myevent.clientY-disY;
+						if(t<0){
+							t=0;
+						}else if(t>pdiv.offsetHeight-mydiv.offsetHeight){
+							t=pdiv.offsetHeight-mydiv.offsetHeight;
+						}
+						mydiv.style.top=t+'px';
+						
+						percent=t/(pdiv.offsetHeight-mydiv.offsetHeight)
+						document.title=percent;
+						mydiv.style.top=t+'px';
+						mydiv3.style.top=-(mydiv3.offsetHeight-mydiv2.offsetHeight)*percent+'px';
+					}
+					document.onmouseup=function(){
+						document.onmousemove=null;
+						document.onmouseup=null;
+					}
+				}
+				return false;
+			}
+		}
+	</script>
+  </head>  
+  <body>
+  	<div id="parent">
+    <div id="div1"></div>
+	</div>
+	<div id="div2">
+		<div id="div3">
+		每到毕业季，毕业生的就业问题都是社会热点。我毕业十年，也曾就读南京某著名高校，毕业时面临的窘迫与无助至今记忆犹新。正因为如此，看到现在大学生就业越来越盲目有些小小的看法。当然，只是我个人意见，大家可以选择性接纳。大学学了英文专业，后来又做了六七年图书编辑，所以，就在这里班门弄斧，用我很喜欢的一本小说来给毕业季的弟弟妹妹们说说。我选择的是麦家的《解密》。《解密》中的主人公容金珍堪称民国破译第一人，他是个天才，天才也有被选择的时候，郑瘸子就是他的面试官，701就是他的用人单位。让我们来看看这个民国天才是怎么来处理求职这件事的。 
+  
+1、营造好口碑，在校内塑造传奇 
+不少同学会发现，在学校里有名的学生在毕业时比死读书的学生吃的开。他可以是学生会干部、文艺青年、校园歌手、公益事业积极参与者，用人单位就是喜欢录用这些传奇。因为用人单位吸纳新人的第一目的是为了给企业注入新鲜血液，给企业老员工打一针强心剂，所以，在上学期间多注意参加活动，让自己在学校师生中成为积极分子的意义就显得尤为重要。 
+《解密》中的容金珍在学校绝对是个异类，数学天才，上课逃课，连连跳级，在学校早已经成为了一个传奇。这些都为他被保密组织701选拔成功做好了良好的口碑铺垫。
+  
+胡哥支招：刚入校就积极入学生会、上学期间积极入团体，再不济平时多参加志愿者活动，传播正能量，做些对社会和学校都有益的事会更有价值。那种站在雨中给女生求爱的事儿最好别干，臭名就没必要出了，用人单位会觉得你太出格，太感情用事。 
+  
+2、穿衣有品位，好的行头是成功的一半 
+胡哥虽然不是个以貌取人的人，但是不得不承认，相貌在一定程度上影响着一个人的命运，面试官通常只靠第一眼印象来决定毕业生的录用，讲究的外在是成功的一半。《解密》中的容金珍出身名门，书香门第，再加上自幼被老洋人抚养，虽然自己不注重穿着，但是中西合璧造成的穿衣风格早已从小养成。《解密》中在描写他第一次出远门，跟随老黎黎离开老家时曾这样描绘过他的形象：“大头虫穿着一身周正的新衣服，提着一只洋先生漂洋过海带来的牛皮箱……脖子上系着洋先生早年从外国带来的围巾……” 
+  
+他将这种风格沿用到学校生活几年，甚至到工作之后，简约低调，朴素内敛。使得面试官郑瘸子在第一眼看到他就决定要录用他。这一点上，毕业生们可以学习一下。 
+  
+胡哥支招：朴素简约比奢华炫富更有用。男女生都可以选择剪裁得体，用料考究，细节体现品质的衣服。男生可以考虑休闲西装，千万不要穿亮色西装让人和歌厅领班傻傻分不清，女生切记不要穿着豹纹黑丝，更不要提名牌或者仿名牌的包，尤其不要穿有大LOGO的衣服，这样只能让你看上去更蠢。 
+  
+  
+  
+3、老师推荐，在面试时脱颖而出 
+《解密》中有这样一个情节耐人寻味。701局长郑瘸子来招破译人才，接连面试了一大串优秀学生都不满意，直到最后他亲自跑到校长办公室，小黎黎向他推荐了容金珍，立刻被录用。 
+这是一个很常见的事情。用人单位总是这样，越是你主动去接近的积极想去的他们未必会录用，他们更乐于听信与老师等权威人士的推荐。所以，与你的老师搞好关系就成了面试时脱颖而出的捷径。小黎黎之所以推荐容金珍当然不仅仅因为这是他的亲戚，更重要的是他觉得容金珍是天才，完全能够胜任。 
+  
+胡哥支招：在毕业前，不妨与你的老师来一番长谈，告诉他你的职业规划，想要去哪些单位，吸取老师的合理建议，最后一点很重要，要明确告诉老师你希望老师给你机会，向用人单位推荐你。当然，胡哥不想告诉你拍老师马屁之类的东西，那些不在我们这篇文字的讨论范畴，胡哥只是想说，你会越来越清楚，找到关键人推荐对你被录用成功有多重要。平时就要积累人品，让老师真正看到你的才华和闪光点，这样他才会在第一时间想到你。另外一点很重要，尊师重道，真正从内心尊重你老师给你的建议。
+  
+  
+4、向老员工积极取经，试用期取胜真理 
+一旦被用人单位试用，恭喜你，你已经成功了一小半。那么，在试用期期间要如何表现呢，如何能够在试用期结束后成功转正成了你这一阶段的主要目标。《解密》中的容金珍在这一点的做法值得学习。他在迅速熟悉了单位环境后积极让自己融入新环境，很快发现了701组织内一个爱下棋的老前辈。这个前辈因为破译密码用脑过度而疯掉，但是本人对于破译的技巧和经验还是值得人学习的。所以，天公作美，容金珍结识了他和他一起下棋。两人在下棋的过程中切磋破译方法，最终成功破解紫密和黑密。这虽然是作家麦家为了让容金珍尽快破译有意的巧妙安排，但是对于求职来说也确实可以借鉴。 
+  
+胡哥支招：到了新单位，要用你的亲和力和虚心打动老员工，认准一个或者几个前辈耐心向别人请教。吃亏不怕，上当不怕，关键要让前辈们带你尽快进入角色，他会告诉你公司的一些不成文规定，同事关系，如何在工作中做的更好。这样都为你转正奠定了好的基础。 
+  
+  
+5、专业书在手，通向升职的终极密码 
+有些同学可能要问，说我们单位员工之间接触不多，没有找到愿意带我的老员工怎么办？是不是就没有机会提升自己转正了。当然不是。俗语说，老天饿不死瞎家雀，只要肯上进，办法还是有的。《解密》中的容金珍在刚进入701的时候除了找到了老前辈学习，还求助于另外一本书，《世界密码史》，这本书洋洋洒洒几百万字，不要说读，单是放在那里就足够震撼。他的领导郑瘸子就对此赞不绝口，称容金珍是难得的天才。容金珍的英雄形象就是从这本书开始奠定的。试想，如果你在你的办公位上放上一本和你们本单位业务相关的权威书，专业书，你的上司路过就能看到，他会借此判断你是一个积极进取的可塑人才，从而在日常工作中留心观察你，一旦看到你确实在专业性上面比其他新人突出，转正是立刻的，升职是必须的。 
+  
+胡哥支招：买一本权威的专业书放在你办公桌上，空闲时候随时翻看。在增长专业知识的同时让领导看到你的努力和专业，近而增强对你的印象。必要时可以在开例会的时候有意无意多引用书里的话，塑造你在同事中的专业形象。 
+  
+  </div>
+	</div>
+  </body>
+</html>

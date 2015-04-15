@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.3.css">
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.3.js"></script>
+</head>
+<body>
+<div data-role="page" id="firstView">
+    <header data-role="header">
+        <a>按钮</a>
+        <h1>前进视图标题</h1>
+        <a href="#secondView" data-theme="b" data-role="button" data-transition="slide">前进</a>
+    </header>
+    <div data-role="content">
+        <div data-role="collapsible-set">
+            <section data-role="collapsible">
+                <h3>可折叠区域标题</h3>
+                <p>这是一个可以折叠的区域，默认是关闭状态的，点击可以关闭</p>
+            </section>
+            <section data-role="collapsible">
+                <h3>可折叠区域标题</h3>
+                <p>这是一个可以折叠的区域，默认是关闭状态的，点击可以关闭</p>
+            </section>
+            <section data-role="collapsible">
+                <h3>可折叠区域标题</h3>
+                <p>这是一个可以折叠的区域，默认是关闭状态的，点击可以关闭</p>
+            </section>
+        </div>
+    </div>
+    <footer data-role="footer" class="ui-bar">
+        <div data-role="controlgroup" data-type="horizontal">
+            <a data-role="button" data-icon="delete" href="#">删除</a>
+            <a data-role="button" data-icon="plus" href="#">添加</a>
+            <a data-role="button" data-icon="arrow-u" href="#">向上</a>
+            <a data-role="button" data-icon="arrow-d" href="#">向下</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

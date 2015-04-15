@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p>待会把这个变成蓝色的</p>
+    <span>这个可以变成红色</span>
+    <p>这个也是蓝色</p>
+    <button type="button">点击</button>
+    <script src="../js/jquery1.10.3_20130911.min.js"></script>
+    <script>
+        (function($){
+            /*$.fn类似于jquery.prototype*/
+            $.fn.makeItBlue=function(){
+                this.css("background-color","blue");
+            };
+            $.fn.makeItRed=function(){
+                this.css("background-color","red");
+            }
+        })(jQuery);
+        $(document).ready(function(){
+            $("button").on("click",function(){
+                $("p").makeItBlue();
+                $("span").makeItRed();
+            });
+        });
+    </script>
+</body>
+</html>

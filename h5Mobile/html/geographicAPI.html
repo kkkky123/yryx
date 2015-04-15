@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+    navigator.geolocation.getCurrentPosition(function(pos){
+        console.log("当前纬度:"+pos.coords.latitude);
+        console.log("当前经度:"+pos.coords.longitude);
+        //这个暂时获取不到console.log("当前海拔:"+pos.coords.altitude);
+        console.log("当前经纬度的精确度:"+pos.coords.accuracy);
+    });
+    var watchId=navigator.geolocation.watchPosition(function(pos){
+        console.log("当前位置变化的纬度:"+pos.coords.latitude);
+        console.log("当前位置变化的经度:"+pos.coords.longitude);
+        //这个暂时获取不到console.log("当前海拔:"+pos.coords.altitude);
+        console.log("当前位置变化的经纬度的精确度:"+pos.coords.accuracy);
+        navigator.geolocation.clearWatch(watchId);
+    },function(){});
+</script>
+</body>
+</html>

@@ -1,0 +1,3794 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../影视资料库_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:27px;
+    top:31px;
+    width:800px;
+    height:646px;
+}
+
+#u0_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:806px;
+    height:652px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:315px;
+    width:796px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u2_normal {
+    background-image: url('../影视资料库_files/u0_normal.png');
+}
+
+.u2_container {
+    position:absolute;
+    left:27px;
+    top:31px;
+    width:800px;
+    height:646px;
+}
+
+#u2_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:806px;
+    height:652px;
+}
+
+.u3 {
+    position:absolute;
+    left:2px;
+    top:315px;
+    width:796px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u4_normal {
+    background-image: url('../影视资料库_files/u4_normal.png');
+}
+
+.u4_container {
+    position:absolute;
+    left:373px;
+    top:142px;
+    width:180px;
+    height:22px;
+}
+
+#u4_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:28px;
+}
+
+.u5 {
+    position:absolute;
+    left:2px;
+    top:3px;
+    width:176px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u6 {
+    position:absolute;
+    left:558px;
+    top:141px;
+    width:55px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+#u7 {
+    position:absolute;
+    left:92px;
+    top:178px;
+    width:640px;
+    height:439px
+}
+
+.u8_normal {
+    background-image: url('../影视资料库_files/u8_normal.png');
+}
+
+.u8_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:66px;
+    height:22px;
+}
+
+#u8_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:72px;
+    height:28px;
+}
+
+.u9 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:62px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10_normal {
+    background-image: url('../影视资料库_files/u10_normal.png');
+}
+
+.u10_container {
+    position:absolute;
+    left:66px;
+    top:0px;
+    width:58px;
+    height:22px;
+}
+
+#u10_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:28px;
+}
+
+.u11 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12_normal {
+    background-image: url('../影视资料库_files/u12_normal.png');
+}
+
+.u12_container {
+    position:absolute;
+    left:124px;
+    top:0px;
+    width:104px;
+    height:22px;
+}
+
+#u12_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:110px;
+    height:28px;
+}
+
+.u13 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14_normal {
+    background-image: url('../影视资料库_files/u10_normal.png');
+}
+
+.u14_container {
+    position:absolute;
+    left:228px;
+    top:0px;
+    width:58px;
+    height:22px;
+}
+
+#u14_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:28px;
+}
+
+.u15 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u16_normal {
+    background-image: url('../影视资料库_files/u16_normal.png');
+}
+
+.u16_container {
+    position:absolute;
+    left:286px;
+    top:0px;
+    width:59px;
+    height:22px;
+}
+
+#u16_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:65px;
+    height:28px;
+}
+
+.u17 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:55px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u18_normal {
+    background-image: url('../影视资料库_files/u18_normal.png');
+}
+
+.u18_container {
+    position:absolute;
+    left:345px;
+    top:0px;
+    width:100px;
+    height:22px;
+}
+
+#u18_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:28px;
+}
+
+.u19 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u20_normal {
+    background-image: url('../影视资料库_files/u20_normal.png');
+}
+
+.u20_container {
+    position:absolute;
+    left:445px;
+    top:0px;
+    width:99px;
+    height:22px;
+}
+
+#u20_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:105px;
+    height:28px;
+}
+
+.u21 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:95px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u22_normal {
+    background-image: url('../影视资料库_files/u22_normal.png');
+}
+
+.u22_container {
+    position:absolute;
+    left:544px;
+    top:0px;
+    width:91px;
+    height:22px;
+}
+
+#u22_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:97px;
+    height:28px;
+}
+
+.u23 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:87px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u24_normal {
+    background-image: url('../影视资料库_files/u24_normal.png');
+}
+
+.u24_container {
+    position:absolute;
+    left:0px;
+    top:22px;
+    width:66px;
+    height:58px;
+}
+
+#u24_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:72px;
+    height:64px;
+}
+
+.u25 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:62px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u26_normal {
+    background-image: url('../影视资料库_files/u26_normal.png');
+}
+
+.u26_container {
+    position:absolute;
+    left:66px;
+    top:22px;
+    width:58px;
+    height:58px;
+}
+
+#u26_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u27 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u28_normal {
+    background-image: url('../影视资料库_files/u28_normal.png');
+}
+
+.u28_container {
+    position:absolute;
+    left:124px;
+    top:22px;
+    width:104px;
+    height:58px;
+}
+
+#u28_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:110px;
+    height:64px;
+}
+
+.u29 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u30_normal {
+    background-image: url('../影视资料库_files/u26_normal.png');
+}
+
+.u30_container {
+    position:absolute;
+    left:228px;
+    top:22px;
+    width:58px;
+    height:58px;
+}
+
+#u30_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u31 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u32_normal {
+    background-image: url('../影视资料库_files/u32_normal.png');
+}
+
+.u32_container {
+    position:absolute;
+    left:286px;
+    top:22px;
+    width:59px;
+    height:58px;
+}
+
+#u32_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:65px;
+    height:64px;
+}
+
+.u33 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:55px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u34_normal {
+    background-image: url('../影视资料库_files/u34_normal.png');
+}
+
+.u34_container {
+    position:absolute;
+    left:345px;
+    top:22px;
+    width:100px;
+    height:58px;
+}
+
+#u34_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:64px;
+}
+
+.u35 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u36_normal {
+    background-image: url('../影视资料库_files/u36_normal.png');
+}
+
+.u36_container {
+    position:absolute;
+    left:445px;
+    top:22px;
+    width:99px;
+    height:58px;
+}
+
+#u36_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:105px;
+    height:64px;
+}
+
+.u37 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:95px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u38_normal {
+    background-image: url('../影视资料库_files/u38_normal.png');
+}
+
+.u38_container {
+    position:absolute;
+    left:544px;
+    top:22px;
+    width:91px;
+    height:58px;
+}
+
+#u38_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:97px;
+    height:64px;
+}
+
+.u39 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:87px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40_normal {
+    background-image: url('../影视资料库_files/u40_normal.png');
+}
+
+.u40_container {
+    position:absolute;
+    left:0px;
+    top:80px;
+    width:66px;
+    height:60px;
+}
+
+#u40_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:72px;
+    height:66px;
+}
+
+.u41 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:62px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u42_normal {
+    background-image: url('../影视资料库_files/u42_normal.png');
+}
+
+.u42_container {
+    position:absolute;
+    left:66px;
+    top:80px;
+    width:58px;
+    height:60px;
+}
+
+#u42_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:66px;
+}
+
+.u43 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u44_normal {
+    background-image: url('../影视资料库_files/u44_normal.png');
+}
+
+.u44_container {
+    position:absolute;
+    left:124px;
+    top:80px;
+    width:104px;
+    height:60px;
+}
+
+#u44_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:110px;
+    height:66px;
+}
+
+.u45 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u46_normal {
+    background-image: url('../影视资料库_files/u42_normal.png');
+}
+
+.u46_container {
+    position:absolute;
+    left:228px;
+    top:80px;
+    width:58px;
+    height:60px;
+}
+
+#u46_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:66px;
+}
+
+.u47 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u48_normal {
+    background-image: url('../影视资料库_files/u48_normal.png');
+}
+
+.u48_container {
+    position:absolute;
+    left:286px;
+    top:80px;
+    width:59px;
+    height:60px;
+}
+
+#u48_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:65px;
+    height:66px;
+}
+
+.u49 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:55px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u50_normal {
+    background-image: url('../影视资料库_files/u50_normal.png');
+}
+
+.u50_container {
+    position:absolute;
+    left:345px;
+    top:80px;
+    width:100px;
+    height:60px;
+}
+
+#u50_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:66px;
+}
+
+.u51 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u52_normal {
+    background-image: url('../影视资料库_files/u52_normal.png');
+}
+
+.u52_container {
+    position:absolute;
+    left:445px;
+    top:80px;
+    width:99px;
+    height:60px;
+}
+
+#u52_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:105px;
+    height:66px;
+}
+
+.u53 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:95px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u54_normal {
+    background-image: url('../影视资料库_files/u54_normal.png');
+}
+
+.u54_container {
+    position:absolute;
+    left:544px;
+    top:80px;
+    width:91px;
+    height:60px;
+}
+
+#u54_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:97px;
+    height:66px;
+}
+
+.u55 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:87px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u56_normal {
+    background-image: url('../影视资料库_files/u40_normal.png');
+}
+
+.u56_container {
+    position:absolute;
+    left:0px;
+    top:140px;
+    width:66px;
+    height:60px;
+}
+
+#u56_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:72px;
+    height:66px;
+}
+
+.u57 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:62px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u58_normal {
+    background-image: url('../影视资料库_files/u42_normal.png');
+}
+
+.u58_container {
+    position:absolute;
+    left:66px;
+    top:140px;
+    width:58px;
+    height:60px;
+}
+
+#u58_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:66px;
+}
+
+.u59 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u60_normal {
+    background-image: url('../影视资料库_files/u44_normal.png');
+}
+
+.u60_container {
+    position:absolute;
+    left:124px;
+    top:140px;
+    width:104px;
+    height:60px;
+}
+
+#u60_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:110px;
+    height:66px;
+}
+
+.u61 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u62_normal {
+    background-image: url('../影视资料库_files/u42_normal.png');
+}
+
+.u62_container {
+    position:absolute;
+    left:228px;
+    top:140px;
+    width:58px;
+    height:60px;
+}
+
+#u62_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:66px;
+}
+
+.u63 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u64_normal {
+    background-image: url('../影视资料库_files/u48_normal.png');
+}
+
+.u64_container {
+    position:absolute;
+    left:286px;
+    top:140px;
+    width:59px;
+    height:60px;
+}
+
+#u64_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:65px;
+    height:66px;
+}
+
+.u65 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:55px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u66_normal {
+    background-image: url('../影视资料库_files/u50_normal.png');
+}
+
+.u66_container {
+    position:absolute;
+    left:345px;
+    top:140px;
+    width:100px;
+    height:60px;
+}
+
+#u66_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:66px;
+}
+
+.u67 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u68_normal {
+    background-image: url('../影视资料库_files/u52_normal.png');
+}
+
+.u68_container {
+    position:absolute;
+    left:445px;
+    top:140px;
+    width:99px;
+    height:60px;
+}
+
+#u68_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:105px;
+    height:66px;
+}
+
+.u69 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:95px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u70_normal {
+    background-image: url('../影视资料库_files/u54_normal.png');
+}
+
+.u70_container {
+    position:absolute;
+    left:544px;
+    top:140px;
+    width:91px;
+    height:60px;
+}
+
+#u70_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:97px;
+    height:66px;
+}
+
+.u71 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:87px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u72_normal {
+    background-image: url('../影视资料库_files/u40_normal.png');
+}
+
+.u72_container {
+    position:absolute;
+    left:0px;
+    top:200px;
+    width:66px;
+    height:60px;
+}
+
+#u72_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:72px;
+    height:66px;
+}
+
+.u73 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:62px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u74_normal {
+    background-image: url('../影视资料库_files/u42_normal.png');
+}
+
+.u74_container {
+    position:absolute;
+    left:66px;
+    top:200px;
+    width:58px;
+    height:60px;
+}
+
+#u74_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:66px;
+}
+
+.u75 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u76_normal {
+    background-image: url('../影视资料库_files/u44_normal.png');
+}
+
+.u76_container {
+    position:absolute;
+    left:124px;
+    top:200px;
+    width:104px;
+    height:60px;
+}
+
+#u76_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:110px;
+    height:66px;
+}
+
+.u77 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u78_normal {
+    background-image: url('../影视资料库_files/u42_normal.png');
+}
+
+.u78_container {
+    position:absolute;
+    left:228px;
+    top:200px;
+    width:58px;
+    height:60px;
+}
+
+#u78_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:66px;
+}
+
+.u79 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u80_normal {
+    background-image: url('../影视资料库_files/u48_normal.png');
+}
+
+.u80_container {
+    position:absolute;
+    left:286px;
+    top:200px;
+    width:59px;
+    height:60px;
+}
+
+#u80_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:65px;
+    height:66px;
+}
+
+.u81 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:55px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u82_normal {
+    background-image: url('../影视资料库_files/u50_normal.png');
+}
+
+.u82_container {
+    position:absolute;
+    left:345px;
+    top:200px;
+    width:100px;
+    height:60px;
+}
+
+#u82_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:66px;
+}
+
+.u83 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u84_normal {
+    background-image: url('../影视资料库_files/u52_normal.png');
+}
+
+.u84_container {
+    position:absolute;
+    left:445px;
+    top:200px;
+    width:99px;
+    height:60px;
+}
+
+#u84_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:105px;
+    height:66px;
+}
+
+.u85 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:95px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u86_normal {
+    background-image: url('../影视资料库_files/u54_normal.png');
+}
+
+.u86_container {
+    position:absolute;
+    left:544px;
+    top:200px;
+    width:91px;
+    height:60px;
+}
+
+#u86_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:97px;
+    height:66px;
+}
+
+.u87 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:87px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u88_normal {
+    background-image: url('../影视资料库_files/u24_normal.png');
+}
+
+.u88_container {
+    position:absolute;
+    left:0px;
+    top:260px;
+    width:66px;
+    height:58px;
+}
+
+#u88_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:72px;
+    height:64px;
+}
+
+.u89 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:62px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u90_normal {
+    background-image: url('../影视资料库_files/u26_normal.png');
+}
+
+.u90_container {
+    position:absolute;
+    left:66px;
+    top:260px;
+    width:58px;
+    height:58px;
+}
+
+#u90_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u91 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u92_normal {
+    background-image: url('../影视资料库_files/u28_normal.png');
+}
+
+.u92_container {
+    position:absolute;
+    left:124px;
+    top:260px;
+    width:104px;
+    height:58px;
+}
+
+#u92_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:110px;
+    height:64px;
+}
+
+.u93 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u94_normal {
+    background-image: url('../影视资料库_files/u26_normal.png');
+}
+
+.u94_container {
+    position:absolute;
+    left:228px;
+    top:260px;
+    width:58px;
+    height:58px;
+}
+
+#u94_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u95 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u96_normal {
+    background-image: url('../影视资料库_files/u32_normal.png');
+}
+
+.u96_container {
+    position:absolute;
+    left:286px;
+    top:260px;
+    width:59px;
+    height:58px;
+}
+
+#u96_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:65px;
+    height:64px;
+}
+
+.u97 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:55px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u98_normal {
+    background-image: url('../影视资料库_files/u34_normal.png');
+}
+
+.u98_container {
+    position:absolute;
+    left:345px;
+    top:260px;
+    width:100px;
+    height:58px;
+}
+
+#u98_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:64px;
+}
+
+.u99 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u100_normal {
+    background-image: url('../影视资料库_files/u36_normal.png');
+}
+
+.u100_container {
+    position:absolute;
+    left:445px;
+    top:260px;
+    width:99px;
+    height:58px;
+}
+
+#u100_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:105px;
+    height:64px;
+}
+
+.u101 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:95px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u102_normal {
+    background-image: url('../影视资料库_files/u38_normal.png');
+}
+
+.u102_container {
+    position:absolute;
+    left:544px;
+    top:260px;
+    width:91px;
+    height:58px;
+}
+
+#u102_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:97px;
+    height:64px;
+}
+
+.u103 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:87px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u104_normal {
+    background-image: url('../影视资料库_files/u24_normal.png');
+}
+
+.u104_container {
+    position:absolute;
+    left:0px;
+    top:318px;
+    width:66px;
+    height:58px;
+}
+
+#u104_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:72px;
+    height:64px;
+}
+
+.u105 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:62px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u106_normal {
+    background-image: url('../影视资料库_files/u26_normal.png');
+}
+
+.u106_container {
+    position:absolute;
+    left:66px;
+    top:318px;
+    width:58px;
+    height:58px;
+}
+
+#u106_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u107 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u108_normal {
+    background-image: url('../影视资料库_files/u28_normal.png');
+}
+
+.u108_container {
+    position:absolute;
+    left:124px;
+    top:318px;
+    width:104px;
+    height:58px;
+}
+
+#u108_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:110px;
+    height:64px;
+}
+
+.u109 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u110_normal {
+    background-image: url('../影视资料库_files/u26_normal.png');
+}
+
+.u110_container {
+    position:absolute;
+    left:228px;
+    top:318px;
+    width:58px;
+    height:58px;
+}
+
+#u110_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u111 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u112_normal {
+    background-image: url('../影视资料库_files/u32_normal.png');
+}
+
+.u112_container {
+    position:absolute;
+    left:286px;
+    top:318px;
+    width:59px;
+    height:58px;
+}
+
+#u112_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:65px;
+    height:64px;
+}
+
+.u113 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:55px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u114_normal {
+    background-image: url('../影视资料库_files/u34_normal.png');
+}
+
+.u114_container {
+    position:absolute;
+    left:345px;
+    top:318px;
+    width:100px;
+    height:58px;
+}
+
+#u114_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:64px;
+}
+
+.u115 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u116_normal {
+    background-image: url('../影视资料库_files/u36_normal.png');
+}
+
+.u116_container {
+    position:absolute;
+    left:445px;
+    top:318px;
+    width:99px;
+    height:58px;
+}
+
+#u116_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:105px;
+    height:64px;
+}
+
+.u117 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:95px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u118_normal {
+    background-image: url('../影视资料库_files/u38_normal.png');
+}
+
+.u118_container {
+    position:absolute;
+    left:544px;
+    top:318px;
+    width:91px;
+    height:58px;
+}
+
+#u118_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:97px;
+    height:64px;
+}
+
+.u119 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:87px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u120_normal {
+    background-image: url('../影视资料库_files/u24_normal.png');
+}
+
+.u120_container {
+    position:absolute;
+    left:0px;
+    top:376px;
+    width:66px;
+    height:58px;
+}
+
+#u120_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:72px;
+    height:64px;
+}
+
+.u121 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:62px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u122_normal {
+    background-image: url('../影视资料库_files/u26_normal.png');
+}
+
+.u122_container {
+    position:absolute;
+    left:66px;
+    top:376px;
+    width:58px;
+    height:58px;
+}
+
+#u122_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u123 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u124_normal {
+    background-image: url('../影视资料库_files/u28_normal.png');
+}
+
+.u124_container {
+    position:absolute;
+    left:124px;
+    top:376px;
+    width:104px;
+    height:58px;
+}
+
+#u124_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:110px;
+    height:64px;
+}
+
+.u125 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u126_normal {
+    background-image: url('../影视资料库_files/u26_normal.png');
+}
+
+.u126_container {
+    position:absolute;
+    left:228px;
+    top:376px;
+    width:58px;
+    height:58px;
+}
+
+#u126_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:64px;
+    height:64px;
+}
+
+.u127 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:54px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u128_normal {
+    background-image: url('../影视资料库_files/u32_normal.png');
+}
+
+.u128_container {
+    position:absolute;
+    left:286px;
+    top:376px;
+    width:59px;
+    height:58px;
+}
+
+#u128_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:65px;
+    height:64px;
+}
+
+.u129 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:55px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u130_normal {
+    background-image: url('../影视资料库_files/u34_normal.png');
+}
+
+.u130_container {
+    position:absolute;
+    left:345px;
+    top:376px;
+    width:100px;
+    height:58px;
+}
+
+#u130_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:64px;
+}
+
+.u131 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u132_normal {
+    background-image: url('../影视资料库_files/u36_normal.png');
+}
+
+.u132_container {
+    position:absolute;
+    left:445px;
+    top:376px;
+    width:99px;
+    height:58px;
+}
+
+#u132_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:105px;
+    height:64px;
+}
+
+.u133 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:95px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u134_normal {
+    background-image: url('../影视资料库_files/u38_normal.png');
+}
+
+.u134_container {
+    position:absolute;
+    left:544px;
+    top:376px;
+    width:91px;
+    height:58px;
+}
+
+#u134_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:97px;
+    height:64px;
+}
+
+.u135 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:87px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u136_normal {
+    background-image: url('../影视资料库_files/u136_normal.png');
+}
+
+.u136_container {
+    position:absolute;
+    left:99px;
+    top:204px;
+    width:50px;
+    height:50px;
+}
+
+#u136_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:56px;
+    height:56px;
+}
+
+.u137 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u138_normal {
+    background-image: url('../影视资料库_files/u136_normal.png');
+}
+
+.u138_container {
+    position:absolute;
+    left:99px;
+    top:263px;
+    width:50px;
+    height:50px;
+}
+
+#u138_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:56px;
+    height:56px;
+}
+
+.u139 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u140_normal {
+    background-image: url('../影视资料库_files/u136_normal.png');
+}
+
+.u140_container {
+    position:absolute;
+    left:99px;
+    top:323px;
+    width:50px;
+    height:50px;
+}
+
+#u140_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:56px;
+    height:56px;
+}
+
+.u141 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u142_normal {
+    background-image: url('../影视资料库_files/u136_normal.png');
+}
+
+.u142_container {
+    position:absolute;
+    left:99px;
+    top:382px;
+    width:50px;
+    height:50px;
+}
+
+#u142_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:56px;
+    height:56px;
+}
+
+.u143 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u144_normal {
+    background-image: url('../影视资料库_files/u136_normal.png');
+}
+
+.u144_container {
+    position:absolute;
+    left:99px;
+    top:442px;
+    width:50px;
+    height:50px;
+}
+
+#u144_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:56px;
+    height:56px;
+}
+
+.u145 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u146_normal {
+    background-image: url('../影视资料库_files/u136_normal.png');
+}
+
+.u146_container {
+    position:absolute;
+    left:99px;
+    top:500px;
+    width:50px;
+    height:50px;
+}
+
+#u146_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:56px;
+    height:56px;
+}
+
+.u147 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u148_normal {
+    background-image: url('../影视资料库_files/u136_normal.png');
+}
+
+.u148_container {
+    position:absolute;
+    left:99px;
+    top:558px;
+    width:50px;
+    height:50px;
+}
+
+#u148_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:56px;
+    height:56px;
+}
+
+.u149 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u150 {
+    position:absolute;
+    left:184px;
+    top:140px;
+    width:100px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u151 {
+    position:absolute;
+    left:672px;
+    top:619px;
+    width:144px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u152 {
+    position:absolute;
+    left:38px;
+    top:178px;
+    width:59px;
+    height:439px
+}
+
+.u153_normal {
+    background-image: url('../影视资料库_files/u153_normal.png');
+}
+
+.u153_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:54px;
+    height:22px;
+}
+
+#u153_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:60px;
+    height:28px;
+}
+
+.u154 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:50px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u155_normal {
+    background-image: url('../影视资料库_files/u155_normal.png');
+}
+
+.u155_container {
+    position:absolute;
+    left:0px;
+    top:22px;
+    width:54px;
+    height:58px;
+}
+
+#u155_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:60px;
+    height:64px;
+}
+
+.u156 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:50px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u157_normal {
+    background-image: url('../影视资料库_files/u157_normal.png');
+}
+
+.u157_container {
+    position:absolute;
+    left:0px;
+    top:80px;
+    width:54px;
+    height:60px;
+}
+
+#u157_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:60px;
+    height:66px;
+}
+
+.u158 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:50px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u159_normal {
+    background-image: url('../影视资料库_files/u157_normal.png');
+}
+
+.u159_container {
+    position:absolute;
+    left:0px;
+    top:140px;
+    width:54px;
+    height:60px;
+}
+
+#u159_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:60px;
+    height:66px;
+}
+
+.u160 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:50px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u161_normal {
+    background-image: url('../影视资料库_files/u157_normal.png');
+}
+
+.u161_container {
+    position:absolute;
+    left:0px;
+    top:200px;
+    width:54px;
+    height:60px;
+}
+
+#u161_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:60px;
+    height:66px;
+}
+
+.u162 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:50px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u163_normal {
+    background-image: url('../影视资料库_files/u155_normal.png');
+}
+
+.u163_container {
+    position:absolute;
+    left:0px;
+    top:260px;
+    width:54px;
+    height:58px;
+}
+
+#u163_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:60px;
+    height:64px;
+}
+
+.u164 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:50px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u165_normal {
+    background-image: url('../影视资料库_files/u155_normal.png');
+}
+
+.u165_container {
+    position:absolute;
+    left:0px;
+    top:318px;
+    width:54px;
+    height:58px;
+}
+
+#u165_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:60px;
+    height:64px;
+}
+
+.u166 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:50px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u167_normal {
+    background-image: url('../影视资料库_files/u155_normal.png');
+}
+
+.u167_container {
+    position:absolute;
+    left:0px;
+    top:376px;
+    width:54px;
+    height:58px;
+}
+
+#u167_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:60px;
+    height:64px;
+}
+
+.u168 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:50px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u170 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u172 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u174 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u176 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u178 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u180 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u182 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u184 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u185 {
+    position:absolute;
+    left:38px;
+    top:622px;
+    width:100px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+#u186 {
+    position:absolute;
+    left:727px;
+    top:178px;
+    width:83px;
+    height:439px
+}
+
+.u187_normal {
+    background-image: url('../影视资料库_files/u187_normal.png');
+}
+
+.u187_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:78px;
+    height:22px;
+}
+
+#u187_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:84px;
+    height:28px;
+}
+
+.u188 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:74px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u189_normal {
+    background-image: url('../影视资料库_files/u189_normal.png');
+}
+
+.u189_container {
+    position:absolute;
+    left:0px;
+    top:22px;
+    width:78px;
+    height:58px;
+}
+
+#u189_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:84px;
+    height:64px;
+}
+
+.u190 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:74px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u191_normal {
+    background-image: url('../影视资料库_files/u191_normal.png');
+}
+
+.u191_container {
+    position:absolute;
+    left:0px;
+    top:80px;
+    width:78px;
+    height:60px;
+}
+
+#u191_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:84px;
+    height:66px;
+}
+
+.u192 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:74px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u193_normal {
+    background-image: url('../影视资料库_files/u191_normal.png');
+}
+
+.u193_container {
+    position:absolute;
+    left:0px;
+    top:140px;
+    width:78px;
+    height:60px;
+}
+
+#u193_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:84px;
+    height:66px;
+}
+
+.u194 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:74px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u195_normal {
+    background-image: url('../影视资料库_files/u191_normal.png');
+}
+
+.u195_container {
+    position:absolute;
+    left:0px;
+    top:200px;
+    width:78px;
+    height:60px;
+}
+
+#u195_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:84px;
+    height:66px;
+}
+
+.u196 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:74px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u197_normal {
+    background-image: url('../影视资料库_files/u189_normal.png');
+}
+
+.u197_container {
+    position:absolute;
+    left:0px;
+    top:260px;
+    width:78px;
+    height:58px;
+}
+
+#u197_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:84px;
+    height:64px;
+}
+
+.u198 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:74px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u199_normal {
+    background-image: url('../影视资料库_files/u189_normal.png');
+}
+
+.u199_container {
+    position:absolute;
+    left:0px;
+    top:318px;
+    width:78px;
+    height:58px;
+}
+
+#u199_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:84px;
+    height:64px;
+}
+
+.u200 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:74px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u201_normal {
+    background-image: url('../影视资料库_files/u189_normal.png');
+}
+
+.u201_container {
+    position:absolute;
+    left:0px;
+    top:376px;
+    width:78px;
+    height:58px;
+}
+
+#u201_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:84px;
+    height:64px;
+}
+
+.u202 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:74px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u203 {
+    position:absolute;
+    left:739px;
+    top:222px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u204 {
+    position:absolute;
+    left:739px;
+    top:281px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u205 {
+    position:absolute;
+    left:739px;
+    top:343px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u206 {
+    position:absolute;
+    left:739px;
+    top:402px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u207 {
+    position:absolute;
+    left:739px;
+    top:460px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u208 {
+    position:absolute;
+    left:739px;
+    top:518px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u209 {
+    position:absolute;
+    left:739px;
+    top:576px;
+    width:58px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u210 {
+    position:absolute;
+    left:636px;
+    top:142px;
+    width:180px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u211 {
+    position:absolute;
+    left:42px;
+    top:147px;
+    width:142px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u212_normal {
+    background-image: url('../影视资料库_files/u212_normal.png');
+}
+
+.u212_container {
+    position:absolute;
+    left:28px;
+    top:32px;
+    width:798px;
+    height:100px;
+}
+
+#u212_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:804px;
+    height:106px;
+}
+
+.u213 {
+    position:absolute;
+    left:2px;
+    top:42px;
+    width:794px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u214 {
+    position:absolute;
+    left:779px;
+    top:48px;
+    width:40px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u215 {
+    position:absolute;
+    left:679px;
+    top:45px;
+    width:79px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u216 {
+    position:absolute;
+    left:765px;
+    top:43px;
+    width:12px;
+    height:19px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u217 {
+    position:absolute;
+    left:164px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u218 {
+    position:absolute;
+    left:296px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u219 {
+    position:absolute;
+    left:692px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u220 {
+    position:absolute;
+    left:34px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+#u221 {
+    position:absolute;
+    left:429px;
+    top:120px;
+    width:125px;
+    height:111px;
+    overflow:hidden;
+}
+
+#pd0u221 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:125px;
+    height:111px;
+    
+}
+
+.u222_normal {
+    background-image: url('../影视资料库_files/u222_normal.png');
+}
+
+.u222_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:124px;
+    height:108px;
+}
+
+#u222_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:130px;
+    height:114px;
+}
+
+.u223 {
+    position:absolute;
+    left:2px;
+    top:46px;
+    width:120px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u224 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u225 {
+    position:absolute;
+    left:0px;
+    top:36px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u226 {
+    position:absolute;
+    left:0px;
+    top:72px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+#u227 {
+    position:absolute;
+    left:560px;
+    top:120px;
+    width:125px;
+    height:111px;
+    overflow:hidden;
+}
+
+#pd0u227 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:125px;
+    height:111px;
+    
+}
+
+.u228 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u229 {
+    position:absolute;
+    left:0px;
+    top:36px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u230 {
+    position:absolute;
+    left:0px;
+    top:72px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u231 {
+    position:absolute;
+    left:42px;
+    top:46px;
+    width:238px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u232 {
+    position:absolute;
+    left:429px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u233 {
+    position:absolute;
+    left:560px;
+    top:84px;
+    width:124px;
+    height:36px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+

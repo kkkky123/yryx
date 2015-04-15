@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>弹性运动+摩擦力.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+	#div1 {width:100px;height:100px;background:red;position:absolute;left:0;top:30px;}
+	span {width:1px;height:300px;background:black;left:300px;position:absolute;}
+</style>
+<script type="text/javascript">
+	var iSpeed=0;
+	var left=0;
+	function startMove(obj,iTarget){
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function(){
+			iSpeed+=(iTarget-obj.offsetLeft)/5;//弹性运动的加速度和距离成正比，距离越大，加速度增大
+			iSpeed*=0.7;//由于要考虑摩擦力，所以速度要有一个减小的趋势
+			//终止位置就是当前速度小于1并且距离也小于1 的时候
+			if(Math.abs(iSpeed)<1 && Math.abs(left-iTarget)<1){
+				clearInterval(obj.timer);
+				obj.style.left=iTarget+'px';
+			}else{
+				left+=iSpeed;
+				obj.style.left=left+'px';
+			}
+		},30);
+	}
+	window.onload=function(){
+		var oDiv=document.getElementById('div1');
+		var oBtn=document.getElementById('btn1');
+		
+		oBtn.onclick=function(){
+			startMove(oDiv,300);
+		};
+	};
+</script>
+  </head>
+  
+  <body>
+  	<input id="btn1" type="button" value="开始运动"/>
+    <div id="div1"></div>
+	<span></span>
+  </body>
+</html>

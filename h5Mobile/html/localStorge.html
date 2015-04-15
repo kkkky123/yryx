@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+</body>
+<script>
+    //localStorge的一般用法
+    /*localStorage.setItem("name","shibuyiyangdeyanhuo");
+    localStorage.setItem("phone","12342312");
+    for(var i=0;i<localStorage.length;i++){
+        alert(localStorage.getItem(localStorage.key(i)));
+    }*/
+    //localStorge存储json格式
+    var person={"name":"小明","age":"12","phone":"1213131"};
+    localStorage.setItem("personData",JSON.stringify(person));//要把原有格式转换成json
+    alert(JSON.parse(localStorage.getItem("personData")).name);//把字符串再转成原有格式
+   /* JSON.parse(localStorage.getItem("personData")).name="大明";
+    //不能这么修改，除非是直接把数据拿出来，然后再放回去，不支持直接在localStorge里边改
+    alert(JSON.parse(localStorage.getItem("personData")).name);*/
+    var personData=JSON.parse(localStorage.getItem("personData"));
+    personData.name="大明";
+    localStorage.setItem("personData",JSON.stringify(personData));
+    alert(JSON.parse(localStorage.getItem("personData")).name);
+
+    window.addEventListener("storage",function(e){
+        console.log(e);
+    },true);
+    //localStorage.clear();//不清除的的话就一直保存着，浪费资源
+</script>
+</html>

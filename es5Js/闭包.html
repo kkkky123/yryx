@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>闭包.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<script type="text/javascript">
+	window.onload=function(){
+		var oUl=document.getElementById('ul1');
+		var aLi=oUl.getElementsByTagName('li');
+		
+		//闭包就是利用各种手段使得JS的垃圾回收机制不把局部变量回收，然后起到全局变量的作用而又没有全局变量
+		//最方便的方法是函数返回值或者函数嵌套，即把一个函数的内部变量当做参数传递给其内部函数，在其内部函数内再进行调用就相当于全局变量
+		/*for(var i=0;i<aLi.length;i++){
+			(function(i){
+				aLi[i].onclick=function(){
+					alert(i);
+				};
+			})(i);	
+		}*/
+		
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].onclick=(function(i){
+				return function(){
+					alert(i);
+				};
+			})(i);
+		}
+	};
+</script>
+  </head>
+  
+  <body>
+    <ul id="ul1">
+    	<li>1111111111111</li>
+		<li>2222222222222</li>
+		<li>33333333333333</li>
+		<li>444444444444444</li>
+    </ul>
+  </body>
+</html>

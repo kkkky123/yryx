@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>添加新片</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-fileupload.css" rel="stylesheet">
+<style>
+#actorlist td {vertical-align: middle;}
+#actorlist th {text-align: center;}
+#content {position:relative;}
+#movieimage {position:absolute;right:300px;top:50px;}
+</style>
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--导航-->
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="usermanage.html">管理后台</a> </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="actorManage.html">演员资料库</a></li>  
+          <li class="active"><a href="movieInfo.html">影视资料库</a></li>
+          <li> <a href="movieAgency.html">经纪公司管理</a></li>
+          <li class="dropdown"> <a href="movieTag.html" class="dropdown-toggle" data-toggle="dropdown">标签管理 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="tagClassfic.html">标签分类管理</a></li>
+              <li class="divider"></li>
+              <li><a href="movieTag.html">影视标签管理</a></li>
+              <li class="divider"></li>
+              <li><a href="actorTag.html">角色标签管理</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">账号管理 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="agenyuser.html">经纪公司账号</a></li>
+              <li class="divider"></li>
+              <li><a href="usermanage.html">系统子账号</a></li>
+            </ul>
+          </li>
+          <li><a href="appealManage.html">申诉管理</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown"> <a href="#" data-toggle="dropdown" class="dropdown-toggle">用户名 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="modifypwd.html">修改密码</a></li>
+             <!-- <li><a href="#">子账号管理</a></li>-->
+              <li class="divider"></li>
+              <li><a href="login.html">退出</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> 
+    </div>
+    <!-- /.container-fluid --> 
+  </nav>
+</div>
+
+<!--导航下面的指示框-->
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="movieInfo.html"><h4>影视资料库</h4></a></li>
+    <li class="active">添加新片</li>
+  </ol>
+</div>
+
+<!--页面主体-->
+<div class="container" id="content">
+  <h4 class="page-header">作品资料</h4>
+  <div class="row">
+    <form class="form-horizontal" action="" method="post" role="form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label class="control-label col-lg-2">片名</label>
+          <div class="col-lg-3">
+            <input type="text" name="movieName" class="form-control" placeholder="片名">
+          </div>
+        </div>
+        <div class="form-group">
+          	<label class="control-label col-lg-2">类型</label>
+            <div class="col-lg-8">
+            	<label class="radio-inline">
+                	<input type="radio" name="movietype" value="movie">电影
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="movietype" value="tv">剧集
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="movietype" value="ad">广告
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="movietype" value="mv">MV
+                </label>
+                <label class="radio-inline">
+                	<input type="radio" name="movietype" value="other">其他
+                </label>
+            </div>
+         </div>
+         <div class="form-group">
+            <label class="control-label col-lg-2">导演</label>
+            <div class="col-lg-4">
+              <input type="text" name="director" class="form-control director">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">开机时间</label>
+            <div class="col-lg-3">
+            	<!--<select name="openyear" class="form-control openyear">
+                	<option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                </select>
+                <span class="form-control-static">年</span>
+                <select name="openmonth" class="form-control openmonth">
+                	<option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <span class="form-control-static">月</span>-->
+                <input type="date" class="form-control" name="openDate">
+            </div>
+          </div>
+          <div class="form-group">
+          	<label class="control-label col-lg-2">上映时间</label>
+            <div class="col-lg-3">
+            	<!--<select name="onshowyear" class="form-control onshowyear">
+                	<option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                </select>
+                <span class="form-control-static">年</span>
+                <select name="onshowmonth" class="form-control onshowmonth">
+                	<option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <span class="form-control-static">月</span>-->
+                <input type="date" class="form-control" name="onshowDate">
+            </div>
+          </div>
+        <div class="text-center form-group" id="movieimage">
+          <label class="control-label">海报预览</label>
+          <div class="controls">
+            <div class="fileupload fileupload-new" data-provides="fileupload">
+              <div class="fileupload-new thumbnail" style="width: 150px; height: 200px;"> <img src="http://placehold.it/150x200" alt="" /></div>
+              <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 200px; line-height: 20px;"></div>
+              <div>
+              	<span class="btn btn-file btn-default">
+                    <span class="fileupload-new">上传海报(3:4)</span>
+                    <span class="fileupload-exists">替换</span>
+                    <input type="file" class="default" name="movieimage" />
+                </span>
+                <a href="#" class="btn fileupload-exists btn-default" data-dismiss="fileupload">删除</a>
+             </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-lg-2">影片标签</label>
+            <div class="col-lg-9">
+            	<label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="cukuang">粗犷</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="ruya">儒雅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="ruizhi">睿智</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="gaofushuai">高富帅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="nanshen">男神</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="huayangmeinan">花样美男</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="erbiqingnian">二逼青年</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="diaosi">屌丝</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="jishuzhai">技术宅</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="tubie">土鳖</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="tuhao">土豪</label>
+                <label class="checkbox-inline"><input type="checkbox" name="actornature[]" value="aiqiongcuo">矮穷挫</label>
+            </div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-lg-2">主要演员</label>
+            <div class="col-lg-1">
+        		<button id="mainActors" type="button" class="btn btn-default btn-add-actor">添加</button>
+            </div> 
+        </div>
+        <div class="form-group" id="mainActorLists">
+        	<div class="col-lg-6 form-inline col-xs-offset-2 hidden" id="mainActorList">
+            	<input type="text" class="form-control" placeholder="演员名" name="actorName[]">
+                <span class="form-control-static">饰</span>
+                <input type="text" class="form-control" placeholder="角色名" name="roleName[]">
+                <button type="button" class="btn btn-default btn-del-actor">删除</button>
+            </div>
+        </div>
+        <div class="form-group">
+        	<label class="control-label col-lg-2">曾获奖项</label>
+            <div class="col-lg-1">
+        	<button id="train" type="button" class="btn btn-default btn-add-prize">添加</button>
+            </div> 
+        </div>
+        <div class="form-group prizeAll">
+        	<div class="form-inline col-xs-offset-2 col-lg-10 hidden" id="prize-list">
+				<select class="form-control" name="getPrizeDate[]">
+					<option>2011年</option>
+					<option>2012年</option>
+				</select>
+                <input type="text" class="form-control" placeholder="请填写获奖内容" name="getPrizeContent[]">
+                <button class="btn btn-del-prize btn-default">删除</button>
+            </div>
+        </div>
+      <div class="form-actions col-xs-offset-4">
+        <button type="submit" class="btn btn-default btn-save col-lg-2">保存</button>
+        <a class="btn btn-default col-lg-2 col-xs-offset-1" href="movieInfo.html">取消</a>
+      </div><br>
+    </form>
+  </div>
+</div>
+
+<script src="js/jquery1.10.3_20130911.min.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/bootstrap-fileupload.js"></script> 
+<script>
+$(function(){
+	$(".btn-add-prize").on("click",function(){
+		$("#prize-list").clone().attr("id","").attr("class","form-inline col-xs-offset-2 col-lg-10").appendTo($("#prize-list").parent());	
+	});
+	$(".prizeAll").delegate("button","click",function(){
+		$(this).parent().remove();
+		//alert($(this).attr("class"));	
+	});
+	
+	$(".btn-add-actor").on("click",function(){
+		$("#mainActorList").clone().attr("id","").attr("class","col-lg-6 form-inline col-xs-offset-2").appendTo($("#mainActorList").parent());	
+	});
+	$("#mainActorLists").delegate("button","click",function(){
+		$(this).parent().remove();	
+	});
+});
+</script>
+</body>
+</html>

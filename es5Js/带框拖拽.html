@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>带框拖拽.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>带框拖拽.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style>
+		.div2{position:absolute;border:1px dashed;}
+		#div1{width:100px;height:100px;background-color:red;position:absolute;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var mydiv=document.getElementById('div1');
+			mydiv.onmousedown=function(ev){
+				var myevent=ev || event;
+				disX=myevent.clientX-mydiv.offsetLeft;
+				disY=myevent.clientY-mydiv.offsetTop;
+				mydiv2=document.createElement('div');
+				mydiv2.className='div2';
+				
+				mydiv2.style.width=mydiv.offsetWidth-2+'px';
+				mydiv2.style.height=mydiv.offsetHeight-2+'px';
+				mydiv2.style.left=mydiv.offsetLeft+'px';
+				mydiv2.style.top=mydiv.offsetTop+'px';
+				document.body.appendChild(mydiv2);
+				
+				if(mydiv.setCapture){//以下写法只在ie当中可以用，别的可以使用下面的
+					mydiv2.setCapture();//该函数表示mydiv这个对象捕获了当前页面所有的鼠标操作
+					mydiv2.onmousemove=function(ev){
+						var myevent=ev || event;
+						mydiv2.style.left=myevent.clientX-disX+'px';
+						mydiv2.style.top=myevent.clientY-disY+'px';
+					}
+					mydiv2.onmouseup=function(){
+						mydiv2.onmousemove=null;
+						mydiv2.onmouseup=null;
+						mydiv2.releaseCapture();//释放捕获
+						
+						mydiv.style.left=mydiv2.style.left;
+						mydiv.style.top=mydiv2.style.top;
+						document.body.removeChild(mydiv2);
+					}
+				}
+				else{
+					document.onmousemove=function(ev){
+						var myevent=ev || event;
+						mydiv2.style.left=myevent.clientX-disX+'px';
+						mydiv2.style.top=myevent.clientY-disY+'px';
+					}
+					document.onmouseup=function(){
+						document.onmousemove=null;
+						document.onmouseup=null;
+						
+						mydiv.style.left=mydiv2.style.left;
+						mydiv.style.top=mydiv2.style.top;
+						document.body.removeChild(mydiv2);
+					}
+				}
+				return false;
+			}
+		}
+	</script>
+  </head>  
+  <body>
+  	sasas
+    <div id="div1">sssss</div>
+	sasa
+  </body>
+</html>

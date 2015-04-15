@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>分页</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+ <style>
+ 	a{margin:5px;}
+ </style>
+ <script type="text/javascript">
+ 	window.onload=function(){
+		page({
+			id:'div1',
+			nowpage:1,
+			allpage:10,
+			callback:function(now,all){
+				window.alert("当前页："+ now + ",总共页：" + all);
+			}
+		});//函数的参数是比较厉害的json格式，如果要改进的话直接改最后的callback函数就可以完成任意功能
+		return false;//阻止点击超链接跳转页面
+	};
+	function page(opt){
+		if(!opt.id){return false;}//没有取到id的话就可以直接down了
+		var obj = document.getElementById(opt.id);//获取对象
+		var nowpage=opt.nowpage || 1;//获取当前页码，或者直接默认为1
+		var allpage=opt.allpage || 5;//获取总的页面，或者默认为5
+		
+		if(allpage>=6 && nowpage>=4){//总页码大于6或者当前页码大于4的时候才会出现首页字符
+			var oa=document.createElement('a');
+			oa.href = '#' + 1;
+			oa.innerHTML="首页";
+			obj.appendChild(oa);
+		}
+		if(nowpage>=2){//当前页码大于2的时候就出现上一页
+			var oa=document.createElement('a');
+			oa.href = '#' + (nowpage-1);
+			oa.innerHTML="上一页";
+			obj.appendChild(oa);
+		}
+		if(allpage<=5){//总的页面小于5的时候直接把所有的页码都打出来就行了，没那么多废话
+			for (var i = 1; i <= allpage; i++) {
+				var oa = document.createElement('a');
+				oa.href = '#' + i;
+				if (i == nowpage) {
+					oa.innerHTML = i;
+				}
+				else {
+					oa.innerHTML = '[' + i + ']';
+				}
+				obj.appendChild(oa);
+			}
+		}else{//总页码超过5的话，默认只出现5个页码，以当前页码为中心，向前两个，向后两个
+			for(var i=1;i<=5;i++){
+				var oa=document.createElement('a');
+				if (nowpage == 1 || nowpage == 2) {//如果当前页码为1或者2的话，也打印5个页码，但是不能向前出现打2个页码了
+					oa.href = '#' + i;
+					if (nowpage == i) {
+						oa.innerHTML = i;
+					}
+					else {
+						oa.innerHTML = '[' + i + ']';
+					}
+					obj.appendChild(oa);
+				}else if((allpage-nowpage)==1||(allpage-nowpage)==0){//当前页码为最后两个页码的时候，和前面类似
+					oa.href='#'+(allpage-5+i);
+					if((allpage-nowpage==0)&&i==5){
+						oa.innerHTML=nowpage;
+					}else if((allpage-nowpage==1)&&i==4){
+						oa.innerHTML=nowpage;
+					}else{
+						oa.innerHTML='['+(allpage-5+i)+']';
+					}
+					obj.appendChild(oa);
+				}
+				else {
+					oa.href = '#' + (nowpage - 3 + i);//好吧，最普遍的情况，以当前为中心，+-2个页码就可以了，注意的是，当前页码没有中括号
+					if (i == 3) {
+						oa.innerHTML = nowpage;
+					}
+					else {
+						oa.innerHTML = '[' + (nowpage - 3 + i) + ']';
+					}
+					obj.appendChild(oa);
+				}
+			}
+		}
+		if((allpage-nowpage>=3)&&allpage>=6){//如果总页码超过6，并且当前页码为倒数第三个以后的话出现尾页
+			var oa=document.createElement('a');
+			oa.href = '#' + allpage;
+			oa.innerHTML="尾页";
+			obj.appendChild(oa);
+		}
+		if((allpage-nowpage>=1)){//只要不是最后一页，就出现下一页
+			var oa=document.createElement('a');
+			oa.href = '#' + (nowpage+1);
+			oa.innerHTML="下一页";
+			obj.appendChild(oa);
+		}
+		opt.callback(nowpage,allpage);//判断完哪个页码的话，调用一下函数，这里就简单弹出当前页码和总的页码，要是加入操作的话最好就在这个函数做手脚
+		var aA=obj.getElementsByTagName('a');
+		for(var i=0;i<aA.length;i++){//给每个页码都添加分页函数
+			aA[i].onclick=function(){
+				var nowpage = parseInt(this.getAttribute('href').substring(1));//获取当前页码数
+				obj.innerHTML='';//将当前div里边已经打印的页码清空，然后在打出页码就行了，类似于刷新
+				page({
+					id:opt.id,
+					nowpage:nowpage,
+					allpage:opt.allpage,
+					callback:opt.callback
+				});
+				return false;
+			};
+		}
+	}
+ </script>
+  <body>
+  	<h1>这是个分页</h1>
+  	<div id="div1">
+     <!--<a href="#1">首页</a>
+	 <a href="#4">上一页</a>
+	 <a href="#3">[3]</a>
+	 <a href="#4">[4]</a>
+	 <a href="#5">5</a>
+	 <a href="#6">[6]</a>
+	 <a href="#7">[7]</a>
+	 <a href="#6">下一页</a>
+	 <a href="#10">尾页</a>-->
+	</div>
+  </body>
+</html>

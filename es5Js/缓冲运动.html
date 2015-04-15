@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>缓冲运动.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+	#div1 {width:100px;height:100px;position:absolute;left:0;background:red;}
+</style>
+<script type="text/javascript">
+	var timer=null;
+	function startMove(obj,iTarget){
+		var iSpeed=0;		
+		clearInterval(timer);
+		timer=setInterval(function(){
+			var dis=iTarget-obj.offsetLeft;
+			//缓冲运动的速度和距离有关，即速度=（终点-起点）/速度系数，速度系数越大，运动越慢
+			iSpeed=dis>0?Math.ceil(dis/20):Math.floor(dis/20);
+			if(obj.offsetLeft==iTarget){
+				clearInterval(timer);
+				//obj.style.left=iTarget+'px';
+			}else{
+				obj.style.left=obj.offsetLeft+iSpeed+'px';
+			}
+		},30);
+		
+	}
+	window.onload=function(){
+		var oBtn=document.getElementById('btn1');
+		var oDiv=document.getElementById('div1');
+		
+		oBtn.onclick=function(){
+			//alert(oDiv.offsetLeft);
+			startMove(oDiv,300);
+		}
+	}
+</script>
+  </head>
+  
+  <body>
+    <input id="btn1" type="button" value="开始运动"/>
+	<div id="div1"></div>
+	<span style="width:0px;height:300px;position:absolute;left:300px;border:1px solid black;"></span>
+  </body>
+</html>
