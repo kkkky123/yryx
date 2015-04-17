@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function myDivision(num1,num2){
+        var res=Math.round(num1/num2);
+        if(res.toString().length>3){
+            var arr=res.toString().split("");
+            var count=0;
+            for(var i=arr.length-1;i>=0;i--){
+                count++;
+                if(count>=3 && i>0){
+                    arr.splice(i,0,",");
+                    count=0;
+                }
+            }
+            return arr.join("");
+        }
+        return res;
+    }
+    console.log(myDivision(12345678901,10));
+</script>
+</body>
+</html>
