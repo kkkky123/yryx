@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul.nav,ul.nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            float: left;
+            border: 1px solid #486b02;
+            background-color: #8bd400;
+        }
+        ul.nav li {
+            float: left;
+            width: 8em;
+            background-color: #8bd400;
+        }
+        ul.nav li ul {
+            width: 8em;
+            position: absolute;
+            left: -999em;
+        }
+        ul.nav li:hover ul{
+            left: auto;
+        }
+        ul.nav a{
+            display: block;
+            color: #2b3f00;
+            text-decoration: none;
+            padding: 0.3em 1em;
+            border-right: 1px solid #486b02;
+            border-left: 1px solid #e4ffd3;
+        }
+        ul.nav li li a{
+            border-bottom: 1px solid #486b02;
+            border-top: 1px solid #e4ffd3;
+            border-left: 0;
+            border-right: 0;
+        }
+        ul.nav li:last-child a{
+            border-right: 0;
+            border-bottom: 0;
+        }
+        ul a:hover,ul a:focus {
+            color: #e4ffd3;
+            background-color: #6da203;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="#">aaaaa</a></li>
+        <li><a href="#">bbbbb</a>
+            <ul>
+                <li><a href="#">1111</a></li>
+                <li><a href="#">2222</a></li>
+                <li><a href="#">333333</a></li>
+            </ul>
+        </li>
+        <li><a href="#">cccc</a>
+            <ul>
+                <li><a href="#">4444</a></li>
+                <li><a href="#">555555</a></li>
+                <li><a href="#">66</a></li>
+            </ul>
+        </li>
+        <li><a href="#">dddddd</a></li>
+    </ul>
+</body>
+</html>
