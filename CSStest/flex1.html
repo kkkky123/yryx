@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #deals {
+            display: flex;        /* 应为是伸缩布局每一个商品有同样高度 */
+            flex-flow: row wrap;  /* 让商品折行                     */
+        }
+        .sale-item {
+            display: flex;        /* 用伸缩布局配置每一个商品的描述 */
+            flex-flow: column;    /* 垂直配置商品的内容           */
+            border: 1px solid;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .sale-item > img {
+            order: -1;            /* 将图像挪到其他内容之前（视觉顺序） */
+            align-self: center;   /* 在侧轴（水平向）置中图像         */
+        }
+        .sale-item > button {
+            margin-top: auto;     /* 自动顶端外边距让按钮置底 */
+        }
+    </style>
+</head>
+<body>
+    <section id='deals'>
+        <section class='sale-item'>
+            <h1>电脑初学者配备</h1>
+            <p>如果你的钱不够多，这是你可以买到的最好的电脑。
+            <ul>
+                <li>电脑
+                <li>屏幕
+                <li>键盘
+                <li>滑鼠
+            </ul>
+            <img src='http://placehold.it/200x200' alt='你可以得到：一台白色的电脑与其他配备。' />
+            <button>下单！</button>
+        </section>
+        <section class='sale-item'>
+            <h1>电脑初学者配备</h1>
+            <p>如果你的钱不够多，这是你可以买到的最好的电脑。
+            <ul>
+                <li>电脑
+                <li>屏幕
+                <li>键盘
+                <li>滑鼠
+            </ul>
+            <img src='http://placehold.it/200x200' alt='你可以得到：一台白色的电脑与其他配备。' />
+            <button>下单！</button>
+        </section>
+    </section>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*ul {
+            display: flex;
+            list-style: none;
+            background: #ccc;
+            border: 1px solid;
+        }
+        ul li {
+            margin: 10px;
+        }
+        ul > li > a + div {
+            order: 0;
+            display: none;
+        }
+        ul > li > a:hover + div {
+            order: -1;
+            display: block;
+        }*/
+        #main {
+            display: flex;
+        }
+
+        #main > article {
+            flex: 1;
+            order: 2;
+        }
+
+        #main > nav {
+            width: 200px;
+            order: 1;
+        }
+
+        #main > aside {
+            width: 200px;
+            order: 3;
+        }
+    </style>
+</head>
+<body>
+<header><h1>Header</h1></header>
+<div id='main'>
+    <article><h1>article</h1></article>
+    <nav><h1>nav</h1></nav>
+    <aside><h1>aside</h1></aside>
+</div>
+<footer><h1>footer</h1></footer>
+</body>
+</html>
