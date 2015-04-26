@@ -1,0 +1,36 @@
+* {
+	margin: 0;padding: 0;
+}
+#container {
+	width: 100%;
+	
+}
+#header {
+	height: 100px;background: #ccc;width: 100%;line-height: 100px;
+}
+#wrapper {
+	float: left;
+	width: 100%;
+}
+#wrapper #content {
+	margin: 0 0 0 40%;
+	padding: 0 1px;
+	background: silver;
+}
+#navigation {
+	float: left;
+	background: blue;
+	width: 20%;
+	margin-left: -100%;
+}
+#extra {
+	width: 20%;
+	background: orange;
+	float: left;
+	margin-left: -80%;
+}	
+#footer {
+	clear: both;
+	width: 100%;
+	background: green;
+}
