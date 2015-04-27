@@ -2,7 +2,8 @@
 	margin: 0;padding: 0;
 }
 #container {
-	width: 100%;
+	width: 960px;
+	margin: 0 auto;
 }
 #header {
 	height: 100px;background: #ccc;width: 100%;line-height: 100px;
@@ -12,22 +13,18 @@
 	width: 100%;
 }
 #wrapper #content {
-	margin-right: 200px;
 	padding: 0 1px;
 	background: silver;
 }
 #navigation {
 	float: right;
 	background: blue;
-	width: 200px;
-	margin-left: -200px;
+	width: 49.9%;
 }
 #extra {
-	clear: right;
-	width: 200px;
+	width: 49.9%;
 	background: orange;
-	float: right;
-	margin-left: -200px;
+	float: left;
 }	
 #footer {
 	clear: both;

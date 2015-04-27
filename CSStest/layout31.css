@@ -8,8 +8,9 @@
 	height: 100px;background: #ccc;width: 100%;line-height: 100px;
 }
 #wrapper {
-	float: left;
+	float: right;
 	width: 100%;
+	margin-right: -200px;
 }
 #wrapper #content {
 	margin-right: 200px;
@@ -17,17 +18,14 @@
 	background: silver;
 }
 #navigation {
-	float: right;
+	float: left;
 	background: blue;
 	width: 200px;
-	margin-left: -200px;
 }
 #extra {
-	clear: right;
-	width: 200px;
+	width: 100%;
 	background: orange;
-	float: right;
-	margin-left: -200px;
+	float: left;
 }	
 #footer {
 	clear: both;

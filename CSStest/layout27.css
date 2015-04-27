@@ -12,22 +12,18 @@
 	width: 100%;
 }
 #wrapper #content {
-	margin-right: 200px;
 	padding: 0 1px;
 	background: silver;
 }
 #navigation {
-	float: right;
+	float: left;
 	background: blue;
-	width: 200px;
-	margin-left: -200px;
+	width: 49.9%;
 }
 #extra {
-	clear: right;
-	width: 200px;
+	width: 49.9%;
 	background: orange;
-	float: right;
-	margin-left: -200px;
+	float: left;
 }	
 #footer {
 	clear: both;

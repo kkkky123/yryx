@@ -2,32 +2,30 @@
 	margin: 0;padding: 0;
 }
 #container {
-	width: 100%;
+	width: 960px;
+	margin: 0 auto;
 }
 #header {
 	height: 100px;background: #ccc;width: 100%;line-height: 100px;
 }
 #wrapper {
-	float: left;
-	width: 100%;
+	float: right;
+	width: 750px;
 }
 #wrapper #content {
-	margin-right: 200px;
 	padding: 0 1px;
 	background: silver;
 }
 #navigation {
-	float: right;
+	float: left;
 	background: blue;
 	width: 200px;
-	margin-left: -200px;
+	margin-right: 10px;
 }
 #extra {
-	clear: right;
-	width: 200px;
+	width: 750px;
 	background: orange;
 	float: right;
-	margin-left: -200px;
 }	
 #footer {
 	clear: both;

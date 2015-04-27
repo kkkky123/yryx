@@ -2,14 +2,16 @@
 	margin: 0;padding: 0;
 }
 #container {
-	width: 100%;
+	width: 960px;
+	margin: 0 auto;
 }
 #header {
 	height: 100px;background: #ccc;width: 100%;line-height: 100px;
 }
 #wrapper {
-	float: left;
 	width: 100%;
+	float: right;
+	margin-right: -200px;
 }
 #wrapper #content {
 	margin-right: 200px;
@@ -17,17 +19,14 @@
 	background: silver;
 }
 #navigation {
-	float: right;
+	float: left;
 	background: blue;
 	width: 200px;
-	margin-left: -200px;
 }
 #extra {
-	clear: right;
 	width: 200px;
 	background: orange;
-	float: right;
-	margin-left: -200px;
+	float: left;
 }	
 #footer {
 	clear: both;
