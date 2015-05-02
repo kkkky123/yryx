@@ -8,26 +8,26 @@
 	height: 100px;background: #ccc;width: 100%;line-height: 100px;
 }
 #wrapper {
-	float: left;
+	float: right;
 	width: 100%;
 }
 #wrapper #content {
-	margin-right: 200px;
+	margin-left: 200px;
 	padding: 0 1px;
 	background: silver;
 }
 #navigation {
-	float: right;
+	float: left;
 	background: blue;
 	width: 200px;
-	margin-left: -200px;
+	margin-right: -200px;
 }
 #extra {
-	clear: right;
+	clear: left;
 	width: 200px;
 	background: orange;
-	float: right;
-	margin-left: -200px;
+	float: left;
+	margin-right: -200px;
 }	
 #footer {
 	clear: both;

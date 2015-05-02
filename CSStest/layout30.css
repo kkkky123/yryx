@@ -10,24 +10,22 @@
 #wrapper {
 	float: left;
 	width: 100%;
+	margin-left: -30%;
 }
 #wrapper #content {
-	margin-right: 200px;
+	margin-left: 30%;
 	padding: 0 1px;
 	background: silver;
 }
 #navigation {
-	float: right;
+	float: left;
 	background: blue;
-	width: 200px;
-	margin-left: -200px;
+	width: 30%;
 }
 #extra {
-	clear: right;
-	width: 200px;
+	width: 100%;
 	background: orange;
-	float: right;
-	margin-left: -200px;
+	float: left;
 }	
 #footer {
 	clear: both;
