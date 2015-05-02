@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            width: 400px;
+            height: 400px;
+            border: 1px solid;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        #map p {
+            display: block;
+            height: 39px;
+            border-bottom: 1px solid;
+        }
+
+        #map p:last-child {
+            border-bottom: none;
+        }
+
+        #map p span {
+            display: inline-block;
+            width: 39px;
+            border-right: 1px solid;
+            height: 39px;
+            position: relative;
+        }
+        #map p span:last-child {
+            width: 40px;
+            border-right: none;
+        }
+        #map p span .money {
+            margin: 0;
+            padding: 0;
+            width: 39px;
+            height: 39px;
+            border: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1>键盘的上(W)下(X)左(A)右(D)控制方向,1-9设置金币数，O设置障碍，H设置英雄，K设置杀手数量</h1>
+
+<div id="operator">
+    <button type="button" id="sets">设置</button>
+    <button type="button" id="start">开始游戏</button>
+</div>
+<!--<canvas id="killMap" width="400px" height="400px" style="border:1px solid red;"></canvas>-->
+<div id="map">
+    <p>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </p>
+
+    <p>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </p>
+
+    <p>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </p>
+
+    <p>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </p>
+
+    <p>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </p>
+
+    <p>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </p>
+
+    <p>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </p>
+
+    <p>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </p>
+
+    <p>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </p>
+
+    <p>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </p>
+</div>
+<div id="status">
+    <p>金币数：<span id="money">0</span></p>
+
+    <p>障碍物：<span id="obstacle">0</span></p>
+
+    <p>英雄位置：<span id="heroPos">0,0</span></p>
+
+    <p>杀手数量：<span id="killers">0</span></p>
+    <h4>比赛结果：<span>未开始</span></h4>
+</div>
+<script src="event.js"></script>
+<script>
+    function getClass(oParent,sClass){
+        var aBox=oParent.getElementsByTagName('*');
+        var aResult=[];
+        for(var i=0;i<aBox.length;i++){
+            if(aBox[i].className==sClass){
+                aResult.push(aBox[i]);
+            }
+        }
+        return aResult;
+    }
+    window.onload = function () {
+        var map=document.getElementById("map"),
+                setsButton=document.getElementById("sets"),
+                startButton=document.getElementById("start");
+        setsHover=function(event){
+            var event=event || window.event;
+            var target=event.target || event.srcElement;
+            if(target.hasClick){
+                return;
+            }else{
+                switch(target.tagName.toLowerCase()){
+                    case "span":{
+                        target.hasClick=true;
+                        var input=document.createElement("input");
+                        input.type="text";
+                        input.className="money";
+                        input.write=true;
+                        target.appendChild(input);
+                        input.focus();
+                        input.onkeydown=setsKey;
+                    }break;
+                }
+            }
+
+        };
+        setsKey=function(event){
+            var event=event || window.event;
+            var target=event.target || event.srcElement;
+            switch (event.keyCode){
+                case 72:{
+                    /*H*/
+                    this.value="H";
+                }break;
+                case 75:{
+                    /*K*/
+                    this.value="K";
+                }break;
+                case 79:{
+                    /*O*/
+                    this.value="O";
+                }break;
+                case 49:case 50:case 51:case 52:case 53:
+                case 54:case 55:case 56:case 57:{
+                    /*1-9*/
+                    this.value=String.fromCharCode(event.keyCode);
+                }break;
+                default:{return false;}break;
+            }
+            if(this.value.length>0){
+                this.onkeydown=null;
+                this.disabled="disabled";
+                var that=this;
+                this.onblur=function(){
+                    that.disabled="disabled";
+                };
+                return false;
+            }
+        };
+        setsButton.onclick=function(event){
+            map.addEventListener("click",setsHover,false);
+            //map.addEventListener("keydown",setsKey,false);
+        };
+    };
+</script>
+</body>
+</html>

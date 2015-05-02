@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+<head>
+<title>TankGame</title>
+</head>
+<body onkeydown="getCommand(event);">
+<h1>键盘的上(W)下(S)左(A)右(D)控制方向，空格发射子弹</h1>
+<canvas id="tankMap" width="400px" height="300px" style="border:1px solid red;background-color:black;"></canvas>
+<br/><span>敌方坦克还有：<span>15</span><br/>
+英雄生命：<span>2</span>
+</span>
+<script typ="javascript" src="tankgame5.js"></script>
+<script type="text/javascript">
+	//得到画布
+	var canvas=document.getElementById('tankMap');
+	var cxt=canvas.getContext("2d");
+
+	var gameover=false;
+	var hero=new HeroTank(190,270,0,heroColor);
+	var heroBullets=new Array();//我方子弹
+	var enemyBullets=new Array();//敌方子弹
+	var enemytanks=new Array(5);//敌方坦克
+	var bombs=new Array();
+	for(var i=0;i<enemytanks.length;i++){	
+		enemytanks[i]=new EnemyTank((i+1)*50,0,2,enemyColor);
+		window.setInterval("enemytanks["+i+"].run()",50);//让敌方坦克动起来
+		//每个坦克创建之后就赋给子弹
+		switch(enemytanks[i].direct){
+			case 0:
+				enemyBullets[i]=new Bullet(enemytanks[i].x+9,enemytanks[i].y,enemytanks[i].direct,"enemy",enemytanks[i]);
+			break;
+			case 1:
+				enemyBullets[i]=new Bullet(enemytanks[i].x+30,enemytanks[i].y+9,enemytanks[i].direct,"enemy",enemytanks[i]);
+			break;
+			case 2:
+				enemyBullets[i]=new Bullet(enemytanks[i].x+9,enemytanks[i].y+30,enemytanks[i].direct,"enemy",enemytanks[i]);
+			break;
+			case 3:
+				enemyBullets[i]=new Bullet(enemytanks[i].x,enemytanks[i].y+9,enemytanks[i].direct,"enemy",enemytanks[i]);
+			break;
+		}
+		var etime=window.setInterval("enemyBullets["+i+"].run()",50);//第一颗子弹动起来
+		enemyBullets[i].timer=etime;//判断什么时候去掉这一颗子弹
+		
+
+	}
+	clearMap();
+	function clearMap(){
+		if(gameover){
+			window.alert("游戏结束");
+			window.clearInterval(overtimer);
+		}
+		cxt.clearRect(0,0,400,300);//清屏，也就是删掉之前画的图
+		drawTank(hero);//每次清屏之后画布上该有的都要画出来，子弹什么的
+		drawHeroBullet();
+		drawEnemyBullet();
+		isHitTank();//每次刷新的时候都判断一下有没有击中坦克
+		drawBomb();
+		for(var i=0;i<enemytanks.length;i++){
+			drawTank(enemytanks[i]);
+		}
+	}
+	function getCommand(obj){
+		switch(obj.keyCode){
+			case 38:case 87:{//上
+				hero.moveUp();
+			}break;
+			case 39:case 68:{//右
+				hero.moveRight();
+			}break;
+			case 40:case 83:{//下
+				hero.moveDown();
+			}break;
+			case 37:case 65:{//左
+				hero.moveLeft();
+			}break;
+			case 32:{//空格键发射子弹
+				hero.shootenemy();
+			}break;
+		}
+	}
+	var overtimer=window.setInterval("clearMap()",100);
+	if(gameover){
+		window.alert("游戏结束");
+		window.clearInterval(overtimer);
+	}
+</script>
+</body>
+</html>
