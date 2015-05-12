@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta http-equiv="content-type" charset="utf-8">
+    <script src="../js/angular-1.3.0.js"></script>
+    <script src="../js/controllers.js"></script>
+    <title>search:{{query}}</title>
+</head>
+<body>
+search:<input ng-model="query">
+<ul ng-controller="PhoneListCtrl">
+    <li ng-repeat="phone in phones | filter:query">
+        {{phone.name}}
+        <p>{{phone.snippet}}</p>
+    </li>
+</ul>
+<ol ng-controller="PhoneListCtrl">
+    <li ng-repeat="name in names | filter:query">
+        {{name.name}}
+    </li>
+    <p>total:{{names.length}}</p>
+    <p>{{hello}}</p>
+    <p>{{query}}</p>
+</ol>
+<table>
+    <tr><th>rows</th></tr>
+    <tr ng-repeat="i in ['a',1,2,3,4,5]"><td>{{i}}</td></tr>
+</table>
+</body>
+</html>

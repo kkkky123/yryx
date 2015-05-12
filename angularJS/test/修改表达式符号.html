@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="app">
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/angular.css">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div ng-controller="myController">
+            <input type="email" ng-model="to" placeholder="Recipient"/>
+            <textarea ng-model="emailBody" cols="40" rows="10"></textarea>
+            <pre> __previewText__</pre>
+        </div>
+        <script src="../js/angular-1.3.0.js"></script>
+        <script type="text/javascript">
+            angular.module('emailParse',[]).config(['$interpolateProvider',function($interpolateProvider){
+                $interpolateProvider.startSymbol('__');
+                $interpolateProvider.endSymbol('__');
+            }]).factory('EmailParse',['$interpolate',function($interpolate){
+                return {
+                    parse:function(text,context){
+                        var template=$interpolate(text);
+                        return template(context);
+                    }
+                }
+            }]);
+            var app=angular.module('app',['emailParse']);
+            app.controller('myController',['$scope','EmailParse',function($scope,EmailParse){
+                $scope.to = 'ari@aaa.co';
+                $scope.emailBody = 'Hello __to__,\n\nMy name is Ari too!';
+                $scope.$watch('emailBody',function(body){
+                    if(body){
+                        $scope.previewText=EmailParse.parse(body,{
+                            to:$scope.to
+                        })
+                    }
+                });
+            }]);
+        </script>
+    </body>
+</html>

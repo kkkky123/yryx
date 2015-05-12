@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="../js/angular1.2.5.min.js"></script>
+    <script src="../js/test3.js"></script>
+  </head>
+  <body>
+    <div ng-controller="Ctrl1">
+      Hello <input ng-model='name'> <hr/>
+      &ltspan ng:bind="name"&gt <span ng:bind="name"></span> <br/>
+      &ltspan ng_bind="name"&gt <span ng_bind="name"></span> <br/>
+      &ltspan ng-bind="name"&gt <span ng-bind="name"></span> <br/>
+      &ltspan data-ng-bind="name"&gt <span data-ng-bind="name"></span> <br/>
+      &ltspan x-ng-bind="name"&gt <span x-ng-bind="name"></span> <br/>
+    </div>
+    <div ng-controller="Ctrl2">
+      Date format: <input ng-model="format"> <hr/>
+      Current time is: <span my-current-time="format"></span>
+    </div>
+  </body>
+</html>

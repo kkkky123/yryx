@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<body>
+<div ng-controller="myCtrl">
+    <p><input type="number" ng-model="count"></p>
+    <p><input type="number" ng-model="price"></p>
+    <p>{{count * price | currency}}</p>
+    <p>1 + 2 = {{ 1 + 2 }}</p>
+    <ul>
+        <li>
+            <span>Nexus S</span>
+            <p>
+                Fast just got faster with Nexus S.
+            </p>
+        </li>
+        <li>
+            <span>Motorola XOOM™ with Wi-Fi</span>
+            <p>
+                The Next, Next Generation tablet.
+            </p>
+        </li>
+    </ul>
+</div>
+<script src="../js/angular-1.3.0.js"></script>
+<script src="../js/test4.js"></script>
+<!--<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("myCtrl", function($scope) {
+        $scope.count=1;
+        $scope.price=1.99;
+    });
+</script>-->
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/angular.css">
+    </head>
+    <body>
+        <div ng-controller="myController">
+            <h1>hello {{clock.now | date:'medium'}}</h1>
+        </div>
+        <script src="../js/angular1.2.5.min.js"></script>
+        <script type="text/javascript">
+            function myController($scope){
+                $scope.clock={
+                        now:new Date()
+                    };
+                var updateClock=function(){
+                    $scope.clock.now=new Date();
+                };
+                setInterval(function(){
+                    $scope.$apply(updateClock());
+                },1000);
+                updateClock();
+            }    
+        </script>
+    </body>
+</html>

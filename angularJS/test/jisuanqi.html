@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-controller="jisuanqiCtrl">
+<input type="number" ng-model="first">
+<select ng-model="operate">
+    <option ng-repeat="ope in opes" value="{{ope}}">{{ope}}</option>
+</select>
+<input type="number" ng-model="second">
+<p>{{result()}}</p>
+<script src="../js/angular-1.3.0.js"></script>
+<script src="../js/jisuanqiCtrl.js"></script>
+</body>
+</html>

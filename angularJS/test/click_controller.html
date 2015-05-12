@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="app">
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/angular.css">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div ng-controller="myController">
+            <h4>加减测试</h4>
+            <button class="button" ng-click="add(1)">Add</button>
+            <a href="#" ng-click="subtract(1)" class="button alert">Subtract</a>
+            <h4>Current count:{{ counter }}</h4>
+        </div>
+        <script src="../js/angular1.2.5.min.js"></script>
+        <script type="text/javascript">
+            var app=angular.module('app',[]);
+            app.controller('myController',function($scope){
+                $scope.counter=0;
+                $scope.add=function(amount){
+                    $scope.counter+=amount;
+                };
+                $scope.subtract=function(amount){
+                    $scope.counter-=amount;
+                };
+            });
+        </script>
+    </body>
+</html>
