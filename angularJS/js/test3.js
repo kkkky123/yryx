@@ -9,7 +9,7 @@ function Ctrl2($scope) {
 //angular.module('time', [])
 // Register the 'myCurrentTime' directive factory method.
 // We inject $timeout and dateFilter service since the factory method is DI.
-/*angular.module('time', []).directive('myCurrentTime', function($timeout, dateFilter) {
+angular.module('time', []).directive('myCurrentTime', function($timeout, dateFilter) {
 	// return the directive link function. (compile function not needed)
 	return function(scope, element, attrs) {
 		var format, // date format
@@ -43,4 +43,4 @@ function Ctrl2($scope) {
 
 		updateLater(); // kick off the UI update process.
 	}
-});*/
+});
