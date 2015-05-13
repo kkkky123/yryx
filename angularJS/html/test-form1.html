@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .css-form input.ng-invalid.ng-dirty {
+            background-color: #fa787e;
+        }
+        .css-form input.ng-valid.ng-dirty {
+            background-color: #78fa89;
+        }
+    </style>
+</head>
+<body>
+<div ng-controller="Controller">
+    <form novalidate class="css-form">
+        Name:<input type="text" ng-model="user.name" required/><br/>
+        E-mail:<input type="email" ng-model="user.email" required/><br/>
+        Gender: <input type="radio" ng-model="user.gender" value="male"/>Male
+        <input type="radio" ng-model="user.gender" value="female"/>Female <br/>
+        <button ng-click="reset()">Reset</button>
+        <button ng-click="update(user)">Save</button>
+    </form>
+    <pre>form = {{ user | json}}</pre>
+    <pre>master = {{ master | json}}</pre>
+</div>
+<script src="../js/angular-1.3.0.js"></script>
+<script>
+    function Controller($scope) {
+        $scope.master = {};
+        $scope.update = function (user) {
+            $scope.master = angular.copy(user);
+        };
+        $scope.reset = function () {
+            $scope.user = angular.copy($scope.master);
+        };
+        $scope.reset();
+    }
+</script>
+</body>
+</html>

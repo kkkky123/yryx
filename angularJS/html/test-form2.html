@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .css-form input.ng-invalid.ng-dirty {
+            background-color: #fa787e;
+        }
+
+        .css-form input.ng-valid.ng-dirty {
+            background-color: #78fa89;
+        }
+    </style>
+</head>
+<body>
+<div ng-controller="Controller">
+    <form novalidate class="css-form" name="form">
+        Name:<input type="text" ng-model="user.name" name="uName" required/><br/>
+        E-mail:<input type="email" ng-model="user.email" name="uEmail" required/><br/>
+
+        <div ng-show="form.uEmail.$dirty && form.uEmail.$invalid">
+            Invalid:
+            <span ng-show="form.uEmail.$error.required">Tell us your emial.</span>
+            <span ng-show="form.uEmail.$error.email">not a valid emial</span>
+        </div>
+        Gender: <input type="radio" ng-model="user.gender" value="male"/>Male
+        <input type="radio" ng-model="user.gender" value="female"/>Female <br/>
+        <input type="checkbox" ng-model="user.agree" name="userAgree" required/>
+        I agree: <input type="text" ng-show="user.agree" ng-model="user.agreeSign" required/><br/>
+
+        <div ng-show="!user.agree || !user.agreeSign">Please Agree and Sign.</div>
+        <button ng-click="reset()" ng-disabled="isUnchanged(user)">Reset</button>
+        <button ng-click="update(user)" ng-disabled="form.$invalid || isUnchanged(user)">Save</button>
+    </form>
+    <pre>form = {{ user | json}}</pre>
+    <pre>master = {{ master | json}}</pre>
+</div>
+<script src="../js/angular-1.3.0.js"></script>
+<script>
+    function Controller($scope) {
+        $scope.master = {};
+        $scope.update = function (user) {
+            $scope.master = angular.copy(user);
+        };
+        $scope.reset = function () {
+            $scope.user = angular.copy($scope.master);
+        };
+        $scope.inUnchanged = function (user) {
+            return angular.equals(user, $scope.master);
+        };
+        $scope.reset();
+    }
+</script>
+</body>
+</html>
