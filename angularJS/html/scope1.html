@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div ng-controller="employeeController">
+        Manager: {{employee.name}} [{{ department}}] <br/>
+        Reports:
+        <ul>
+            <li ng-repeat="employee in employee.reports">
+                {{employee.name}} [{{ department}}]
+            </li>
+        </ul>
+        <hr/>
+    </div>
+
+    <script src="../js/angular-1.3.0.js"></script>
+    <script>
+        function employeeController($scope){
+            $scope.department= "Engineering";
+            $scope.employee = {
+                name:"Joe the Manager",
+                reports: [
+                    {name:"John"},
+                    {name:"mary"}
+                ]
+            }
+        }
+    </script>
+</body>
+</html>
