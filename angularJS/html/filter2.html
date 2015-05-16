@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="MyReverseModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="Ctrl">
+    <input type="greeting" ng-model="greeting"/>
+    <p>No filter: {{greeting}} </p>
+    <p>Reverse : {{greeting|reverse}} </p>
+    <p>Reverse + uppercase : {{greeting|reverse:true}}</p>
+</div>
+<script src="../js/angular-1.3.0.js"></script>
+<script>
+    angular.module("MyReverseModule", []).filter("reverse", function () {
+        return function (input, uppercase) {
+            var out = "";
+            for (var i = 0; i < input.length; i++) {
+                out = input.charAt(i) + out;
+            }
+            if (uppercase) {
+                out = out.toUpperCase();
+            }
+            return out;
+        }
+    }).controller("Ctrl",function($scope){
+        $scope.geeting = "hello";
+    });
+</script>
+</body>
+</html>
