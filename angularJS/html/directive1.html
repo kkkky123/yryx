@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="docSimpleDirective">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .odd {
+            background-color: red;
+        }
+        .even {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <ul ng-init="l=[1,2,3,4]">
+        <li ng-class-odd="'odd'" ng-class-even="'even'" ng-repeat="m in l">{{ m }}</li>
+    </ul>
+    <div ng-show="true">1</div>
+    <div ng-show="false">2</div>
+    <div ng-hide="true">3</div>
+    <div ng-hide="false">4</div>
+    <div ng-init="a=2">
+        <ul ng-switch on="a">
+            <li ng-switch-when="1">1</li>
+            <li ng-switch-when="2">2</li>
+            <li ng-switch-default>other</li>
+        </ul>
+    </div>
+    <hr/>
+    <form name="test_form" ng-controller="TestCtrl">
+        <input type="text" name="a" required ng-model="a"  />
+        <input type="text" name="b" required ng-model="b" ng-minlength="2" />
+        <span ng-click="see()">{{ test_form.$error }}</span>
+    </form>
+    <hr/>
+    <form name="test_form2" ng-controller="TestCtrl2" ng-init="o=[{name: 'AA', g: '00', v: '='}, {name: 'BB', g: '11', v: '+'}, {name: 'CC', g: '00', v: '!'}]; a=o[1].v;">
+        <select ng-model="a" ng-options="x.v as x.name for x in o" ng-change="show()">
+        </select>
+    </form>
+    <div ng-controller="Ctrl">
+        <my-customer></my-customer>
+    </div>
+    <script src="../js/angular.js"></script>
+    <script>
+        angular.module("docSimpleDirective",[]).controller("Ctrl",function($scope){
+            $scope.customer = {
+                name:"zhangSan",
+                address:"aaaaaaaaaa.street"
+            };
+        }).directive("myCustomer",function(){
+            return {
+                restrict:"AE",
+                template:"<span>姓名：{{customer.name}}</span><br/><span>地址：{{customer.address}}</span>"
+            }
+        }).controller("TestCtrl",function($scope){
+            $scope.see=function(){
+                console.log($scope.test_form.$error);
+            }
+        }).controller("TestCtrl2",function($scope){
+            $scope.show=function(){
+                console.log($scope.a);
+            }
+        });
+    </script>
+</body>
+</html>

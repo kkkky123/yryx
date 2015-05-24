@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        span.bar {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <span class="bar" ui-sref=".page1" ui-sref-active="active"><a href="">Page 1</a></span>
+        <span class="bar" ui-sref=".page2"><a href="">Page 2</a></span>
+        <span class="bar" ui-sref=".page3"><a href="">Page 3</a></span>
+    </div>
+    <div>
+        <div ui-view=""></div>
+    </div>
+</div>
+</body>
+</html>
