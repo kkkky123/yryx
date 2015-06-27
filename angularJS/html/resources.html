@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="BookCtrl"></div>
+<script src="../js/angular.js"></script>
+<script src="../js/angular-resource.js"></script>
+<script>
+    var app = angular.module('demo', ['ngResource'], angular.noop);
+    app.controller('BookCtrl', function ($scope, $resource) {
+        var actions = {
+            create: {method: 'POST', params: {_method: 'create'}},
+            read: {method: 'POST', params: {_method: 'read'}},
+            update: {method: 'POST', params: {_method: 'update'}},
+            delete: {method: 'POST', params: {_method: 'delete'}},
+            multi: {method: 'POST', params: {_method: 'multi'}}
+        };
+        var Book = $resource('/book', {}, actions);
+        var book = Book.read({id: '123'}, function(response){
+            console.log(book);
+        });
+        console.log(book)
+    });
+</script>
+</body>
+</html>

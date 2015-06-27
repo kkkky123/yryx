@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="TestCtrl">
+    <input type="text" ng-model="a" test />
+    <button ng-click="show(a)">查看</button>
+</div>
+<script src="../js/angular.js"></script>
+<script>
+    angular.module('demo',[]).directive('test',function(){
+        return {
+            restrict:'A',
+            require:'ngModel',
+            link:function(scope,element,attrs,ctrl){
+                ctrl.$formatters.push(function (value) {
+                    return value.join(',');
+                });
+
+                ctrl.$parsers.push(function (value) {
+                    return value.split(',');
+                });
+            }
+        }
+    }).controller('TestCtrl',function($scope){
+        $scope.a=[];
+        $scope.show=function(value){
+            console.log(value);
+        };
+    });
+</script>
+</body>
+</html>

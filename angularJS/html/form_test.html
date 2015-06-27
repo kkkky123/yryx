@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="TestCtrl">
+    <ys-block title="title" text="text"></ys-block>
+    <p>标题: <input ng-model="title" /></p>
+    <p>内容: <input ng-model="text" /></p>
+    <ys-block title="title" text="text"></ys-block>
+</div>
+<script src="../js/angular.js"></script>
+<script>
+    angular.module('demo',[]).directive('ysBlock',function(){
+        return {
+            restrict:'E',
+            replace:true,
+            scope:{
+                title:'=',
+                text:'='
+            },
+            template:'<div style="width: 200px; border: 1px solid black;"><h1 style="background-color: gray; color: white; font-size: 22px;">{{ title }}</h1><div>{{ text }}</div></div>'
+        }
+    }).controller('TestCtrl', function($scope){
+        $scope.title = '标题在这里';
+        $scope.text = '内容在这里';
+    });
+</script>
+</body>
+</html>

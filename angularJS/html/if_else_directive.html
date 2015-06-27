@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="TestCtrl">
+    <if true="a % 2 == 0">
+        <p>判断为真, {{ name }}</p>
+        <else>
+            <p>判断为假, {{ name }}</p>
+        </else>
+    </if>
+
+    <div>
+        <p>a: <input ng-model="a"/></p>
+
+        <p>name: <input ng-model="name"/></p>
+    </div>
+</div>
+<script src="../js/angular.js"></script>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script>
+    angular.module('demo', []).directive('if', function ($parse, $compile) {
+        return {
+            restrict: 'E',
+            scope: true,
+            compile: function (element, attrs) {
+                var cond = $parse(attrs.true);
+
+                return function ($scope, ielement, iattrs, controller) {
+                    $scope.if_node = $compile($.trim(ielement.html()))($scope, angular.noop);
+                    ielement.empty();
+                    var mark = $('<!-- IF/ELSE -->');
+                    $(element).before(mark);//建立一个占位符，可以获取位置
+                    $(element).remove();
+
+                    $scope.$watch(function (scope) {
+                        if (cond(scope)) {//为真,把else_node删除
+                            mark.after($scope.if_node);
+                            $($scope.else_node).detach();
+                        } else {//为假，先显示else_ndoe，再删除整个if_node
+                            if ($scope.else_node !== undefined) {
+                                mark.after($scope.else_node);
+                                $($scope.if_node).detach();
+                            }
+                        }
+                    });
+                }
+            }
+        }
+    }).directive('else',function($compile){
+        return {
+            restrict:'E',
+            compile:function(element,attrs){
+                return function(scope,ielement,iattrs){
+                    scope.else_node = $compile($.trim(ielement.html()))(scope, angular.noop);
+                    $(element).remove();
+                }
+            }
+        }
+    }).controller('TestCtrl', function ($scope) {
+        $scope.a = 1;
+        $scope.name='test';
+    });
+</script>
+</body>
+</html>

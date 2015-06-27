@@ -1,0 +1,133 @@
+<!doctype html>
+<html ng-app="demo">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/codemirror.css" type="text/css"/>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    <script src="../js/angular.js"></script>
+    <script src="../js/ui-bootstrap-tpls.js"></script>
+    <script src="../js/codemirror.js"></script>
+    <script src="../js/ui-codemirror.js"></script>
+    <style>
+        .lineNumber {
+            border: 1px solid #cccccc;
+            padding-left: 0px;
+            position: relative;
+            left: 15px;
+            margin-right: -30px;
+        }
+        .lineNumber .col-sm-12 {
+            padding: 0px;
+        }
+        .CodeMirror {
+            height: 300px;
+        }
+        .CodeMirror-linenumber {
+            padding: 0 3px;
+            min-width: 20px;
+            text-align: center;
+            color: #999;
+        }
+        .tab-content {
+            float: left;
+            height: 300px;
+            width: 400px;
+            background-color: #ccc;
+            overflow: hidden;
+        }
+        ul.nav-pills {
+            width: 200px;
+            float: left;
+        }
+        div.tab-pane {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body ng-controller="TabsDemoCtrl">
+<form action=".." role="form">
+    <div class="form-group">
+        <label class="col-sm-2 control-label text-right">详细菜单</label>
+    </div>
+    <div class="col-sm-10 lineNumber">
+        <tabset vertical="true" type="pills" class="col-sm-12">
+            <tab heading="推荐名单" ng-click="fresh(0)">
+                <ui-codemirror ui-codemirror-opts="editorOptions" array-to-str ui-refresh="tabs[0].active" ng-model="aa"></ui-codemirror>
+            </tab>
+            <tab heading="黑名单" ng-click="fresh(1)">
+                <ui-codemirror ui-codemirror-opts="editorOptions" array-to-str ui-refresh="tabs[1].active" ng-model="bb"></ui-codemirror>
+            </tab>
+        </tabset>
+        <hr />
+    </div>
+</form>
+<script>
+    angular.module('demo', ['ui.bootstrap','ui.codemirror']).controller('TabsDemoCtrl', function ($scope) {
+        $scope.aa=['aa','bb'];
+        $scope.bb=['111','2222','444'];
+        $scope.editorOptions = {
+            lineNumbers: true
+        };
+        $scope.tabs = [
+            { active:true },
+            { active:false}
+        ];
+        $scope.fresh=function(index){
+            $scope.tabs[index].active=!$scope.tabs[index].avtive;
+        }
+    }).directive('arrayToStr',function(){
+        return {
+            restrict:'AE',
+            require:'?ngModel',
+            compile:function(){
+                return function(scope,elm,attrs,ngModel){
+                    ngModel.$formatters.push(function (value) {
+                        return value.join("\n");
+                    });
+                    ngModel.$parsers.push(function(value){
+                        return value.split(/\s*\n\s*/);
+                    })
+                }
+            }
+        }
+    }).directive("opensearchLineEditor",function(){
+        return {
+            restrict:"AE",
+            require:"ngModel",
+            template: "<div><div class='line'>{{ count }}</div><textarea ng-model='items'></textarea></div>",
+            scope: true,
+            link:function(scope,elm,attrs,ngModelCtrl){
+                ngModelCtrl.$render = function() {
+                    scope.items = ngModelCtrl.$viewValue;
+                };
+                scope.$watch('items', function(items) {
+                    ngModelCtrl.$setViewValue(items);
+                    scope.count="";
+                    for(var i= 1,len=items.split("\n").length;i<=len;i++){
+                        scope.count+=" "+i+" ";
+                    }
+                });
+                ngModelCtrl.$formatters.push(function (value) {
+                    return value.join("\n");
+                    /*value.map(function(val,index,value){
+                        value[index]=index+1+". "+val;
+                    });
+                    return value.join("\n");*/
+                });
+                ngModelCtrl.$parsers.push(function (value) {
+                    //console.log(value.split(/\s*\n\s*/));
+                    return value.split(/\s*\n\s*/);
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

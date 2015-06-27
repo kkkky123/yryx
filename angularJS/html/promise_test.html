@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-controller="TestCtrl">
+<script src="../js/angular.js"></script>
+<script>
+    var TestCtrl = function($q){
+        var defer = $q.defer();
+        var promise = defer.promise;
+        promise.then(function(data){console.log('ok, ' + data)},
+                function(data){console.log('error, ' + data)});
+        //defer.reject('xx');
+        defer.resolve('xx');
+    }
+</script>
+</body>
+</html>

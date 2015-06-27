@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="TestCtrl">
+    <ul>
+        <for o in obj_list>
+            <li>{{ o.name }}, {{ o.age | add:6}}</li>
+        </for>
+    </ul>
+    <button ng-click="obj_list=[1,2]; name='o?'">修改</button>
+</div>
+<script src="../js/angular.js"></script>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script>
+    angular.module('demo', []).directive('for', function ($compile) {
+        return {
+            restrict: 'E',
+            priority: 1000,
+            terminal: true,
+            replace:true,
+            compile: function (element, attrs, link) {
+                var match = element[0].outerHTML.match('<for (.*?)=.*? in=.*? (.*?)=.*?>');
+                if (!match || match.length != 3) {
+                    throw Error('syntax: <for o in obj_list>')
+                }
+                var iter = match[1];//o
+                var list = match[2];//obj_list
+                var tpl = $compile($.trim(element.html()));//把li封装成一个模板
+                element.empty();
+                return function (scope, ielement, iattrs, controller) {
+                    var new_node = [];
+                    scope.$watch(list, function (list) {
+                        angular.forEach(new_node, function (n) {
+                            n.remove();
+                        });
+                        var scp, inode;
+                        for (var i = 0, len = list.length; i < len; i++) {
+                            scp = scope.$new();
+                            scp[iter] = list[i];
+                            inode = tpl(scp, angular.noop);
+                            $(ielement).before(inode);
+                            new_node.push(inode);
+                        }
+                    });
+                };
+            }
+        }
+    }).controller('TestCtrl', function ($scope) {
+        $scope.obj_list=[
+            {name:"a",age:22},
+            {name:"b",age:23},
+            {name:"c",age:24},
+            {name:"d",age:25}
+        ];
+    }).filter('add',function(){
+        return function(input,value){
+            return parseInt(input)+parseInt(value);
+        }
+    });
+</script>
+</body>
+</html>
