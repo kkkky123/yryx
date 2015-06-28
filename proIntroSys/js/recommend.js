@@ -3,7 +3,7 @@
  */
 
 /**
- *
+ * ç”Ÿæˆå›ºå®šèŒƒå›´å†…çš„éšæœºæ•°
  * @param start
  * @param end
  * @return {int} random number
@@ -12,10 +12,10 @@ function getRandom(start, end) {
     return Math.round(Math.random() * (end - start) + start);
 }
 /**
- * Éú³Écount¸öÉÌÆ·¶ÔÏó
- * ¶ÔÏóÊôĞÔ°üÀ¨£º{int}¶ÔÏóid,{array}¹ØÁª¶ÔÏóid,{int}ÌìÆø¹ØÁª´úÂë,
- * return ÉÌÆ·¶ÔÏóÊı×é
+ * ç”Ÿæˆcountä¸ªå•†å“å¯¹è±¡
+ * å¯¹è±¡å±æ€§åŒ…æ‹¬ï¼š{int}å¯¹è±¡id,{array}å…³è”å¯¹è±¡id,{int}å¤©æ°”å…³è”ä»£ç 
  * @param count
+ * @returns {Array}
  */
 function initGoods(count) {
     var res = [];
@@ -26,11 +26,12 @@ function initGoods(count) {
         var obj = {
             id: 0,
             associatedGoods: [],
-            weather: 0
+            weather: 0,
+            sim:0
         };
         obj.id = i + 1;
-        obj.weather = getRandom(1, 5);//ÌìÆø×´¿öÎªËæ»ú1-5 ´ú±íÒõÇçÓêÑ©·ç
-        len = getRandom(3, 5);//¹ØÁªÉÌÆ·Îª3-5¸öËæ»ú
+        obj.weather = getRandom(1, 5);//å¤©æ°”çŠ¶å†µä¸ºéšæœº1-5 ä»£è¡¨é˜´æ™´é›¨é›ªé£
+        len = getRandom(3, 5);//å…³è”å•†å“ä¸º3-5ä¸ªéšæœº
         for (j = 0; j < len; j++) {
             obj.associatedGoods[j] = getRandom(1, 1000);
         }
@@ -39,15 +40,15 @@ function initGoods(count) {
     return res;
 }
 /**
- * Éú³Écount¸öÓÃ»§¶ÔÏó
- * ÊôĞÔ°üÀ¨£º
- * ÓÃ»§id:int
- * µØÀíÎ»ÖÃ£ºarray int x,int y
- * ¹ºÂò¼ÇÂ¼£ºarray 0-5¸ö ÉÌÆ·id
- * ¹ºÂòÒâÏò int ÉÌÆ·id
- * ¹ØÁªÓÃ»§ ´ı¶¨
- * return ÓÃ»§¶ÔÏóÊı×é
+ * ç”Ÿæˆcountä¸ªç”¨æˆ·å¯¹è±¡
+ * å±æ€§åŒ…æ‹¬ï¼š
+ * ç”¨æˆ·id:int
+ * åœ°ç†ä½ç½®ï¼šarray int x,int y
+ * è´­ä¹°è®°å½•ï¼šarray 0-5ä¸ª å•†å“id
+ * è´­ä¹°æ„å‘ int å•†å“id
+ * å…³è”ç”¨æˆ· å¾…å®š
  * @param count
+ * @returns {Array}
  */
 function initUsers(count) {
     var res = [];
@@ -81,7 +82,11 @@ function initUsers(count) {
     return res;
 }
 
-/**/
+/**
+ * æ•°ç»„å»é‡
+ * @param arr
+ * @returns {Array}
+ */
 function arrayUnique(arr) {
     var res = [];
     for (var i = 0; i < arr.length; i++) {
@@ -94,45 +99,121 @@ function arrayUnique(arr) {
 $(function () {
     var allGoodsCount = 1000;
     var allUsersCount = 1000;
-    var allGoods = initGoods(allGoodsCount);//Éú³É1000¸öÉÌÆ·ºÍ1000¸öÓÃ»§
+    var allGoods = initGoods(allGoodsCount);//ç”Ÿæˆ1000ä¸ªå•†å“å’Œ1000ä¸ªç”¨æˆ·
     var allUsers = initUsers(allUsersCount);
+    var distance = 400;
+    var i, j, len;
+
+    var $inputRecord = $(".inputRecord");
+    var $inputX = $('.inputX');
+    var $inputY = $('.inputY');
+    var $inputWeather = $('.inputWeather');
+    var $inputDistance = $('.inputDistance');
+    var $inputRecordGoods = $('.inputRecordGoods');
+    var $hiddenTr = $('.hiddenTr');
+    var $resTbody = $('.resTbody');
 
     //current user
     var currentUser = initUsers(1)[0];
     currentUser.id = getRandom(1, allUsersCount);
-    currentUser.buying = getRandom(1,allGoodsCount);
+    currentUser.buying = getRandom(1, allGoodsCount);
+    var currentWeather = getRandom(1, 5);
+    //currentUser.buyRecord = $inputRecord.val().split(/\s+/);
+
+    //ä»¥ä¸‹ä¿¡æ¯ä¸ºè¾“å…¥ï¼Œä½†æ˜¯è¿™é‡Œä½¿ç”¨éšæœºç”Ÿæˆçš„æ¨¡å¼ï¼Œæ˜¾ç¤ºåœ¨é¡µé¢ä¸­
+    $inputRecord.val(currentUser.buyRecord.join(','));
+    $inputX.val(currentUser.position.x);
+    $inputY.val(currentUser.position.y);
+    $inputWeather.val(currentWeather);
+    $inputDistance.val(distance);
     //console.log(currentUser);
 
-    //¾àÀë½üµÄÓÃ»§
-    var distance = 100;
+    //å½“å‰ç”¨æˆ·çš„è´­ä¹°è®°å½•ç›¸å…³çš„å•†å“
+    var userAssoRecordGoods = [];
+    for (i = 0, len = currentUser.buyRecord.length; i < len; i++) {
+        userAssoRecordGoods = userAssoRecordGoods.concat(allGoods[currentUser.buyRecord[i] - 1].associatedGoods);
+    }
+    $inputRecordGoods.val(arrayUnique(userAssoRecordGoods).sort(function (val1, val2) {
+        return val1 - val2;
+    }).join(','));
+
+    //è·ç¦»è¿‘çš„ç”¨æˆ·
     var nearUsers = allUsers.filter(function (item, index) {
         return Math.pow(item.position.x - currentUser.position.x, 2) + Math.pow(item.position.y - currentUser.position.y, 2) < Math.pow(distance, 2);
     });
-    //console.log(nearUsers);
+    console.log("è¿‘è·ç¦»ç”¨æˆ·ä¸ªæ•°");
+    console.log(nearUsers.length);
 
-    //ÏàËÆ¶È¸ßµÄÓÃ»§
-    /*var assoUsers = nearUsers.filter(function(item,index){
-     return currentUser.id in item.b
-     });*/
+    //ç›¸ä¼¼åº¦é«˜çš„ç”¨æˆ·
+    var assoUsers = nearUsers.filter(function (item, index) {
+        var currentRecord = currentUser.buyRecord;
+        //å°è¯•å°†ç›¸ä¼¼åº¦é«˜å®šä½ä¸ºï¼šè´­ä¹°è®°å½•æœ‰ç›¸åŒçš„ï¼Œå’Œä¸è´­ä¹°è®°å½•å…³è”çš„æœ‰ç›¸åŒçš„
+        currentRecord=currentRecord.concat(userAssoRecordGoods);
+        for (i = 0, len = currentRecord.length; i < len; i++) {
+            if (item.buyRecord.indexOf(currentRecord[i]) != -1) {
+                return true;
+            }
+        }
+        return false;
+    });
+    console.log('ç›¸ä¼¼åº¦é«˜çš„ç”¨æˆ·');
+    console.log(assoUsers.length);
+    //nearUsers = assoUsers;
 
-    //»ñÈ¡½ü¾àÀëÓÃ»§µÄ¹ºÂò¼ÇÂ¼
+    //è·å–è¿‘è·ç¦»ä¸”ç›¸ä¼¼åº¦é«˜çš„ç”¨æˆ·çš„è´­ä¹°è®°å½•
     var nearBuyed = [];
-    nearUsers.map(function (item, index) {
+    assoUsers.map(function (item, index) {
         nearBuyed = nearBuyed.concat(item.buyRecord);
     });
-    nearBuyed = arrayUnique(nearBuyed).sort(function(val1,val2){
-        return val1-val2;
+    nearBuyed = arrayUnique(nearBuyed).sort(function (val1, val2) {
+        return val1 - val2;
     });
-    //console.log(nearBuyed.length);
+    console.log("è¿‘è·ç¦»ä¸”ç›¸ä¼¼åº¦é«˜ç”¨æˆ·çš„è´­ä¹°è®°å½•");
+    console.log(nearBuyed.length);
 
-    //ÌìÆøÊÊºÏµÄÉÌÆ·
-    var currentWeather = getRandom(1, 5);
-    var weatherEqual = nearBuyed.filter(function(item,index){
-        return allGoods[item].weather == currentWeather;
+    //é€‚åˆå¤©æ°”çš„å•†å“
+    var weatherEqual = nearBuyed.filter(function (item, index) {
+        return allGoods[item - 1].weather == currentWeather;
     });
-    //console.log(weatherEqual.length);
-
-    console.log(currentUser.buying);
-    console.log(currentUser.buyRecord);
+    console.log('å¤©æ°”æƒ…å†µé€‚åˆçš„å•†å“');
     console.log(weatherEqual);
+
+    //åˆ é™¤å½“å‰ç”¨æˆ·å·²æœ‰çš„è´­ä¹°è®°å½•ä¸­çš„å•†å“
+    var delRepeatGoods = weatherEqual.filter(function (item, index) {
+        var currentRecord = currentUser.buyRecord;
+        for (i = 0, len = currentRecord.length; i < len; i++) {
+            if (item == currentRecord[i]) {
+                return false;
+            }
+        }
+        return true;
+    });
+
+    /*console.log('å½“å‰ç”¨æˆ·çš„è´­ä¹°è®°å½•');
+    console.log(currentUser.buyRecord);
+    console.log('æœ€ç»ˆç”Ÿæˆçš„æ¨èåˆ—è¡¨');
+    console.log(finalRecomGoods);*/
+
+    var assoGoods = currentUser.buyRecord.concat(userAssoRecordGoods);
+    var finalRecomGoods = delRepeatGoods.filter(function(item,index){
+        for(i=0,len=assoGoods.length;i<len;i++){
+            if(assoGoods.indexOf(item)!=-1){
+                allGoods[item-1].sim = getRandom(5,9);
+                return true;
+            }else{
+                for(j=0;j<allGoods[item-1].associatedGoods.length;j++){
+                    if(assoGoods.indexOf(allGoods[item-1].associatedGoods[j])!=-1){
+                        allGoods[item-1].sim = getRandom(1,4);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    });
+
+    for (i = 0, len = finalRecomGoods.length; i < len; i++) {
+        var currentGoods = allGoods[finalRecomGoods[i] - 1];
+        $hiddenTr.clone().removeClass().children("td").eq(0).html(currentGoods.id).end().eq(1).html(currentGoods.associatedGoods.join(',')).end().eq(2).html(currentGoods.weather).end().eq(3).html(currentGoods.sim).end().end().appendTo($resTbody);
+    }
 });
