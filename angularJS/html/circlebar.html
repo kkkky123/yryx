@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet/less" href="../styles/circlebar.less"/>
+</head>
+<body ng-controller="circleCtrl">
+<progressbar-circle></progressbar-circle>
+<script src="../bower_components/less/dist/less.min.js"></script>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script>
+    angular.module('app',[]).controller('circleCtrl',function($scope){
+        $scope.value=50;
+        $scope.message = '正在清理中ss';
+    }).directive('progressbarCircle',function(){
+        return {
+            restrict: 'EA',
+            replace: true,
+            template:"<div class='circlebar'>\n" +
+                    "  <span class='text'>{{message}}</span>\n" +
+                    "  <div class='circle-left'></div>\n" +
+                    "  <div class='circle-right'></div>\n" +
+                    "</div>",
+            link:function(scope, elem, attrs){
+                var data = scope.value;
+                var angle;
+                if (data >= 0 && data <= 50) {
+                    angle = (225 - 45)/50*data + 45;
+                } else {
+                    angle = (405 - 225)/50*data + 225;
+                    angular.element(elem[0].getElementsByTagName('div')[1]).css({
+                        "border-top-color": "#0099cc",
+                        "border-right-color": "#0099cc"
+                    });
+                }
+                angular.element(elem[0].getElementsByTagName('div')[1]).css({
+                    "-webkit-transform": "rotate("+angle+"deg)",
+                    "-moz-transform": "rotate("+angle+"deg)",
+                    "-ms-transform": "rotate("+angle+"deg)",
+                    "-o-transform": "rotate("+angle+"deg)",
+                    "transform": "rotate("+angle+"deg)"
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

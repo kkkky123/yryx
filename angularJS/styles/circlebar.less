@@ -1,0 +1,44 @@
+.circlebar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 10px solid #e3e3e3;
+  border-radius: 50%;
+  z-index: 1;
+  .text {
+    display: block;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    z-index: 2;
+    font-size: 20px;
+    text-align: center;
+  }
+  .circle-left {
+    border: 10px solid #0099cc;
+    .rotate(45deg)
+  }
+  .circle-right {
+    border: 10px solid #e3e3e3;
+  }
+  .circle-left, .circle-right {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 1;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 50%;
+    top: -10px;
+    left: -10px;
+  }
+}
+
+.rotate(@angle){
+  -webkit-transform: rotate(@angle);
+  -moz-transform: rotate(@angle);
+  -ms-transform: rotate(@angle);
+  -o-transform: rotate(@angle);
+  transform: rotate(@angle);
+}
