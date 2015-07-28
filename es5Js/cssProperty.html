@@ -15,9 +15,9 @@
             //myDiv.style.removeProperty("border");//这个会删除掉指定的属性，没有的就不删除了
             for(i=0,len=myDiv.style.length;i<len;i++){
                 prop=myDiv.style[i];
-                //value=myDiv.style.getPropertyValue(prop);
-                value=myDiv.style.getPropertyCSSValue(prop);
-                alert(prop+":"+value.cssText+"("+value.cssValueType+")");
+                value=myDiv.style.getPropertyValue(prop);
+                //value=myDiv.style.getPropertyCSSValue(prop);//这函数貌似不存在
+                alert(prop+":"+value);
             }
         };
     </script>

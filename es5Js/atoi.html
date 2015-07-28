@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    window.onload=function(){
+        function atoiTest(str){
+            var pattern=/[\D]*(\d*)[\D]*[\s\S]*/g;
+            if(pattern.test(str)){
+                if(RegExp.$1.length==0){
+                    return 0;
+                }else{
+                    var num1=RegExp.$1;
+                    var count1= 0,count2=0;
+                    var arr1=str.split("");
+                    arr1.forEach(function(val,index){
+                        if(val=="+"){
+                            count1++;
+                        }else if(val=="-"){
+                            count2++;
+                        }
+                    });
+                    if(count2>count1 && (count2-count1)%2==1){
+                        if(parseInt(num1)>2147483648){
+                            return -2147483648;
+                        }
+                        return -parseInt(num1);
+                    }else if(count1==count2 && count1>0){
+                        return 0;
+                    }else{
+                        if(parseInt(num1)>2147483647){
+                            return 2147483647;
+                        }else{
+                            return parseInt(num1);
+                        }
+                    }
+                }
+            }else{
+                return 0;
+            }
+        }
+        alert(atoiTest("   - 321"));
+    };
+</script>
+</body>
+</html>

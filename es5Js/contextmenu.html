@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="myDiv">
+        可以实现模拟右键菜单
+    </div>
+    <ul id="myMenu" style="position: absolute;visibility: hidden;background-color: #ccc;">
+        <li><a href="#">aaaaaa</a></li>
+        <li><a href="#">bbbbbbb</a></li>
+        <li><a href="#">ccccc</a></li>
+    </ul>
+    <script src="event.js"></script>
+    <script>
+        EventUtil.addHandler(window,"load",function(event){
+            var div=document.getElementById("myDiv");
+            EventUtil.addHandler(div,"contextmenu",function(event){
+                var event=EventUtil.getEvent(event);
+                EventUtil.preventDefault(event);
+
+                var menu=document.getElementById("myMenu");
+                menu.style.left=event.clientX+"px";
+                menu.style.top=event.clientY+"px";
+                menu.style.visibility="visible";
+            });
+            EventUtil.addHandler(document,"click",function(event){
+                document.getElementById("myMenu").style.visibility="hidden";
+            });
+        });
+    </script>
+</body>
+</html>

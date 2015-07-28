@@ -2,30 +2,74 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>test</title>
     <style>
-        /** {margin: 0;padding: 0;}
-        .clear:after {content: "";clear: both;display: block;}*/
-        ul {position: relative;width: 100px;height: 400px;background: #ccc;}
-        .a div {display: none;position: absolute;top: 0;left: 100px;}
-        .a:hover div {display: block;}
+        * {margin: 0;padding: 0;}
+        body {font-size: 16px;}
+        .nav {width: 100%;height: 100px;color: #fff;background-color: #008cba;
+            line-height: 100px;font-size: 5em;
+            text-align: center;min-width: 200px;}
+        .nav .left {float: left;height: 100%;width: 10%;background-color: red;}
+        .nav .middle {float: left;height: 100%;width: 80%;}
+        .nav .right {float: right;height: 100%;width: 10%;background-color: silver;}
+
+        #content {width: 100%;height: 800px;background: #ccc;}
+        #content .year-month {width: 100%;height: 40px;line-height: 40px;font-size: 30px;color: #0000f1;
+            background: #fff;text-align: center;}
+        #content ul {list-style: none;}
+        #content ul li {background: orange;border: 1px solid;margin: 4px;}
+        #content ul li .text {float: left;width: 90%;font-size: 1em;text-indent: 2em;padding: 8px 0;}
+        #content ul li .tag {float: right;width: 10%;background: #0000ff;padding-top: 8px;padding-bottom: 8px;}
+        #content ul li .tag .date {text-align: center;color: #fff;font-size: 2em;}
+        #content ul li .tag .day {text-align: center;color: #fff;font-size: 1em;}
+        .clear:after {content: "";display: block;height: 0;clear: both;visibility: hidden;}
     </style>
 </head>
 <body>
-    aaa&nbsp;aa
-    <!--<div id="div1" class="clear" style="width: 400px;background: #ccc;border: 1px solid;">
-        <p style="text-indent: 24px;float: left;width: 340px;">2013年11月30日 - 本来挺好听一歌,现在一听到副歌部分开始唱“我是好美好美的红蔷薇”时,我就想起马三立老师那张驴脸,然后,然后就没有然后了。 试听:红蔷薇-丽江小倩...</p>
-        <div style="float: left;text-align: center;background-color: #c65f34;color: #fff;
-        width: 52px;margin:4px;line-height: 26px;">
-            <p style="font-size: 26px;">25</p>
-            <p>星期二</p>
-        </div>
-    </div>-->
-    <ul>
-        <li class="a">aaaaaa<div>bbbbbb</div></li>
-        <li class="a">aaaaaa<div>cccccc</div></li>
-        <li class="a">aaaaaa<div>ddddddd</div></li>
-        <li class="a">aaaaaa<div>eeeeee</div></li>
-    </ul>
+    <div class="nav clear">
+        <h4 class="left">&lt;</h4>
+        <h4 class="middle">我的学车日记</h4>
+        <h4 class="right">+</h4>
+    </div>
+    <div id="content">
+        <div class="year-month">2014年12月</div>
+        <ul>
+            <li class="clear">
+                <p class="text">一哥们让我给他介绍女朋友，要求160以上，可爱点，别太小心眼的。刚好有个符合条件的姑娘单着，我就问了，
+                    结果女生的要求是有房有车，月入1w+，身高175以上，样貌耐看。我去问符合该条件的男生，他对女生的要求是身高168以上，
+                    必须漂亮甜美的，很会做家务又能赚钱。我又去找了个符合该条件的女生，她的要求是男方要有别墅，有奔驰，有公司，身高180
+                    以上...........我又去找了个符合该条件的女生，她的要求是男方要有别墅，有奔驰，有公司，身高180以上...........
+                </p>
+                <div class="tag">
+                    <p class="date">25</p>
+                    <p class="day">星期一</p>
+                </div>
+            </li>
+            <li class="clear">
+                <p class="text">一哥们让我给他介绍女朋友，要求160以上，可爱点，别太小心眼的。刚好有个符合条件的姑娘单着，我就问了，
+                    结果女生的要求是有房有车，月入1w+，身高175以上，样貌耐看。我去问符合该条件的男生，他对女生的要求是身高168以上，
+                    必须漂亮甜美的，很会做家务又能赚钱。我又去找了个符合该条件的女生，她的要求是男方要有别墅，有奔驰，有公司，身高180
+                    以上...........一哥们让我给他介绍女朋友，要求160以上，可爱点，别太小心眼的。刚好有个符合条件的</p>
+                <div class="tag">
+                    <p class="date">25</p>
+                    <p class="day">星期一</p>
+                </div>
+            </li>
+            <li class="clear">
+                <p class="text">一哥们让我给他介绍女朋友，要求160以上，可爱点，别太小心眼的。刚好有个符合条件的姑娘单着，我就问了，结果女生的要求是有房有车，月入1w+，身高175以上，样貌耐看。我去问符合该条件的男生，他对女生的要求是身高168以上，必须漂亮甜美的，很会做家务又能赚钱。我又去找了个符合该条件的女生，她的要求是男方要有别墅，有奔驰，有公司，身高180以上...........</p>
+                <div class="tag">
+                    <p class="date">25</p>
+                    <p class="day">星期一</p>
+                </div>
+            </li>
+            <li class="clear">
+                <p class="text">一哥们让我给他介绍女朋友，要求160以上，可爱点，别太小心眼的。刚好有个符合条件的姑娘单着，我就问了，结果女生的要求是有房有车，月入1w+，身高175以上，样貌耐看。我去问符合该条件的男生，他对女生的要求是身高168以上，必须漂亮甜美的，很会做家务又能赚钱。我又去找了个符合该条件的女生，她的要求是男方要有别墅，有奔驰，有公司，身高180以上...........</p>
+                <div class="tag">
+                    <p class="date">25</p>
+                    <p class="day">星期一</p>
+                </div>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

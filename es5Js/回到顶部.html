@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>回到顶部.html</title>
@@ -11,10 +11,9 @@
 <script type="text/javascript">
 	window.onload=function(){
 		var oBtn=document.getElementById('btn1');
-		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;//
 		var timer=null;
 		var isSys=true;//判断是不是click事件引起的滚动，如果不是，则停止定时器
-		
+
 		window.onscroll=function(){
 			if(!isSys){//不是click事件引起的滚轮，那就只能是用户引起的滚动，此时停止滚动
 				clearInterval(timer);
@@ -22,12 +21,12 @@
 			}
 			isSys=false;//用户操作滚轮的时候，设置该值
 			oBtn.style.display="block";//滚动滚动条的时候显示返回顶部按钮
-		}
+		};
 		oBtn.onclick=function(){
 			timer=setInterval(function(){
 				var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;//当前可视页面的top值
 				var ispeed=Math.floor(-scrollTop/8);//计算从当前位置到页面顶端的距离，向下取整
-				
+
 				if(document.documentElement.scrollTop==0&&document.body.scrollTop==0){
 					clearInterval(timer);
 					oBtn.style.display="none";
@@ -36,8 +35,8 @@
 					isSys=true;//此时为onclick事件引起的滚动，不调用滚轮事件
 					document.documentElement.scrollTop=scrollTop+ispeed;//减少当前可视页面的top值
 					document.body.scrollTop=scrollTop+ispeed;
-				}		
-			},50);	
+				}
+			},50);
 		};
 	};
 </script>

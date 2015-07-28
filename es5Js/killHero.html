@@ -37,7 +37,7 @@
             width: 40px;
             border-right: none;
         }
-        .money,.killer,.hero,.obs {
+        #map p span .money {
             margin: 0;
             padding: 0;
             width: 39px;
@@ -47,28 +47,7 @@
             left: 0;
             top: 0;
             text-align: center;
-            font-size: 20px;
-            line-height: 39px;
-        }
-        .money {
             font-size: 30px;
-            color: orange;
-        }
-        .killer {
-            color: red;
-        }
-        .hero {
-            color: #0000cc;
-        }
-        .obs {
-            color: green;
-        }
-        #status {
-            width: 300px;
-            border: 1px solid #ccc;
-            position: absolute;
-            top: 200px;
-            right: 200px;
         }
     </style>
 </head>
@@ -122,13 +101,14 @@
     </p>
 </div>
 <div id="status">
-    <p>金币数：<span id="moneyNum">0</span></p>
+    <p>金币数：<span id="money">0</span></p>
+
     <p>障碍物：<span id="obstacle">0</span></p>
+
+    <p>英雄位置：<span id="heroPos">0,0</span></p>
+
     <p>杀手数量：<span id="killers">0</span></p>
-    <p>游戏轮数：<span id="step">0</span></p>
-    <p>英雄吃到的金币：<span id="heroMoney">0</span></p>
-    <p>杀手吃到的金币：<span id="killMoney">0</span></p>
-    <h4>比赛结果：<span id="gameover">未开始</span></h4>
+    <h4>比赛结果：<span>未开始</span></h4>
 </div>
 <script src="event.js"></script>
 <script>
@@ -145,20 +125,7 @@
     window.onload = function () {
         var map=document.getElementById("map"),
                 setsButton=document.getElementById("sets"),
-                startButton=document.getElementById("start"),
-                moneyNum=document.getElementById("moneyNum"),
-                obstable=document.getElementById("obstacle"),
-                heroMoney=document.getElementById("heroMoney"),
-                killerMoney=document.getElementById("killMoney"),
-                killers=document.getElementById("killers");
-                gameover=document.getElementById("gameover"),
-                step=document.getElementById("step");
-        var hero= 0,killerNum= 0,moneyCount= 0,obsNum= 0,steps=0;
-        var arr=map.getElementsByTagName("span");
-        for(var i= 0;i<100;i++){
-            arr[i].xIndex=parseInt(i/10);
-            arr[i].yIndex=parseInt(i%10);
-        }
+                startButton=document.getElementById("start");
         setsHover=function(event){
             var event=event || window.event;
             var target=event.target || event.srcElement;
@@ -167,7 +134,6 @@
             }else{
                 switch(target.tagName.toLowerCase()){
                     case "span":{
-                        //console.log(target.xIndex+","+target.yIndex);
                         target.hasClick=true;
                         var input=document.createElement("input");
                         input.type="text";
@@ -187,41 +153,26 @@
             switch (event.keyCode){
                 case 72:{
                     /*H*/
-                    if(hero==0){
-                        this.value="Hero";
-                        this.className="hero";
-                        hero++;
-                    }else{
-                        return false;
-                    }
+                    this.value="H";
                 }break;
                 case 75:{
                     /*K*/
-                    this.value="Kill";
-                    this.className="killer";
-                    killers.innerHTML=++killerNum;
+                    this.value="K";
                 }break;
                 case 79:{
                     /*O*/
-                    this.value="Obs";
-                    this.className='obs';
-                    obstable.innerHTML=++obsNum;
+                    this.value="O";
                 }break;
                 case 49:case 50:case 51:case 52:case 53:
                 case 54:case 55:case 56:case 57:{
                     /*1-9*/
                     this.value=String.fromCharCode(event.keyCode);
-                    this.className="money";
-                    moneyNum.innerHTML=++moneyCount;
                 }break;
                 default:{return false;}break;
             }
             if(this.value.length>0){
                 this.onkeydown=null;
                 this.disabled="disabled";
-                this.xIndex=this.parentNode.xIndex;
-                this.yIndex=this.parentNode.yIndex;
-                //console.log(this.xIndex+","+this.yIndex);
                 var that=this;
                 this.onblur=function(){
                     that.disabled="disabled";
@@ -233,180 +184,6 @@
             map.addEventListener("click",setsHover,false);
             //map.addEventListener("keydown",setsKey,false);
         };
-        startButton.onclick=function(event){
-            setsButton.onclick=null;
-            map.removeEventListener("click",setsHover,false);
-            document.addEventListener("keydown",start,false);
-        };
-        start=function(event){
-            var event=event||window.event;
-            var target=event.target||event.srcElement;
-            var hero=getClass(map,"hero")[0];
-            var kills=getClass(map,"killer");
-            switch (event.keyCode){
-                case 72:case 75:case 79:
-                case 49:case 50:case 51:case 52:case 53:
-                case 54:case 55:case 56:case 57:
-                {
-                    alert("非设置阶段，不能设置障碍物，英雄，杀手或金币");
-                    return;
-                }break;
-                case 87:{
-                    /*W 向上*/
-                    run(hero,1);
-                }break;
-                case 65:{
-                    /*A 左*/
-                    run(hero,3);
-                }break;
-                case 68:{
-                    /*D 右*/
-                    run(hero,4);
-                }break;
-                case 88:{
-                    /*X 下*/
-                    run(hero,2);
-                }break;
-                default:{
-                    alert("按键有误，请重新选择按键");
-                    return false;
-                }break;
-            }
-            for(var i=0;i<kills.length;i++){
-                run(kills[i],Math.floor(Math.random()*8));
-            }
-            step.innerHTML=++steps;
-        };
-        canRun=function(el,next){
-            var nextChild=next.childNodes[0];
-            if(nextChild!=null){
-                if(nextChild.className=="killer" || nextChild.className=="obs"){
-                    if(el.className=="hero"){
-                        alert("即将遇到障碍物或杀手，换一条路走");
-                        return false;
-                    }else{
-                        run(el,Math.floor(Math.random()*8));
-                    }
-                }else if(nextChild.className=="money"){
-                    if(el.className=="hero"){
-                        var heroMoneyNum=parseInt(heroMoney.innerHTML);
-                        heroMoney.innerHTML=++heroMoneyNum;
-                    }else{
-                        var killerMoneyNum=parseInt(killerMoney.innerHTML);
-                        killerMoney.innerHTML=++killerMoneyNum;
-                    }
-                    moneyNum.innerHTML=--moneyCount;
-                    if(moneyCount==0){
-                        gameover.innerHTML="游戏结束";
-                        if(killerMoneyNum==0){
-                            alert("游戏结束，英雄胜利");
-                        }else if(heroMoneyNum==0){
-                            alert("游戏结束，杀手胜利");
-                        }else{
-                            console.log("英雄已经输了。。。");
-                        }
-                    }
-                    next.removeChild(nextChild);
-                }
-            }
-            next.appendChild(el);
-            el.xIndex=next.xIndex;
-            el.yIndex=next.yIndex;
-        };
-        run=function(el,direct){
-            var next=null;
-            switch(direct){
-                case 1:{
-                    if(parseInt(el.xIndex)<=0){
-                        if(el.className=="hero"){
-                            alert("不能再向上了");
-                            return false;
-                        }else if(el.className=="killer"){
-                            run(el,2);
-                        }
-                    }else{
-                        next=arr[(parseInt(el.xIndex)-1)*10+parseInt(el.yIndex)];
-                        canRun(el,next);
-                    }
-                }break;
-                case 2:{
-                    if(parseInt(el.xIndex)>=9){
-                        if(el.className=="hero"){
-                            alert("不能再向下了");
-                            return false;
-                        }else if(el.className=="killer"){
-                            run(el,1);
-                        }
-                    }else{
-                        next=arr[(parseInt(el.xIndex)+1)*10+parseInt(el.yIndex)];
-                        canRun(el,next);
-                    }
-                }break;
-                case 3:{
-                    if(parseInt(el.yIndex)<=0){
-                        if(el.className=="hero"){
-                            alert("不能再向左了");
-                            return false;
-                        }else if(el.className=="killer"){
-                            run(el,4);
-                        }
-                    }else{
-                        next=arr[parseInt(el.xIndex)*10+parseInt(el.yIndex)-1];
-                        canRun(el,next);
-                    }
-                }break;
-                case 4:{
-                    if(parseInt(el.yIndex)>=9){
-                        if(el.className=="hero"){
-                            alert("不能再向右了");
-                            return false;
-                        }else if(el.className=="killer"){
-                            run(el,3);
-                        }
-                    }else{
-                        next=arr[parseInt(el.xIndex)*10+parseInt(el.yIndex)+1];
-                        canRun(el,next);
-                    }
-                }break;
-                case 5:{
-                    /*左上*/
-                    if(parseInt(el.xIndex)>=1 && parseInt(el.yIndex)>=1){
-                        next=arr[(parseInt(el.xIndex)-1)*10+parseInt(el.yIndex)-1];
-                        canRun(el,next);
-                    }else{
-                        run(el,Math.floor(Math.random()*8));
-                    }
-                }break;
-                case 6:{
-                    /*右上*/
-                    if(parseInt(el.xIndex)>=1 && parseInt(el.yIndex)<=8){
-                        next=arr[(parseInt(el.xIndex)-1)*10+parseInt(el.yIndex)+1];
-                        canRun(el,next);
-                    }else{
-                        run(el,Math.floor(Math.random()*8));
-                    }
-                }break;
-                case 7:{
-                    /*左下*/
-                    if(parseInt(el.xIndex)<=8 && parseInt(el.yIndex)>=1){
-                        next=arr[(parseInt(el.xIndex)+1)*10+parseInt(el.yIndex)-1];
-                        canRun(el,next);
-                    }else{
-                        run(el,Math.floor(Math.random()*8));
-                    }
-                }break;
-                case 8:{
-                    /*右下*/
-                    if(parseInt(el.xIndex)<=8 && parseInt(el.yIndex)<=8){
-                        next=arr[(parseInt(el.xIndex)+1)*10+parseInt(el.yIndex)+1];
-                        canRun(el,next);
-                    }else{
-                        run(el,Math.floor(Math.random()*8));
-                    }
-                }break;
-            }
-            //step.innerHTML=++steps;
-        }
     };
 </script>
 </body>

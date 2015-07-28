@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="file" id="files-list"/>
+    <div id="output"></div>
+    <div id="progress"></div>
+    <script type="text/javascript" src="./event.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            var filesList=document.getElementById("files-list");
+            EventUtil.addHandler(filesList,"change",function(event){
+                var info="",
+                        output=document.getElementById("output"),
+                        progress=document.getElementById("progress"),
+                        files=EventUtil.getTarget(event).files,
+                        type="default",
+                        reader= new FileReader();
+
+                if(/image/.test(files[0].type)){
+                    reader.readAsDataURL(files[0]);
+                    type="image";
+                }else{
+                    reader.readAsText(files[0]);
+                    type="text";
+                }
+
+                reader.onerror=function(){
+                    output.innerHTML="文件读取失败,error code id"+reader.error.code;
+                };
+                reader.onprogress=function(event){
+                    if(event.lengthComputable){
+                        progress.innerHTML=event.loaded+"/"+event.total;
+                    }
+                };
+
+                reader.onload=function(){
+                    var html="";
+                    switch (type){
+                        case "image":
+                            html="<img src=\""+reader.result + "\"\/>";
+                            break;
+                        case "text":
+                            html=reader.result;
+                            break;
+                    }
+                    output.innerHTML=html;
+                };
+            });
+        };
+    </script>
+</body>
+</html>

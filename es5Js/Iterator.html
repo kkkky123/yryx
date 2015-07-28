@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="div1">
+        <p><b>hello</b> world!</p>
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+    </div>
+    <script>
+        window.onload=function(){
+            var oDiv=document.getElementById("div1");
+            //var Iterator=document.createNodeIterator(oDiv,NodeFilter.SHOW_ELEMENT,null,false);
+            /*如果只是想要输出li,可以在上面函数的第三个参数设置,如下所示*/
+            var Iterator=document.createNodeIterator(oDiv,NodeFilter.SHOW_ELEMENT,function(node){
+                return node.tagName.toLowerCase()=="li"?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP;
+            },false);
+            /*document.createTreeWalker函数与以上应用一样，不同的是TreeWalker比之多了几个方法，可以随时访问firstChild,lastChild,
+            * parentNode,nextSibling,previousSibling，还可以通过修改currentNode时当前节点变成某个节点*/
+            var node=Iterator.nextNode();
+            var result="";
+            while(node!=null){
+                result+=node.tagName.toLowerCase()+",";
+                node=Iterator.nextNode();
+            }
+            alert(result);
+        };
+    </script>
+</body>
+</html>

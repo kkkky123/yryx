@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>这货是标题</title>
+</head>
+<body>
+<img src="./1.jpg" alt=".." width="178" height="108"/>
+    <canvas id="drawing" width="800px" height="450px" style="border: 1px solid;">这是一个绘画区域</canvas>
+    <script type="text/javascript">
+        window.onload=function(){
+            var drawing=document.getElementById("drawing");
+            if(drawing.getContext){
+                var context=drawing.getContext("2d");
+				var image=document.images[0],
+                        imgData,data,
+                        i,len,average,
+                        red,green,blue,alpha;
+                context.drawImage(image,0,0);
+                imgData=context.getImageData(0,0,image.width,image.height);
+                data=imgData.data;
+                for(i=0,len=data.length;i<len;i+=4){
+                    red=data[i];
+                    green=data[i+1];
+                    blue=data[i+2];
+                    alpha=data[i+3];
+
+                    /*一下这样求平均会得到黑白图*/
+                    average=Math.floor((red+green+blue)/3);
+                    data[i]=average;
+                    data[i+1]=average;
+                    data[i+2]=average;
+                }
+                imgData.data=data;
+                context.putImageData(imgData,0,0);
+                context.drawImage(image,0,0,178,108,120,120,200,200);
+            }
+        };
+    </script>
+</body>
+</html>

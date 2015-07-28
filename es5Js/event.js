@@ -22,6 +22,18 @@ var EventUtil = {
             event.cancelBubble=true;
         }
     },
+    getRelatedTarget:function(event){
+        /*获取相关元素，只对mousover和mouseout有用，对mouseover来说，被移入的是主体元素，移除的是相关元素，mouseout相反*/
+        if(event.relatedTarget){
+            return event.relatedTarget;
+        }else if(event.toElement){
+            return event.toElement;
+        }else if(event.fromElement){
+            return fromElement;
+        }else{
+            return null;
+        }
+    },
     addHandler:function(element,type,handler){
         if(element.addEventListener){
             element.addEventListener(type,handler,false);

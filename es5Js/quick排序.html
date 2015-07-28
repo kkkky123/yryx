@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var arr=[85, 24, 63, 45,55, 17, 31, 96, 50];
+    function Qsort(arr){
+        var len=arr.length;
+        if(len<=1) return arr;
+        var left=[],right=[];
+        var midVal=arr[Math.floor(len/2)];
+        for(var i=0;i<len;i++){
+            if(arr[i]==midVal){;}
+            else if(arr[i]<midVal){
+                left.push(arr[i]);
+            }else{
+                right.push(arr[i]);
+            }
+        }
+        return arguments.callee(left).concat([midVal],arguments.callee(right));
+    }
+    alert(Qsort(arr));
+</script>
+</body>
+</html>
