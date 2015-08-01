@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .circlebar {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            border-radius: 50%;
+            background: #0099cc;
+            box-shadow: 1px 1px 1px #e3e3e3;
+        }
+        .circle-left, .circle-right {
+            width:200px;
+            height:200px;
+            position: absolute;
+            top: 0;left: 0;
+        }
+        .left, .right {
+            width:200px;
+            height:200px;
+            background:#e3e3e3;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 8px #e3e3e3;
+        }
+        .circle-left, .right {
+            clip:rect(0,auto,auto,100px);
+        }
+        .right.active {
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+        }
+        .circle-left, .left {
+            clip:rect(0,100px,auto,0);
+        }
+        .text {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            left: 10px;
+            top: 10px;
+            background: #FFF;
+            position: absolute;
+            text-align: center;
+            line-height: 180px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body ng-controller="circleCtrl">
+<progressbar-circle></progressbar-circle>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script>
+    angular.module('app',[]).controller('circleCtrl',function($scope){
+        $scope.value = 37;
+        $scope.message = '正在清理中ss';
+    }).directive('progressbarCircle',function(){
+        return {
+            restrict: 'EA',
+            replace: true,
+            template:"<div class='circlebar'>\n" +
+                    "  <div class='circle-left'><div class='left' ng-style=\"{transform: 'rotate('+ leftAngle +'deg)'}\"></div></div>\n" +
+                    "  <div class='circle-right'><div class='right' ng-style=\"{transform: 'rotate('+ rightAngle +'deg)'}\"></div></div>\n" +
+                    "  <div class='text'>{{message}}</div>\n" +
+                    "</div>",
+            link:function(scope, elem, attrs){
+                var angle = scope.value * 3.6;
+                scope.angle = angle;
+                if (angle <= 180) {
+                    scope.leftAngle = 0;
+                    scope.rightAngle = angle;
+                } else {
+                    scope.leftAngle = angle - 180;
+                    scope.rightAngle = 180;
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
