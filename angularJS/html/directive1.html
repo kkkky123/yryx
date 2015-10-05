@@ -35,7 +35,7 @@
     </form>
     <hr/>
     <form name="test_form2" ng-controller="TestCtrl2" ng-init="o=[{name: 'AA', g: '00', v: '='}, {name: 'BB', g: '11', v: '+'}, {name: 'CC', g: '00', v: '!'}]; a=o[1].v;">
-        <select ng-model="a" ng-options="x.v as x.name for x in o" ng-change="show()">
+        <select ng-model="a" ng-options="x.name for x in o" ng-change="show()">
         </select>
     </form>
     <hr/>
