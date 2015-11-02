@@ -216,4 +216,75 @@ $(function () {
         var currentGoods = allGoods[finalRecomGoods[i] - 1];
         $hiddenTr.clone().removeClass().children("td").eq(0).html(currentGoods.id).end().eq(1).html(currentGoods.associatedGoods.join(',')).end().eq(2).html(currentGoods.weather).end().eq(3).html(currentGoods.sim).end().end().appendTo($resTbody);
     }
+
+    //图表显示的相关配置
+    var myChart = echarts.init(document.getElementById('charts'));
+    option = {
+        title : {
+            text: '品牌推荐结果',
+            subtext: '模拟数据'
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            x : 'center',
+            data:['联想','惠普','宏基','华硕']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        polar : [
+            {
+                indicator : [
+                    {text : '性能', max  : 100},
+                    {text : '重量', max  : 100},
+                    {text : '外观', max  : 100},
+                    {text : '待机时长', max  : 100},
+                    {text : '价格', max  : 100},
+                    {text : '售后', max  : 100}
+                ],
+                radius : 130
+            }
+        ],
+        series : [
+            {
+                name: '完全模拟数据',
+                type: 'radar',
+                /*itemStyle: {
+                    normal: {
+                        areaStyle: {
+                            type: 'default'
+                        }
+                    }
+                },*/
+                data : [
+                    {
+                        value : [97, 42, 88, 94, 90, 86],
+                        name : '联想'
+                    },
+                    {
+                        value : [97, 32, 74, 95, 88, 92],
+                        name : '惠普'
+                    },
+                    {
+                        value : [88, 35, 92, 90, 85, 96],
+                        name : '宏基'
+                    },
+                    {
+                        value : [98, 52, 85, 90, 92, 88],
+                        name : '华硕'
+                    }
+                ]
+            }
+        ]
+    };
+    myChart.setOption(option);
 });
