@@ -287,4 +287,8 @@ $(function () {
         ]
     };
     myChart.setOption(option);
+    myChart.on(echarts.config.EVENT.CLICK, function(){
+        console.log('click');
+    });
+
 });
