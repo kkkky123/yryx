@@ -1,0 +1,14 @@
+{
+    "title": "my project",
+    "version": "1.0.0",
+    "engine": "mockjs",
+    "rulebase": "./interfaceRules/",
+    "status": "online",
+    "interfaces": [ {
+        "name": "主搜索接口",
+        "id": "Search.getItems",
+        "urls": {
+            "online": "http://s.m.taobao.com/client/search.do"
+        }
+    } ]
+}
