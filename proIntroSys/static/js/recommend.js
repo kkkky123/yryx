@@ -113,6 +113,11 @@ $(function () {
     var $hiddenTr = $('.hiddenTr');
     var $resTbody = $('.resTbody');
 
+    var $testA = $('#testa');
+    $testA.on('click', function(){
+        console.log('test');
+        return false;
+    });
     //current user
     var currentUser = initUsers(1)[0];
     currentUser.id = getRandom(1, allUsersCount);

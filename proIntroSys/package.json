@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "koa": "1.x",
-    "koa-static": "1.5.x"
+    "koa-static": "1.5.x",
+    "mysql": "2.9.0",
+    "koa-router": "6.0.0"
   }
 }
