@@ -1,0 +1,13 @@
+{
+  "name": "myProject",
+  "description": "my project",
+  "version": "0.0.1",
+  "author": {
+    "name": "ykz",
+    "email": "xxx"
+  },
+  "dependencies": {
+    "koa": "1.x",
+    "koa-static": "1.5.x"
+  }
+}
