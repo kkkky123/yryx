@@ -2,7 +2,8 @@ var koa = require('koa');
 var server = require('koa-static');
 var app = koa();
 var router = require('koa-router')();
-var mysql = require('mysql');
+
+/*var mysql = require('mysql');
 var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
@@ -18,11 +19,11 @@ connection.query('SELECT * FROM `movies` WHERE movieId = 1', function(err, rows,
 	console.log('The solution is: ', rows[0]);
 });
 
-connection.end();
+connection.end();*/
 
 /*router.get('/', function(ctx, next) {
 	console.log('aa');
-	
+
 });*/
 //app.use(router.routes()).use(router.allowedMethods());
 app.use(server('./static'));
